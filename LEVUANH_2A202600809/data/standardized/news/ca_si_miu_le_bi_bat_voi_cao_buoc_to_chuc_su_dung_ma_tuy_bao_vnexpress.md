@@ -2,7 +2,7 @@
 title: "Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy - Báo VnExpress"
 source: "vnexpress.net"
 url: "https://vnexpress.net/ca-si-miu-le-bi-bat-voi-cao-buoc-to-chuc-su-dung-ma-tuy-5074769.html"
-date_crawled: "2026-06-08T07:03:04.436966+00:00"
+date_crawled: "2026-06-08T08:23:25.451608+00:00"
 doc_type: "news"
 ---
 
@@ -11,8 +11,8 @@ doc_type: "news"
 #  Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy 
 [ ](https://vnexpress.net/ "VNE")
 ##  Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy
-  * [](https://www.facebook.com/congdongvnexpress "Chia sẻ bài viết lên Facebook")
-  * [](https://twitter.com/VnEnews "Chia sẻ bài viết lên X")
+  * [](javascript:; "Chia sẻ bài viết lên Facebook")
+  * [](javascript:; "Chia sẻ bài viết lên X")
   * [](javascript:; "Chia sẻ bài viết lên Linkedin")
   * [ ](https://vnexpress.net/ca-si-miu-le-bi-bat-voi-cao-buoc-to-chuc-su-dung-ma-tuy-5074769.html#box_comment_vne "Ý kiến")
   * [](javascript:; "In")
@@ -33,4 +33,5 @@ Từ 7/5, An mời bạn bè là ca sĩ Miu Lê, Vũ Khương An và vợ chồn
 **Lê Tân**
 ×
 ![](https://vnexpress.net/ca-si-miu-le-bi-bat-voi-cao-buoc-to-chuc-su-dung-ma-tuy-5074769.html)
+[](https://vnexpress.net/ca-si-miu-le-bi-bat-voi-cao-buoc-to-chuc-su-dung-ma-tuy-5074769.html)
 ×

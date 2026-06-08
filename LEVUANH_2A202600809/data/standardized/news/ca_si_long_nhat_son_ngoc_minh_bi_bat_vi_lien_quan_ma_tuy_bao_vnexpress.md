@@ -2,7 +2,7 @@
 title: "Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy - Báo VnExpress"
 source: "vnexpress.net"
 url: "https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html"
-date_crawled: "2026-06-08T07:03:02.276950+00:00"
+date_crawled: "2026-06-08T08:23:23.262307+00:00"
 doc_type: "news"
 ---
 
@@ -11,8 +11,8 @@ doc_type: "news"
 #  Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy 
 [ ](https://vnexpress.net/ "VNE")
 ##  Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy
-  * [](javascript:; "Chia sẻ bài viết lên Facebook")
-  * [](javascript:; "Chia sẻ bài viết lên X")
+  * [](https://www.facebook.com/congdongvnexpress "Chia sẻ bài viết lên Facebook")
+  * [](https://twitter.com/VnEnews "Chia sẻ bài viết lên X")
   * [](javascript:; "Chia sẻ bài viết lên Linkedin")
   * [ ](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html#box_comment_vne "Ý kiến")
   * [](javascript:; "In")
@@ -36,6 +36,12 @@ Sơn Ngọc Minh là ca sĩ từng được biết đến nhiều nhất với v
 ![Ca sĩ Long Nhật, Sơn Ngọc Minh \(giữa\) cùng những người bị khởi tố. Ảnh: Công an TP HCM](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html)
 Ca sĩ Long Nhật, Sơn Ngọc Minh (giữa) cùng những người bị khởi tố. Ảnh: _Công an TP HCM_
 **Quốc Thắng**
+[ ![Long Nhật khiến Hoài Linh 'chết đứng' trên sân khấu](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html) ](https://vnexpress.net/long-nhat-khien-hoai-linh-chet-dung-tren-san-khau-3254396.html "Long Nhật khiến Hoài Linh 'chết đứng' trên sân khấu")
+#### [Long Nhật khiến Hoài Linh 'chết đứng' trên sân khấu](https://vnexpress.net/long-nhat-khien-hoai-linh-chet-dung-tren-san-khau-3254396.html "Long Nhật khiến Hoài Linh 'chết đứng' trên sân khấu")
+[Trong chương trình "Hội quán tiếu lâm", nam ca sĩ là thí sinh duy nhất không cần sự trợ giúp của Hoài Linh. Anh khiến danh hài bất lực trước những chiêu trò ma mãnh của mình.](https://vnexpress.net/long-nhat-khien-hoai-linh-chet-dung-tren-san-khau-3254396.html "Long Nhật khiến Hoài Linh 'chết đứng' trên sân khấu") [ ](https://vnexpress.net/long-nhat-khien-hoai-linh-chet-dung-tren-san-khau-3254396.html#box_comment_vne)
+[ ![Sơn Ngọc Minh làm album kỷ niệm một năm solo](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html) ](https://vnexpress.net/son-ngoc-minh-lam-album-ky-niem-mot-nam-solo-3319847.html "Sơn Ngọc Minh làm album kỷ niệm một năm solo")
+#### [Sơn Ngọc Minh làm album kỷ niệm một năm solo](https://vnexpress.net/son-ngoc-minh-lam-album-ky-niem-mot-nam-solo-3319847.html "Sơn Ngọc Minh làm album kỷ niệm một năm solo")
+[Album "Only You" đánh dấu con đường âm nhạc của nam ca sĩ sau thời gian đầu tư giọng hát, vũ đạo.](https://vnexpress.net/son-ngoc-minh-lam-album-ky-niem-mot-nam-solo-3319847.html "Sơn Ngọc Minh làm album kỷ niệm một năm solo") [ ](https://vnexpress.net/son-ngoc-minh-lam-album-ky-niem-mot-nam-solo-3319847.html#box_comment_vne)
 ×
 ![](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html)
 ×
