@@ -8,17 +8,6 @@ doc_type: "news"
 
 # Anh em ca sĩ Chi Dân rủ nhiều người chơi ma túy như thế nào - Báo VnExpress
 
-[Chuyên án VN10: 4 tiếp viên hàng không xách ma tuý về nước](https://vnexpress.net/topic/chuyen-an-vn10-4-tiep-vien-hang-khong-xach-ma-tuy-ve-nuoc-26697 "Chuyên án VN10: 4 tiếp viên hàng không xách ma tuý về nước")
-[ ](https://vnexpress.net/anh-em-ca-si-chi-dan-ru-nhieu-nguoi-choi-ma-tuy-nhu-the-nao-4929804.html#box_comment_vne)
-*   * [](https://www.facebook.com/congdongvnexpress "Chia sẻ bài viết lên facebook")
-  * [](https://twitter.com/VnEnews "Chia sẻ bài viết lên twitter")
-  * [](javascript:; "Chia sẻ bài viết lên Linkedin")
-  * [](https://vnexpress.net/anh-em-ca-si-chi-dan-ru-nhieu-nguoi-choi-ma-tuy-nhu-the-nao-4929804.html#box_comment_vne "Bình luận")
-  * [](javascript:; "In")
-  * [Trở lại Pháp luật](https://vnexpress.net/phap-luat)
-
-  * [Pháp luật](https://vnexpress.net/phap-luat "Pháp luật")
-
 #  Anh em ca sĩ Chi Dân rủ nhiều người chơi ma túy như thế nào 
 [ ](https://vnexpress.net/ "VNE")
 ##  Anh em ca sĩ Chi Dân rủ nhiều người chơi ma túy như thế nào

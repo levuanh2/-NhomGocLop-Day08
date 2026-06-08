@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-06-08T07:50:00.320499+00:00",
+  "embedding_model": "BAAI/bge-m3",
+  "embedding_dim": 1024,
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "separators": [
+    "\n\n",
+    "\n",
+    ". ",
+    " ",
+    ""
+  ],
+  "document_count": 5,
+  "chunk_count": 55,
+  "vector_store": "faiss",
+  "input_dirs": [
+    "E:\\AITHUCCHIEN\\LAB\\Day08_RAG_pipeline_cohort2\\LEVUANH\\data\\standardized\\news",
+    "E:\\AITHUCCHIEN\\LAB\\Day08_RAG_pipeline_cohort2\\LEVUANH\\data\\standardized\\legal"
+  ],
+  "documents": [
+    {
+      "doc_id": "dc7c4143-ad92-42e8-b238-9430cc356cee",
+      "title": "Anh em ca sĩ Chi Dân rủ nhiều người chơi ma túy như thế nào - Báo VnExpress",
+      "source_file": "anh_em_ca_si_chi_dan_ru_nhieu_nguoi_choi_ma_tuy_nhu_the_nao_bao_vnexpress.md",
+      "doc_type": "news",
+      "content_length": 5104
+    },
+    {
+      "doc_id": "fafac9eb-c44c-48af-8de4-58a60668c903",
+      "title": "Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy - Báo VnExpress",
+      "source_file": "ca_si_long_nhat_son_ngoc_minh_bi_bat_vi_lien_quan_ma_tuy_bao_vnexpress.md",
+      "doc_type": "news",
+      "content_length": 3082
+    },
+    {
+      "doc_id": "ff1ac921-b78e-40f5-ba53-3deb89c59eb5",
+      "title": "Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy - Báo VnExpress",
+      "source_file": "ca_si_miu_le_bi_bat_voi_cao_buoc_to_chuc_su_dung_ma_tuy_bao_vnexpress.md",
+      "doc_type": "news",
+      "content_length": 3232
+    },
+    {
+      "doc_id": "ef3c7eb3-75eb-47c6-b8eb-edd3a2886196",
+      "title": "Chi Dân và Andrea Aybar bị khởi tố vì tổ chức sử dụng ma túy - Ngôi sao",
+      "source_file": "chi_dan_va_andrea_aybar_bi_khoi_to_vi_to_chuc_su_dung_ma_tuy_ngoi_sao.md",
+      "doc_type": "news",
+      "content_length": 2363
+    },
+    {
+      "doc_id": "5d4f1d78-9516-440e-b113-832e9e66dec5",
+      "title": "Người mẫu Andrea Aybar và ca sĩ Chi Dân bị bắt",
+      "source_file": "nguoi_mau_andrea_aybar_va_ca_si_chi_dan_bi_bat.md",
+      "doc_type": "news",
+      "content_length": 4527
+    }
+  ]
+}

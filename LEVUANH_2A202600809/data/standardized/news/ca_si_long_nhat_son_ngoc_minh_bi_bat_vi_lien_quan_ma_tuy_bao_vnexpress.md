@@ -8,38 +8,6 @@ doc_type: "news"
 
 # Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy - Báo VnExpress
 
-[ ](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html#box_comment_vne)
-  * [ ](https://vnexpress.net/ "Trang chủ")
-  * [Mới nhất](https://vnexpress.net/tin-tuc-24h "Mới nhất")
-  * [ VnE-GO ](https://vnexpress.net/vne-go "VnE-GO")
-  * [ Thời sự ](https://vnexpress.net/thoi-su "Thời sự")
-  * [ Thế giới ](https://vnexpress.net/the-gioi "Thế giới")
-  * [ Kinh doanh ](https://vnexpress.net/kinh-doanh "Kinh doanh")
-  * [ Khoa học công nghệ ](https://vnexpress.net/khoa-hoc-cong-nghe "Khoa học công nghệ")
-  * [ Góc nhìn ](https://vnexpress.net/goc-nhin "Góc nhìn")
-  * [ Bất động sản ](https://vnexpress.net/bat-dong-san "Bất động sản")
-  * [ Sức khỏe ](https://vnexpress.net/suc-khoe "Sức khỏe")
-  * [ Thể thao ](https://vnexpress.net/the-thao "Thể thao")
-  * [ Giải trí ](https://vnexpress.net/giai-tri "Giải trí")
-  * [ Pháp luật ](https://vnexpress.net/phap-luat "Pháp luật")
-  * [ Giáo dục ](https://vnexpress.net/giao-duc "Giáo dục")
-  * [ Đời sống ](https://vnexpress.net/doi-song "Đời sống")
-  * [ Xe ](https://vnexpress.net/oto-xe-may "Xe")
-  * [ Du lịch ](https://vnexpress.net/du-lich "Du lịch")
-  * [ Ý kiến ](https://vnexpress.net/y-kien "Ý kiến")
-  * [ Tâm sự ](https://vnexpress.net/tam-su "Tâm sự")
-  * [ Thư giãn ](https://vnexpress.net/thu-gian "Thư giãn")
-  * [Tất cả ](javascript:;)
-
-  * [](javascript:; "Chia sẻ bài viết lên facebook")
-  * [](javascript:; "Chia sẻ bài viết lên twitter")
-  * [](javascript:; "Chia sẻ bài viết lên Linkedin")
-  * [](https://vnexpress.net/ca-si-long-nhat-son-ngoc-minh-bi-bat-vi-lien-quan-ma-tuy-5060857.html#box_comment_vne "Bình luận")
-  * [](javascript:; "In")
-  * [Trở lại Pháp luật](https://vnexpress.net/phap-luat)
-
-  * [Pháp luật](https://vnexpress.net/phap-luat "Pháp luật")
-
 #  Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy 
 [ ](https://vnexpress.net/ "VNE")
 ##  Ca sĩ Long Nhật, Sơn Ngọc Minh bị bắt vì liên quan ma túy

@@ -8,20 +8,9 @@ doc_type: "news"
 
 # Người mẫu Andrea Aybar và ca sĩ Chi Dân bị bắt
 
-[Chuyên án VN10: 4 tiếp viên hàng không xách ma tuý về nước](https://vnexpress.net/topic/chuyen-an-vn10-4-tiep-vien-hang-khong-xach-ma-tuy-ve-nuoc-26697 "Chuyên án VN10: 4 tiếp viên hàng không xách ma tuý về nước")
-[ ](https://vnexpress.net/nguoi-mau-andrea-aybar-va-ca-si-chi-dan-bi-bat-4814295.html#box_comment_vne)
-*   * [](https://www.facebook.com/congdongvnexpress "Chia sẻ bài viết lên facebook")
-  * [](https://twitter.com/VnEnews "Chia sẻ bài viết lên twitter")
-  * [](javascript:; "Chia sẻ bài viết lên Linkedin")
-  * [](https://vnexpress.net/nguoi-mau-andrea-aybar-va-ca-si-chi-dan-bi-bat-4814295.html#box_comment_vne "Bình luận")
-  * [](javascript:; "In")
-  * [Trở lại Pháp luật](https://vnexpress.net/phap-luat)
-
-  * [Pháp luật](https://vnexpress.net/phap-luat "Pháp luật")
-
-
+#  Người mẫu Andrea Aybar và ca sĩ Chi Dân bị bắt 
 [ ](https://vnexpress.net/ "VNE")
-
+##  Người mẫu Andrea Aybar và ca sĩ Chi Dân bị bắt
   * [](https://www.facebook.com/congdongvnexpress "Chia sẻ bài viết lên Facebook")
   * [](https://twitter.com/VnEnews "Chia sẻ bài viết lên X")
   * [](javascript:; "Chia sẻ bài viết lên Linkedin")
