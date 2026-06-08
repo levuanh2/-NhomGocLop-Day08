@@ -19,9 +19,9 @@ import os
 from pathlib import Path
 
 _PROJECT_ROOT = Path(__file__).parent.parent.parent
-_DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
-_STANDARDIZED_DIR = _DATA_DIR / "standardized"
-_VECTORSTORE_DIR = _DATA_DIR / "vectorstore" / "chroma"
+_STANDARDIZED_DIR = _PROJECT_ROOT / "data" / "standardized"
+_VECTORSTORE_DIR = _PROJECT_ROOT / "data" / "vectorstore" / "chroma"
+_COLLECTION_NAME = "legal_chunks"
 
 CORPUS: list[dict] = []
 _bm25 = None
@@ -31,7 +31,7 @@ def _load_corpus_from_chroma() -> list[dict]:
     """Load chunks từ ChromaDB (cùng data với semantic search)."""
     import chromadb
     client = chromadb.PersistentClient(path=str(_VECTORSTORE_DIR))
-    collection = client.get_collection("drug_law_docs")
+    collection = client.get_collection(_COLLECTION_NAME)
     results = collection.get(include=["documents", "metadatas"])
     return [
         {"content": doc, "metadata": meta}

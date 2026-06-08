@@ -284,4 +284,4 @@ if __name__ == "__main__":
         print("=" * 70)
         result = generate_with_citation(q)
         print(f"\nA: {result['answer']}")
-        print(f"\n[Sources: {len(result['sources'])} chunks | via {result['retrieval_source']}]")
+        print(f"\n[Sources: {len(result['chunks'])} chunks | out_of_scope={result['out_of_scope']}]")

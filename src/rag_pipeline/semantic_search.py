@@ -12,8 +12,8 @@ import os
 from pathlib import Path
 
 _PROJECT_ROOT = Path(__file__).parent.parent.parent
-_DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
-_VECTORSTORE_DIR = _DATA_DIR / "vectorstore" / "chroma"
+_VECTORSTORE_DIR = _PROJECT_ROOT / "data" / "vectorstore" / "chroma"
+_COLLECTION_NAME = "legal_chunks"
 _EMBEDDING_MODEL = "text-embedding-3-small"
 
 # Module-level cache để không khởi tạo lại mỗi lần gọi
@@ -34,7 +34,7 @@ def _get_collection():
     if _chroma_collection is None:
         import chromadb
         client = chromadb.PersistentClient(path=str(_VECTORSTORE_DIR))
-        _chroma_collection = client.get_collection("drug_law_docs")
+        _chroma_collection = client.get_collection(_COLLECTION_NAME)
     return _chroma_collection
 
 

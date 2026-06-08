@@ -23,19 +23,13 @@ if hasattr(sys.stderr, "reconfigure"):
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
-VECTORSTORE = ROOT / "LeTrungKien" / "data" / "vectorstore" / "chroma"
+VECTORSTORE = ROOT / "data" / "vectorstore" / "chroma"
 
-# Load .env từ thư mục LeTrungKien (nơi có OPENAI_API_KEY)
 from dotenv import load_dotenv
-load_dotenv(ROOT / "LeTrungKien" / ".env")
-load_dotenv(ROOT / ".env")  # fallback
+load_dotenv(ROOT / ".env")
 
-# ── Patch vectorstore path TRƯỚC khi import module (tránh dùng path mặc định) ──
 import rag_pipeline.semantic_search as _sem
 import rag_pipeline.lexical_search as _lex
-
-_sem._VECTORSTORE_DIR = VECTORSTORE
-_lex._VECTORSTORE_DIR = VECTORSTORE
 
 
 # ── Session Memory ────────────────────────────────────────────────────────────
