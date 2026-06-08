@@ -1,3 +1,74 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit local config/secrets
+.streamlit/secrets.toml
+
+# Test, type-check, and coverage caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build/package outputs
+build/
+dist/
+*.egg-info/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local notebooks/checkpoints
+.ipynb_checkpoints/
+
+# Runtime chat history and generated UI data
+src/interface/data/chat_history/*.json
+!src/interface/data/chat_history/.gitkeep
+
+# Local vector stores / database files
+*.sqlite
+*.sqlite3
+*.db
+chroma/
+faiss_index/
+weaviate_data/
+
+# Model/data artifacts that are usually too large for git
+*.pkl
+*.pickle
+*.parquet
+*.arrow
+*.bin
+*.safetensors
+*.onnx
+venv/
+.venv/
+__pycache__/
+*.pyc
 .vscode/
 .env
 .env.local

@@ -1,0 +1,7 @@
+.claude/
+CLAUDE.md
+.env
+__pycache__/
+.ipynb_checkpoints/
+
+task.md

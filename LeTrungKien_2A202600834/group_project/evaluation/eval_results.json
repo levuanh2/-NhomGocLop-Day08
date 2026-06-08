@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "dimension": "context_recall",
+    "question": "Theo Luật số 120/2025/QH15, những hành vi nào bị nghiêm cấm liên quan đến chất ma túy?",
+    "source_docs": [
+      "Luật phồng chống ma túy.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "article_06.md",
+      "Luật phồng chống ma túy.md"
+    ],
+    "source_hits": {
+      "Luật phồng chống ma túy.md": true
+    },
+    "gt_coverage": 0.75,
+    "answer": "Theo Luật số 120/2025/QH15, những hành vi bị nghiêm cấm liên quan đến chất ma túy bao gồm:\n\n1. Trồng cây có chứa chất ma túy, hướng dẫn trồng cây có chứa chất ma túy [Luật Phòng, chống ma túy, Điều 19].\n2. Giao nhận, quản lý, kiểm soát, lưu giữ, cấp phát, bảo quản chất ma túy, tiền chất trái quy định của pháp luật; cho phép người sử dụng chất ma túy, thuốc gây nghiện hoặc thuốc hướng thần trái quy định của pháp luật [Luật Phòng, chống ma túy, Điều 5].\n3. Sử dụng, tổ chức sử dụng trái phép chất ma túy; cưỡng bức, lôi kéo người khác sử dụng trái phép chất ma túy; chứa chấp, hỗ trợ việc sử dụng trái phép chất ma túy [Luật Phòng, chống ma túy, Điều 5].\n4. Sản xuất, tàng trữ, vận chuyển, mua bán phương tiện, dụng cụ dùng vào việc sản xuất hoặc sử dụng trái phép chất ma túy [Luật Phòng, chống ma túy, Điều 5].\n5. Cản trở việc xét nghiệm chất ma túy trong cơ thể, xác định tình trạng nghiện ma túy, quản lý người sử dụng trái phép chất ma túy, cai nghiện ma túy, quản lý sau cai nghiện ma túy [Luật Phòng, chống ma túy, Điều 5].\n6. Lợi dụng chức vụ, quyền hạn, nghề nghiệp để vi phạm pháp luật về phòng, chống ma túy [Luật Phòng, chống ma túy, Điều 15].\n7. Hướng dẫn sản xuất, sử dụng trái phép chất ma túy; quảng cáo, tiếp thị chất ma túy [Luật Phòng, chống ma túy, Điều 15].",
+    "ground_truth": "Luật nghiêm cấm 11 nhóm hành vi: (1) Trồng cây có chứa chất ma túy; (2) Nghiên cứu, sản xuất, tàng trữ, vận chuyển, mua bán, xuất nhập khẩu trái phép chất ma túy, tiền chất; (3) Chiếm đoạt chất ma túy; (4) Giao nhận, quản lý, cấp phát chất ma túy trái quy định; (5) Sử dụng, tổ chức sử dụng trái phép chất ma túy, cưỡng bức lôi kéo người khác sử dụng; (6) Sản xuất, mua bán dụng cụ sử dụng trái phép chất ma túy; (7) Cản trở xét nghiệm, cai nghiện; (8) Trả thù người thực thi nhiệm vụ phòng chống ma túy; (9) Lợi dụng chức vụ vi phạm pháp luật về ma túy; (10) Hướng dẫn sản xuất, quảng cáo chất ma túy; (11) Kỳ thị người nghiện, người cai nghiện."
+  },
+  {
+    "id": 2,
+    "dimension": "context_recall",
+    "question": "Thời hạn quản lý người sử dụng trái phép chất ma túy là bao lâu và cơ quan nào có thẩm quyền ra quyết định?",
+    "source_docs": [
+      "Luật phồng chống ma túy.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md"
+    ],
+    "source_hits": {
+      "Luật phồng chống ma túy.md": true
+    },
+    "gt_coverage": 0.6111111111111112,
+    "answer": "1. Thời hạn quản lý người sử dụng trái phép chất ma túy là 01 năm kể từ ngày ra quyết định quản lý [Luật Phòng, chống ma túy, Điều 1].\n2. Cơ quan có thẩm quyền ra quyết định quản lý người sử dụng trái phép chất ma túy là Trưởng Công an cấp xã [Luật Phòng, chống ma túy, Điều 2].",
+    "ground_truth": "Thời hạn quản lý là 01 năm kể từ ngày ra quyết định quản lý. Trưởng Công an cấp xã có thẩm quyền ra quyết định quản lý trong thời hạn 24 giờ kể từ khi nhận được kết quả xét nghiệm dương tính với chất ma túy của người cư trú tại địa phương."
+  },
+  {
+    "id": 3,
+    "dimension": "context_recall",
+    "question": "Cơ sở giáo dục có những trách nhiệm gì trong công tác phòng, chống ma túy theo luật hiện hành?",
+    "source_docs": [
+      "Luật phồng chống ma túy.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "Luật phồng chống ma túy.md",
+      "BAN HÀNH CHƯƠNG TRÌNH PHÒNG, CHỐNG MA TÚY TRONG THANH, THIẾU NIÊN.md",
+      "BAN HÀNH CHƯƠNG TRÌNH PHÒNG, CHỐNG MA TÚY TRONG THANH, THIẾU NIÊN.md",
+      "BAN HÀNH CHƯƠNG TRÌNH PHÒNG, CHỐNG MA TÚY TRONG THANH, THIẾU NIÊN.md",
+      "BAN HÀNH CHƯƠNG TRÌNH PHÒNG, CHỐNG MA TÚY TRONG THANH, THIẾU NIÊN.md"
+    ],
+    "source_hits": {
+      "Luật phồng chống ma túy.md": true
+    },
+    "gt_coverage": 0.9696969696969697,
+    "answer": "Cơ sở giáo dục có những trách nhiệm sau trong công tác phòng, chống ma túy theo luật hiện hành:\n\n1. Tổ chức thực hiện chương trình giáo dục về phòng, chống ma túy; phổ biến, giáo dục pháp luật về phòng, chống ma túy cho học sinh, sinh viên, học viên; quản lý chặt chẽ, ngăn chặn học sinh, sinh viên, học viên vi phạm pháp luật về phòng, chống ma túy [Luật phòng, chống ma túy, Điều 1].\n2. Phối hợp với gia đình, cơ quan, tổ chức và chính quyền địa phương để quản lý, giáo dục học sinh, sinh viên, học viên về phòng, chống ma túy [Luật phòng, chống ma túy, Điều 1].\n3. Phối hợp với cơ quan, tổ chức, cá nhân có thẩm quyền tổ chức xét nghiệm chất ma túy trong cơ thể khi cần thiết để phát hiện học sinh, sinh viên, học viên sử dụng trái phép chất ma túy [Luật phòng, chống ma túy, Điều 1].",
+    "ground_truth": "Theo Điều 8, cơ sở giáo dục có 3 trách nhiệm: (1) Tổ chức chương trình giáo dục phòng chống ma túy, phổ biến pháp luật cho học sinh, sinh viên, học viên và quản lý ngăn chặn vi phạm; (2) Phối hợp với gia đình, cơ quan, tổ chức và chính quyền địa phương để quản lý, giáo dục người học; (3) Phối hợp với cơ quan có thẩm quyền tổ chức xét nghiệm chất ma túy trong cơ thể khi cần thiết."
+  },
+  {
+    "id": 4,
+    "dimension": "faithfulness",
+    "question": "Ca sĩ Miu Lê bị bắt vào ngày nào, ở địa điểm nào, và cùng với bao nhiêu người?",
+    "source_docs": [
+      "article_01.md",
+      "article_03.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "article_02.md",
+      "article_01.md",
+      "article_01.md",
+      "article_03.md",
+      "article_08.md"
+    ],
+    "source_hits": {
+      "article_01.md": true,
+      "article_03.md": true
+    },
+    "gt_coverage": 0.72,
+    "answer": "Ca sĩ Miu Lê bị bắt vào ngày 10 tháng 5 năm 2026, tại khu vực bãi tắm Tùng Thu, thuộc thôn 2 Cát Bà, đặc khu Cát Hải, Hải Phòng. Cô bị bắt cùng với 5 người khác, tổng cộng là 6 người. Các người này bao gồm: \n1. Lê Ánh Nhật (ca sĩ Miu Lê, 35 tuổi, trú TP HCM)\n2. Vũ Khương An (31 tuổi, trú TP HCM, hai quốc tịch Việt Nam và Canada)\n3. Trần Minh Trang (30 tuổi, trú Hà Nội)\n4. Vũ Tài Nam (24 tuổi, trú Bắc Ninh)\n5. Trần Đức Phong (35 tuổi, trú Hà Nội)\n6. Đoàn Thị Thúy An (36 tuổi, trú Cát Bà, hai quốc tịch Việt Nam và Mỹ) [VnExpress, 2026].",
+    "ground_truth": "Khoảng 12h30 ngày 10/5, công an phát hiện và bắt giữ 6 người tại khu vực bãi tắm Tùng Thu, thôn 2 Cát Bà, đặc khu Cát Hải, Hải Phòng. Nhóm gồm: Lê Ánh Nhật (ca sĩ Miu Lê), Vũ Khương An, Trần Minh Trang, Vũ Tài Nam, Trần Đức Phong, và Đoàn Thị Thúy An."
+  },
+  {
+    "id": 5,
+    "dimension": "faithfulness",
+    "question": "Khi khám xét nơi lưu trú của nhóm bị bắt tại Cát Bà, công an thu giữ được những chất và tang vật gì?",
+    "source_docs": [
+      "article_03.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "article_03.md",
+      "article_02.md",
+      "article_01.md",
+      "article_04.md",
+      "XỬ PHẠT VI PHẠM HÀNH CHÍNH.md"
+    ],
+    "source_hits": {
+      "article_03.md": true
+    },
+    "gt_coverage": 0.4,
+    "answer": "Khi khám xét nơi lưu trú của nhóm bị bắt tại Cát Bà, công an đã thu giữ được các chất và tang vật sau:\n\n1. 5,35g ketamine.\n2. 0,40g ketamine.\n3. Cocaine.\n4. Hai túi nylon chứa chất bột màu trắng.\n5. Một đĩa nhựa màu đen bám dính chất bột màu trắng.\n6. Một thìa kim loại có bám dính chất bột màu trắng.\n7. Ống hút được cuộn bằng tờ tiền mệnh giá 200.000 đồng bám dính chất bột màu trắng.\n8. Thẻ nhựa màu đen bám dính chất bột màu trắng.\n9. Ống nhựa màu đen bám dính chất bột màu trắng [Document 1 | Source: article_03].",
+    "ground_truth": "Công an thu giữ 5,35g ketamine; 0,40g ketamine và cocaine, cùng một số dụng cụ, đồ vật liên quan đến hành vi tổ chức sử dụng trái phép chất ma túy tại cơ sở lưu trú Titibeach."
+  },
+  {
+    "id": 6,
+    "dimension": "faithfulness",
+    "question": "Ca sĩ Miu Lê bị khởi tố về tội danh gì và bị áp dụng biện pháp ngăn chặn nào?",
+    "source_docs": [
+      "article_03.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "article_03.md",
+      "article_02.md",
+      "article_02.md",
+      "article_01.md",
+      "article_04.md"
+    ],
+    "source_hits": {
+      "article_03.md": true
+    },
+    "gt_coverage": 0.5833333333333334,
+    "answer": "Ca sĩ Miu Lê, tên thật là Lê Ánh Nhật, bị khởi tố về tội danh \"tổ chức sử dụng trái phép chất ma túy\" và bị áp dụng biện pháp ngăn chặn tạm giam [Document 2].",
+    "ground_truth": "Ngày 16/5/2026, Cơ quan Cảnh sát điều tra Công an TP Hải Phòng ra quyết định khởi tố bị can và áp dụng biện pháp ngăn chặn tạm giam đối với Lê Ánh Nhật (Miu Lê) về hành vi 'tổ chức sử dụng trái phép chất ma túy'."
+  },
+  {
+    "id": 7,
+    "dimension": "faithfulness",
+    "question": "Ca sĩ Long Nhật và Sơn Ngọc Minh bị bắt trong hoàn cảnh nào và bị khởi tố về tội gì?",
+    "source_docs": [
+      "article_05.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "article_05.md",
+      "article_08.md",
+      "article_05.md",
+      "article_08.md",
+      "article_06.md"
+    ],
+    "source_hits": {
+      "article_05.md": true
+    },
+    "gt_coverage": 0.5,
+    "answer": "Ca sĩ Long Nhật và ca sĩ Sơn Ngọc Minh bị bắt trong bối cảnh điều tra vụ án \"mua bán, tàng trữ trái phép chất ma túy và tổ chức sử dụng trái phép chất ma túy\" tại TP.HCM. Cả hai bị khởi tố về tội \"tổ chức sử dụng trái phép chất ma túy\" [Document 2, Document 14].",
+    "ground_truth": "Ngày 20/5/2026, Công an TP.HCM khởi tố và tạm giam 71 bị can trong đường dây ma túy, trong đó có Đinh Long Nhật (59 tuổi, ca sĩ nghệ danh Long Nhật) và Sơn Ngọc Minh (36 tuổi, cựu thành viên nhóm V.Music). Cả hai bị khởi tố về tội 'tổ chức sử dụng trái phép chất ma túy'."
+  },
+  {
+    "id": 8,
+    "dimension": "answer_relevance",
+    "question": "Luật Phòng, chống ma túy quy định những nguồn tài chính nào được dùng cho công tác phòng, chống ma túy?",
+    "source_docs": [
+      "Luật phồng chống ma túy.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md"
+    ],
+    "source_hits": {
+      "Luật phồng chống ma túy.md": true
+    },
+    "gt_coverage": 0.7894736842105263,
+    "answer": "Luật Phòng, chống ma túy quy định các nguồn tài chính sau đây được dùng cho công tác phòng, chống ma túy:\n\n1. Ngân sách nhà nước [Luật Phòng, chống ma túy, Điều 4].\n2. Các nguồn tài chính hợp pháp khác [Luật Phòng, chống ma túy, Điều 5].\n3. Nguồn tài trợ, viện trợ, đầu tư, tặng cho của tổ chức, cá nhân trong nước và nước ngoài [Luật Phòng, chống ma túy, Điều 15].",
+    "ground_truth": "Theo Điều 4, có 4 nguồn tài chính: (1) Ngân sách nhà nước; (2) Nguồn tài trợ, viện trợ, đầu tư, tặng cho của tổ chức và cá nhân trong nước và nước ngoài; (3) Chi trả của người nghiện ma túy và gia đình của họ; (4) Các nguồn tài chính hợp pháp khác."
+  },
+  {
+    "id": 9,
+    "dimension": "answer_relevance",
+    "question": "Cai nghiện ma túy được định nghĩa như thế nào trong Luật Phòng, chống ma túy?",
+    "source_docs": [
+      "Luật phồng chống ma túy.md"
+    ],
+    "context_recall": 1.0,
+    "retrieved_sources": [
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md",
+      "Luật phồng chống ma túy.md"
+    ],
+    "source_hits": {
+      "Luật phồng chống ma túy.md": true
+    },
+    "gt_coverage": 0.9032258064516129,
+    "answer": "Cai nghiện ma túy được định nghĩa trong Luật Phòng, chống ma túy như sau: \"Cai nghiện ma túy là quá trình thực hiện các hoạt động hỗ trợ về y tế, tâm lý, xã hội, giúp người nghiện ma túy dừng sử dụng chất ma túy, thuốc gây nghiện, thuốc hướng thần; phục hồi thể chất, tinh thần, nâng cao nhận thức, thay đổi hành vi để chấm dứt việc sử dụng trái phép các chất này\" [Luật Phòng, chống ma túy, Điều 3].",
+    "ground_truth": "Theo Điều 2 khoản 12, cai nghiện ma túy là quá trình thực hiện các hoạt động hỗ trợ về y tế, tâm lý, xã hội nhằm giúp người nghiện ma túy dừng sử dụng chất ma túy, thuốc gây nghiện, thuốc hướng thần; phục hồi thể chất, tinh thần, nâng cao nhận thức, thay đổi hành vi để chấm dứt việc sử dụng trái phép các chất này."
+  },
+  {
+    "id": 10,
+    "dimension": "answer_relevance",
+    "question": "Những nghệ sĩ Việt Nam nào đã bị bắt liên quan đến ma túy trong năm 2026 và tội danh cụ thể của từng người là gì?",
+    "source_docs": [
+      "article_01.md",
+      "article_03.md",
+      "article_05.md",
+      "article_06.md"
+    ],
+    "context_recall": 0.25,
+    "retrieved_sources": [
+      "article_06.md",
+      "article_06.md",
+      "article_08.md",
+      "article_07.md",
+      "article_08.md"
+    ],
+    "source_hits": {
+      "article_01.md": false,
+      "article_03.md": false,
+      "article_05.md": false,
+      "article_06.md": true
+    },
+    "gt_coverage": 0.5,
+    "answer": "Trong năm 2026, các nghệ sĩ Việt Nam đã bị bắt liên quan đến ma túy bao gồm:\n\n1. **Ca sĩ Long Nhật** (59 tuổi)\n   - Tội danh: \"tổ chức sử dụng trái phép chất ma túy\" [article_08].\n\n2. **Ca sĩ Sơn Ngọc Minh** (36 tuổi)\n   - Tội danh: \"tổ chức sử dụng trái phép chất ma túy\" [article_08].\n\n3. **Ca sĩ Miu Lê**\n   - Tội danh: \"tổ chức sử dụng trái phép chất ma túy\" [article_6].",
+    "ground_truth": "Dựa trên tài liệu, có 3 nghệ sĩ bị bắt năm 2026: (1) Ca sĩ Miu Lê (Lê Ánh Nhật) — bị bắt ngày 10/5 tại Cát Bà, khởi tố về 'tổ chức sử dụng trái phép chất ma túy', bị tạm giam từ 16/5/2026; (2) Ca sĩ Long Nhật (Đinh Long Nhật, 59 tuổi) — bị bắt ngày 20/5 tại TP.HCM, khởi tố về 'tổ chức sử dụng trái phép chất ma túy'; (3) Ca sĩ Sơn Ngọc Minh (36 tuổi, cựu thành viên V.Music) — bị bắt cùng ngày 20/5, cùng tội danh với Long Nhật."
+  }
+]
