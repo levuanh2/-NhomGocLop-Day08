@@ -180,7 +180,14 @@ def render_disclaimer_box() -> None:
 def render_chat_panel(messages: list[dict], is_generating: bool) -> str | None:
     render_chat_topbar()
     st.divider()
-    has_pending_stream = bool(st.session_state.get("pending_stream_response"))
+    pending_stream = st.session_state.get("pending_stream_response")
+    if pending_stream and pending_stream.get("chat_id") != st.session_state.get("chat_id"):
+        persist_pending_stream_to_original_chat(pending_stream)
+        pending_stream = None
+    has_pending_stream = bool(
+        pending_stream
+        and pending_stream.get("chat_id") == st.session_state.get("chat_id")
+    )
     with st.container(height=545, border=False):
         if not messages:
             render_welcome_state()
@@ -213,8 +220,33 @@ def render_chat_panel(messages: list[dict], is_generating: bool) -> str | None:
     return None
 
 
+def persist_pending_stream_to_original_chat(pending: dict) -> None:
+    target_chat_id = pending.get("chat_id")
+    if not target_chat_id:
+        st.session_state.pending_stream_response = None
+        return
+
+    chats = load_chats()
+    target_chat = chats.get(target_chat_id)
+    if target_chat:
+        messages = list(target_chat.get("messages", []))
+        messages.append(
+            create_message(
+                "assistant",
+                pending.get("answer") or "Xin lỗi, hệ thống chưa tạo được câu trả lời.",
+                chunks=pending.get("chunks") or [],
+                out_of_scope=bool(pending.get("out_of_scope", False)),
+            )
+        )
+        save_chat(target_chat_id, target_chat.get("title", "Hội thoại pháp luật"), messages)
+        st.session_state.chats = load_chats()
+    st.session_state.pending_stream_response = None
+
+
 def render_pending_stream_response() -> None:
     pending = st.session_state.pending_stream_response
+    if pending.get("chat_id") != st.session_state.get("chat_id"):
+        return
     answer = pending.get("answer") or "Xin lỗi, hệ thống chưa tạo được câu trả lời."
     chunks = pending.get("chunks") or []
     out_of_scope = bool(pending.get("out_of_scope", False))

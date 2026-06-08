@@ -17,8 +17,29 @@ BM25 hoạt động thế nào:
 
 from pathlib import Path
 
-_STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
-_VECTORSTORE_DIR = Path(__file__).parent.parent / "data" / "vectorstore" / "chroma"
+
+def _resolve_data_dir() -> Path:
+    import os
+
+    env_dir = os.getenv("RAG_DATA_DIR")
+    if env_dir and Path(env_dir).exists():
+        return Path(env_dir)
+
+    repo_root = Path(__file__).resolve().parents[2]
+    candidates = [Path(__file__).parent.parent / "data"]
+    candidates.extend(sorted(repo_root.glob("*/data")))
+    for candidate in candidates:
+        if (candidate / "standardized").exists() and (candidate / "vectorstore" / "chroma").exists():
+            return candidate
+    for candidate in candidates:
+        if (candidate / "standardized").exists():
+            return candidate
+    return candidates[0]
+
+
+_DATA_DIR = _resolve_data_dir()
+_STANDARDIZED_DIR = _DATA_DIR / "standardized"
+_VECTORSTORE_DIR = _DATA_DIR / "vectorstore" / "chroma"
 
 CORPUS: list[dict] = []
 _bm25 = None

@@ -10,9 +10,23 @@ Hướng dẫn:
 """
 
 import os
-from dotenv import load_dotenv
+from pathlib import Path
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = None
 
-load_dotenv()
+if load_dotenv:
+    load_dotenv()
+else:
+    env_path = Path(__file__).resolve().parents[2] / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 from .retrieval_pipeline import retrieve, _add_continuations
 
@@ -253,4 +267,4 @@ if __name__ == "__main__":
         print("=" * 70)
         result = generate_with_citation(q)
         print(f"\nA: {result['answer']}")
-        print(f"\n[Sources: {len(result['sources'])} chunks | via {result['retrieval_source']}]")
+        print(f"\n[Sources: {len(result['chunks'])} chunks]")
