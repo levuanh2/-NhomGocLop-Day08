@@ -2,41 +2,46 @@
 Task 7 — Reranking Module.
 
 Chọn 1 trong các phương pháp:
-    - Cross-encoder reranker: BAAI/bge-reranker-base (local, multilingual)
+    - Cross-encoder reranker: flashrank (ONNX local, không cần torch/torchvision)
     - MMR (Maximal Marginal Relevance): tự implement
     - RRF (Reciprocal Rank Fusion): tự implement
 
-Nếu dùng MMR hoặc RRF, đảm bảo hiểu và giải thích được cơ chế.
-
 Lựa chọn:
-    - Cross-encoder local (BAAI/bge-reranker-base) → không cần API key, hỗ trợ tiếng Việt
-    - Fallback về sort by score nếu model load thất bại
+    - flashrank + ms-marco-MiniLM-L-12-v2 (~34 MB ONNX, CPU-only, không cần GPU)
+      → pip install flashrank
+    - Fallback về sort by score nếu flashrank chưa cài
     - rerank_rrf() dùng để merge nhiều ranked lists trong Task 9
 """
 
-from typing import Optional
+from pathlib import Path
 
-_reranker_model = None
-_RERANKER_MODEL_NAME = "BAAI/bge-reranker-base"
+# Cache model tại thư mục gốc project để tránh re-download
+_CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "models" / "flashrank"
+
+# Model nhẹ nhất có chất lượng tốt (~34 MB ONNX)
+# Đổi thành "ms-marco-MultiBERT-L-12" để hỗ trợ tiếng Việt tốt hơn (~400 MB)
+_FLASHRANK_MODEL = "ms-marco-MiniLM-L-12-v2"
+
+_ranker = None  # lazy init — chỉ load khi lần đầu gọi rerank
 
 
-def _get_reranker():
-    """Lazy-load cross-encoder model (cache sau lần đầu)."""
-    global _reranker_model
-    if _reranker_model is None:
-        from sentence_transformers import CrossEncoder
-        _reranker_model = CrossEncoder(_RERANKER_MODEL_NAME)
-    return _reranker_model
+def _get_ranker():
+    global _ranker
+    if _ranker is None:
+        from flashrank import Ranker
+        _CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        _ranker = Ranker(model_name=_FLASHRANK_MODEL, cache_dir=str(_CACHE_DIR))
+    return _ranker
 
 
 def rerank_cross_encoder(
     query: str, candidates: list[dict], top_k: int = 5
 ) -> list[dict]:
     """
-    Rerank candidates dùng cross-encoder local BAAI/bge-reranker-base.
+    Rerank candidates dùng flashrank (ONNX cross-encoder, chạy local CPU).
 
-    Model multilingual, hỗ trợ tốt tiếng Việt, chạy hoàn toàn offline.
-    Fallback: sort by original score nếu model load thất bại.
+    Model ms-marco-MiniLM-L-12-v2: ~34 MB, không cần torch/GPU/API key.
+    Fallback: sort by original score nếu flashrank chưa được cài.
 
     Args:
         query: Câu truy vấn
@@ -47,22 +52,20 @@ def rerank_cross_encoder(
         List of top_k candidates, re-scored và sorted by rerank_score descending.
     """
     try:
-        model = _get_reranker()
-        pairs = [(query, c["content"]) for c in candidates]
-        scores = model.predict(pairs)
-        ranked = sorted(
-            zip(scores, candidates),
-            key=lambda x: x[0],
-            reverse=True,
-        )
+        from flashrank import RerankRequest
+        ranker = _get_ranker()
+        passages = [{"id": i, "text": c["content"]} for i, c in enumerate(candidates)]
+        request = RerankRequest(query=query, passages=passages)
+        results = ranker.rerank(request)
         return [
-            {**cand, "score": float(score)}
-            for score, cand in ranked[:top_k]
+            {**candidates[r["id"]], "score": float(r["score"])}
+            for r in results[:top_k]
         ]
+    except ImportError:
+        print("  [!] flashrank not installed (pip install flashrank), falling back to score sort")
     except Exception as e:
-        print(f"  [!] Local reranker failed ({e}), falling back to score sort")
+        print(f"  [!] flashrank reranker failed ({e}), falling back to score sort")
 
-    # Fallback: sort by existing score
     return sorted(candidates, key=lambda x: x["score"], reverse=True)[:top_k]
 
 

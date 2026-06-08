@@ -13,11 +13,19 @@ markitdown>=0.1.0
 langchain-text-splitters>=0.2.0
 chromadb>=0.4.0
 
-# Task 10 - Generation
+# Task 5, 10 - Embeddings & Generation
 openai>=1.30.0
+
+# Task 6 - Lexical search
+rank-bm25>=0.2.2
+numpy>=1.24.0
+
+# Task 7 - Reranking (ONNX local, no torch/GPU needed)
+flashrank>=0.2.0
+
+# Task 9 - Retrieval pipeline (HyDE requires openai, already listed above)
 
 # Group project - UI
 streamlit>=1.35.0
 
-# Group project - Evaluation
-deepeval>=1.0.0
+# Group project - Evaluation (custom LLM eval via openai, no ragas needed)

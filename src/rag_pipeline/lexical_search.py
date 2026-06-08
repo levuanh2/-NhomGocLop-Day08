@@ -18,28 +18,10 @@ BM25 hoạt động thế nào:
 import os
 from pathlib import Path
 import unicodedata
+from dotenv import load_dotenv
 
+load_dotenv()
 
-def _resolve_data_dir() -> Path:
-    import os
-
-    env_dir = os.getenv("RAG_DATA_DIR")
-    if env_dir and Path(env_dir).exists():
-        return Path(env_dir)
-
-    repo_root = Path(__file__).resolve().parents[2]
-    candidates = [Path(__file__).parent.parent / "data"]
-    candidates.extend(sorted(repo_root.glob("*/data")))
-    for candidate in candidates:
-        if (candidate / "standardized").exists() and (candidate / "vectorstore" / "chroma").exists():
-            return candidate
-    for candidate in candidates:
-        if (candidate / "standardized").exists():
-            return candidate
-    return candidates[0]
-
-
-_DATA_DIR = _resolve_data_dir()
 _PROJECT_ROOT = Path(__file__).parent.parent.parent
 _STANDARDIZED_DIR = _PROJECT_ROOT / "data" / "standardized"
 _VECTORSTORE_DIR = _PROJECT_ROOT / "data" / "vectorstore" / "chroma"

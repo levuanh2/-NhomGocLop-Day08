@@ -60,7 +60,6 @@ FOOTER_MARKERS = [
     "Trở lại Pháp luật",
     "Trở lại Hình sự",
     "Trở lại",
-    "Chia sẻ [",
     "Gửi email cho tác giả",
     "Về trang chủ",
     "Hotline:",
@@ -70,20 +69,65 @@ FOOTER_MARKERS = [
     "Đăng ký nhận thông báo",
 ]
 
+# Regex: chỉ xoá nếu TOÀN dòng khớp
+_LINE_NOISE = re.compile(
+    r"""
+    # JavaScript links bất kỳ dạng
+    ^\[[\s\S]*?\]\(javascript:  |
+    # Author avatar block: [ ![name](img) ](url "name")
+    ^\[\s*!\[.*?\]\(https?://.*?\)\s*\]\(  |
+    # Google News banner
+    news\.google\.com  |
+    # Site logo/banner image link
+    ^\[\s*!\[.*?(logo|tagline|banner|vne|graphics).*?\]\(https?://  |
+    # CDN image lines: các domain ảnh phổ biến của báo VN
+    ^!\[.*?\]\(https?://(cdn|static|images?|s\d+|img|thumb|i\d+|icdn)\d*\.  |
+    # VNExpress CDN
+    ^!\[.*?\]\(https?://[^\s)]*vnecdn\.net  |
+    # Empty list items: * (nothing)
+    ^\s*\*\s*$  |
+    # Social share list items: * [](javascript:; "Chia sẻ...")
+    ^\s*\*\s*\[\s*\]\(javascript:  |
+    # Social action nav row: [ Nghe ]( [ Chia sẻ ]( ...
+    ^\[\s*(Nghe|Chia\s+sẻ|Lưu\s+tin|Bình\s+luận|Trở\s+về)\s*\]\(  |
+    # Date-only lines: 20/05/2026 13:56 GMT+7
+    ^\d{1,2}/\d{1,2}/\d{4}\s+\d{2}:\d{2}  |
+    # Navigation items
+    ^\[?\s*(Trang\s+chủ|Mới\s+nhất|Tin\s+theo\s+khu\s+vực|International|
+             Đăng\s+nhập|Đăng\s+ký|Thông\s+báo|Ý\s+kiến|Tin\s+đã\s+xem|
+             Bật\s+nhận\s+thông\s+báo|Đang\s+tải|Tải\s+ứng\s+dụng|
+             Chia\s+sẻ|Bình\s+luận|Copy\s+link|Gửi\s+email|Mail|
+             Về\s+trang\s+chủ|Lên\s+đầu\s+trang|Liên\s+hệ\s+quảng\s+cáo|
+             Hotline|Copyright|Điều\s+khoản)\s*\]?\(?  |
+    # Thứ X, ngày giờ
+    ^\[?\s*Thứ\s+\w+,\s*\d+/\d+/\d+  |
+    # Topic-only lines (TP HCM, Hà Nội...)
+    ^(TP\s+HCM|Hà\s+Nội|Đà\s+Nẵng|Hải\s+Phòng)\s*$  |
+    # Topic tag bullets from VNExpress
+    ^\s*\*\s*\[.*?\]\(https?://vnexpress\.net/(topic|chu-de)  |
+    # Related article bullets with #### heading
+    ^\s*\*\s*####\s*\[  |
+    # Author email lines
+    \S+@\S+\.\w{2,6}\s*$
+    """,
+    re.IGNORECASE | re.VERBOSE,
+)
+
 
 def _strip_before_article_title(content: str, title: str) -> str:
     if not title:
         return content
     lines = content.split("\n")
+    # Tìm dòng khớp chính xác tiêu đề
     for i, line in enumerate(lines):
         stripped = line.strip()
-        if stripped in (f"# {title}", f"## {title}"):
+        if stripped in (f"# {title}", f"## {title}", f"#  {title}", f"##  {title}"):
             return "\n".join(lines[i:])
+    # Fallback: heading đầu tiên đủ dài
     for i, line in enumerate(lines):
         stripped = line.strip()
-        if stripped.startswith("# ") or stripped.startswith("## "):
-            if len(stripped) > 20:
-                return "\n".join(lines[i:])
+        if (stripped.startswith("# ") or stripped.startswith("## ")) and len(stripped) > 20:
+            return "\n".join(lines[i:])
     return content
 
 
@@ -96,83 +140,150 @@ def _strip_after_footer(content: str) -> str:
             if marker in stripped:
                 cut_index = min(cut_index, i)
                 break
-    if cut_index < len(lines):
-        lines = lines[:cut_index]
-    return "\n".join(lines)
+    return "\n".join(lines[:cut_index])
 
 
-NOISE_PATTERNS = [
-    r"^\[?\s*Trang\s+chủ\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Mới\s+nhất\s*\]?\(?.*?\)?\s*$",
-    r"^Tin\s+theo\s+khu\s+vực\s*$",
-    r"^International\s*$",
-    r"^\[?\s*Đăng\s+nhập\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Đăng\s+ký\s*\]?\(?.*?\)?\s*$",
-    r"^Thông\s+báo\s*$",
-    r"^Ý\s+kiến\s*$",
-    r"^Tin\s+đã\s+xem\s*$",
-    r"^Bật\s+nhận\s+thông\s+báo\s*$",
-    r"^Đang\s+tải\s+dữ\s+liệu\.\.\.\s*$",
-    r"^\[?\s*Tải\s+ứng\s+dụng\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Chia\s+sẻ\s+bài\s+viết\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Chia\s+sẻ\s+.*?\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Bình\s+luận\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*In\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Copy\s+link.*?\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Gửi\s+email.*?\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Mail\s*\]?\(?.*?\)?\s*$",
-    r"^\[?\s*Trở\s+lại\s+.*?\s*\]?\(?.*?\)?\s*$",
-    r"^Về\s+trang\s+chủ\s*$",
-    r"^Lên\s+đầu\s+trang\s*$",
-    r"^Liên\s+hệ\s+quảng\s+cáo\s*$",
-    r"^Hotline\s*:?\s*$",
-    r"^Copyright.*?$",
-    r"^Điều\s+khoản\s*sử\s+dụng.*?$",
-    r"^\[?\s*Thứ\s+\w+,\s*\d+/\d+/\d+\s*\]?\(?.*?\)?\s*$",
-    r"^(TP\s+HCM|Hà\s+Nội|Đà\s+Nẵng|Hải\s+Phòng)\s*$",
-    r"^\*.*?\[.*?\]\(https?://vnexpress\.net/(topic|chu-de).*?\)\s*$",
-    r"^\s*\*\s*\[.*?\]\(https?://vnexpress\.net/(topic|chu-de).*?\)\s*$",
-]
-COMPILED_NOISE = [re.compile(p, re.IGNORECASE) for p in NOISE_PATTERNS]
+def _inline_links_to_text(line: str) -> str:
+    """Chuyển internal topic links [text](url "title") → text, giữ external links."""
+    # [text](https://site.vn/topic/... "title") → text  (internal topic links)
+    line = re.sub(
+        r"\[([^\]]+)\]\(https?://[^\s)]+\s+\"[^\"]*\"\)",
+        r"\1",
+        line,
+    )
+    return line
 
 
 def _clean_news_content(content: str, title: Optional[str] = None) -> str:
     if title:
         content = _strip_before_article_title(content, title)
+
     lines = content.split("\n")
-    cleaned = []
-    skip_next_empty = False
+    cleaned: list[str] = []
+
     for line in lines:
         stripped = line.strip()
+
+        # Dòng trống: giữ tối đa 1 dòng trống liên tiếp
         if not stripped:
-            if skip_next_empty:
+            if cleaned and cleaned[-1] == "":
                 continue
-            skip_next_empty = True
             cleaned.append("")
             continue
-        skip_next_empty = False
-        if re.match(r"^\[\]\(javascript:", stripped, re.IGNORECASE):
+
+        # Xoá toàn dòng nếu khớp pattern noise
+        if _LINE_NOISE.search(stripped):
             continue
-        if re.match(r"^\[\s*\]\(javascript:", stripped, re.IGNORECASE):
+
+        # Chuyển inline topic links thành plain text: [text](url "title") → text
+        line = _inline_links_to_text(line)
+
+        # Xoá tiền tố "TPO - " (Tiền Phong Online)
+        line = re.sub(r"^TPO\s*[-–]\s*", "", line)
+
+        # Re-compute stripped sau khi convert (important: link text đã được giải ra)
+        stripped2 = line.strip()
+
+        # Xoá "và X tác giả khác"
+        if re.match(r"^và\s+\d+\s+tác\s+giả\s+khác", stripped2, re.IGNORECASE):
             continue
-        if re.match(r"^!\[\s*\]\(https?://.*(logo|menu|graphics).*\)$", stripped, re.IGNORECASE):
+
+        # Xoá dòng trống sau convert
+        if not stripped2:
+            if cleaned and cleaned[-1] == "":
+                continue
+            cleaned.append("")
             continue
-        if re.match(r"^\[\s*\]\(https?://.*(logo|menu).*\)$", stripped, re.IGNORECASE):
-            continue
-        is_noise = False
-        for pattern in COMPILED_NOISE:
-            if pattern.match(stripped):
-                is_noise = True
-                break
-        if is_noise:
-            continue
+
+        # Xoá dòng chỉ là tên tác giả (≤3 từ hoặc toàn chữ HOA ≤4 từ, không số/URL)
+        words2 = stripped2.split()
+        if (not re.search(r'[\d\.,:;!?()\[\]@/]', stripped2)
+                and not re.search(r'https?://', stripped2)
+                and len(stripped2) < 60):
+            if len(words2) <= 2:
+                continue
+            # Tên viết HOA kiểu báo chí: ĐAN THUẦN, QUỲNH NGUYỄN
+            if len(words2) <= 4 and all(w == w.upper() and len(w) > 1 for w in words2):
+                continue
+
         cleaned.append(line)
+
     result = "\n".join(cleaned)
     result = _strip_after_footer(result)
+
+    # Xoá tiêu đề trùng lặp: nếu 2 heading đầu là substring của nhau → giữ cái ngắn
+    _headings = re.findall(r"^#{1,2}\s+(.+)$", result, re.MULTILINE)
+    if len(_headings) >= 2:
+        t1, t2 = _headings[0].strip(), _headings[1].strip()
+        if t1.startswith(t2) or t2.startswith(t1):
+            # Xoá heading dài hơn (thường chứa " - Tên trang")
+            long_heading = t1 if len(t1) > len(t2) else t2
+            result = re.sub(
+                r"^#{1,2}\s+" + re.escape(long_heading) + r"\s*$",
+                "",
+                result,
+                count=1,
+                flags=re.MULTILINE,
+            )
+    # Gộp nhiều dòng trống
     result = re.sub(r"\n{3,}", "\n\n", result)
-    result = re.sub(r"(# .+)\n+# \1", r"\1", result, flags=re.IGNORECASE)
-    result = re.sub(r"(# .+)\n+## \1", r"\1", result, flags=re.IGNORECASE)
+
     return result.strip()
+
+
+_DOC_TYPE_RE = re.compile(r"^(LUẬT|NGHỊ ĐỊNH|QUYẾT ĐỊNH|THÔNG TƯ|PHÁP LỆNH|HIẾN PHÁP)$", re.IGNORECASE)
+_SECTION_RE = re.compile(r"^(CHƯƠNG|Chương|PHẦN|Phần|MỤC|Mục)\s+[IVXLCDM\d]+")
+_ARTICLE_RE = re.compile(r"^Điều\s+\d+[a-z]?\s*[\.\:]")
+_SKIP_ADMIN_RE = re.compile(r"^(QUỐC HỘI|CỘNG HÒA|Độc lập|Luật số:|Nghị định số:|Quyết định số:|Hà Nội,|TP\.)")
+
+
+def _convert_doc_win32(path: Path) -> tuple[str, str]:
+    """Dùng Word COM automation để đọc file .doc (OLE format) trên Windows."""
+    import win32com.client
+    word = win32com.client.Dispatch("Word.Application")
+    word.Visible = False
+    doc = word.Documents.Open(str(path.resolve()))
+    paras = [p.Range.Text.strip() for p in doc.Paragraphs]
+    doc.Close(False)
+    word.Quit()
+
+    # Detect document title: line immediately after "LUẬT"/"NGHỊ ĐỊNH"/etc.
+    title = ""
+    for idx, text in enumerate(paras):
+        if not text:
+            continue
+        if _DOC_TYPE_RE.match(text):
+            for nxt in paras[idx + 1:]:
+                if nxt.strip() and not _SKIP_ADMIN_RE.match(nxt):
+                    title = nxt.strip()
+                    break
+            break
+    if not title:
+        for text in paras:
+            if text and text.isupper() and 5 < len(text) < 150 and not _SKIP_ADMIN_RE.match(text):
+                title = text
+                break
+    if not title:
+        title = path.stem
+
+    lines = []
+    for text in paras:
+        if not text or re.match(r"^[-=\s]+$", text):
+            lines.append("")
+            continue
+        if _SKIP_ADMIN_RE.match(text) or _DOC_TYPE_RE.match(text) or text == title:
+            continue
+        if _SECTION_RE.match(text):
+            lines.append(f"\n# {text}")
+        elif _ARTICLE_RE.match(text):
+            lines.append(f"\n## {text}")
+        elif text.isupper() and 4 < len(text) < 150 and not re.match(r"^\d", text):
+            lines.append(f"\n# {text}")
+        else:
+            lines.append(text)
+
+    content = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+    return title, content
 
 
 def convert_legal_file(path: Path) -> Optional[Path]:
@@ -183,6 +294,18 @@ def convert_legal_file(path: Path) -> Optional[Path]:
 
         if ext in (".md", ".txt"):
             content = path.read_text(encoding="utf-8")
+            lines = content.strip().split("\n")
+            title = lines[0].strip().lstrip("#").strip() if lines else path.stem
+            if len(title) < 3:
+                title = path.stem
+            cleaned = re.sub(r"\n{3,}", "\n\n", content.strip())
+        elif ext == ".doc":
+            # .doc (OLE/Word 97) → markitdown không hỗ trợ, dùng Word COM trên Windows
+            try:
+                title, cleaned = _convert_doc_win32(path)
+            except ImportError:
+                print(f"  [WARN] pywin32 not available, skipping {path.name}. Install with: pip install pywin32")
+                return None
         else:
             if not HAS_MARKITDOWN:
                 print(f"  [WARN] MarkItDown not installed, skipping {path.name}")
@@ -190,17 +313,18 @@ def convert_legal_file(path: Path) -> Optional[Path]:
             converter = MarkItDown()
             result = converter.convert(str(path))
             content = result.text_content if hasattr(result, "text_content") else str(result)
+            if not content or not content.strip():
+                print(f"  [WARN] Empty content in {path.name}")
+                return None
+            lines = content.strip().split("\n")
+            title = lines[0].strip().lstrip("#").strip() if lines else path.stem
+            if len(title) < 3:
+                title = path.stem
+            cleaned = re.sub(r"\n{3,}", "\n\n", content.strip())
 
-        if not content or not content.strip():
+        if not cleaned or not cleaned.strip():
             print(f"  [WARN] Empty content in {path.name}")
             return None
-
-        lines = content.strip().split("\n")
-        title = lines[0].strip().lstrip("#").strip() if lines else path.stem
-        if len(title) < 3:
-            title = path.stem
-
-        cleaned = re.sub(r"\n{3,}", "\n\n", content.strip())
 
         frontmatter = _build_yaml_frontmatter({
             "title": title,

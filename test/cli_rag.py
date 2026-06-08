@@ -1,5 +1,5 @@
 """
-CLI test cho RAG Pipeline — dùng data từ LeTrungKien/data/vectorstore.
+CLI test cho RAG Pipeline — dùng data từ data/vectorstore (thư mục gốc project).
 
 Chạy (dùng conda env ai20k):
     python test/cli_rag.py            # chế độ full (retrieve + generate)

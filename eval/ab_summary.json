@@ -1,0 +1,43 @@
+{
+  "configs": {
+    "A": "top_k=3, không reranking, không query expansion",
+    "B": "top_k=5, reranking Jina, query expansion bật"
+  },
+  "metrics": {
+    "faithfulness": {
+      "A": 0.975,
+      "B": 0.975,
+      "diff_B_minus_A": 0.0,
+      "improvement_pct": 0.0
+    },
+    "answer_relevancy": {
+      "A": 0.9813,
+      "B": 1.0,
+      "diff_B_minus_A": 0.0187,
+      "improvement_pct": 1.9
+    },
+    "context_precision": {
+      "A": 0.4375,
+      "B": 0.4625,
+      "diff_B_minus_A": 0.025,
+      "improvement_pct": 5.7
+    },
+    "context_recall": {
+      "A": 0.7938,
+      "B": 0.7875,
+      "diff_B_minus_A": -0.0063,
+      "improvement_pct": -0.8
+    }
+  },
+  "winner": {
+    "faithfulness": "tie",
+    "answer_relevancy": "B",
+    "context_precision": "B",
+    "context_recall": "A"
+  },
+  "overall": {
+    "A": 0.7969,
+    "B": 0.8063,
+    "winner": "B"
+  }
+}

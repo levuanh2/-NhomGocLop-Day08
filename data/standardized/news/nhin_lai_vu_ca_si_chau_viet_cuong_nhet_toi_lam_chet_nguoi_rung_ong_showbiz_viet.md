@@ -8,13 +8,8 @@ type: "news"
 
 # Nhìn lại vụ ca sĩ Châu Việt Cường nhét tỏi làm chết người rúng động showbiz Việt
 
-##  [Giải trí](https://tienphong.vn/giai-tri/ "Giải trí")
 #  Nhìn lại vụ ca sĩ Châu Việt Cường nhét tỏi làm chết người rúng động showbiz Việt 
-Đỗ Quyên 
-07/03/2019 06:35
-[ Nghe ](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo#tts "Nghe") [ Chia sẻ ](javascript:void\(0\); "Chia sẻ") [ Lưu tin ](javascript:void\(0\); "Lưu bài viết") [ Bình luận ](javascript:void\(0\); "Bình luận") [ Trở về ](https://tienphong.vn/giai-tri/ "Trở về")
-![Ca sĩ Châu Việt Cường tại cơ quan điều tra.](https://cdn.tienphong.vn/images/7f5c70d3e738104229acfb7638bb6b022b15630fdb5861b8b46d9594fd3c9d0d52067b0c263f29cb3eac7b25e9468012df3cd66ae6bcd70bf81e0a0b26b64328/chau_viet_cuong_DJFH.jpg.avif) Ca sĩ Châu Việt Cường tại cơ quan điều tra.
-TPO - Theo dự kiến vào sáng nay (7/3), TAND Hà Nội sẽ đưa ra xét xử nam ca sĩ Nguyễn Việt Cường (sinh năm 1978, ở Quảng Ninh, tức ca sĩ Châu Việt Cường) về tội "Giết người". 
+Theo dự kiến vào sáng nay (7/3), TAND Hà Nội sẽ đưa ra xét xử nam ca sĩ Nguyễn Việt Cường (sinh năm 1978, ở Quảng Ninh, tức ca sĩ Châu Việt Cường) về tội "Giết người". 
 Cùng ra hầu tòa với Châu Việt Cường còn có Phạm Đức Thế (sinh năm 1981, quê Ninh Bình) bị truy tố về tội tàng trữ trái phép chất ma túy.
 Theo cáo trạng, rạng sáng ngày 5/3/2018, Châu Việt Cường đi biểu diễn ở tỉnh Hà Nam về đến Hà Nội thì điện thoại cho Phạm Đức Thế xin ngủ nhờ.
 Sau khi liên lạc với Thế, Cường gọi điện cho bạn là Đoàn Quý Nguyên (tức ca sĩ Nam Khang, SN 1985, trú tại phố Nguyễn Đức Cảnh, quận Hoàng Mai, Hà Nội) rủ Nguyên đến nhà Thế chơi cùng.
@@ -40,86 +35,56 @@ Tôi chứng kiến toàn bộ nhưng họ rất vô tư và không ép nên tô
 Theo quan điểm riêng, nghệ sĩ Vượng Râu đồng tình với ý kiến cho rằng múi giờ khác biệt và môi trường có thể khiến nhiều nghệ sĩ sa ngã. Một số nghệ sĩ hát trong vũ trường thì gắn liền với “dân chơi” (cứ nói vui thế), thì để đáp lại tình cảm của người hâm mộ với nghệ sĩ thì người hâm mộ họ sẽ mời...
 Người ta cứ mời và một lần, hai lần vì nể, vì thói quen và những người không đủ bản lĩnh sẽ bị cuốn vào lúc nào không biết”.
 Nghệ sĩ Vượng Râu lấy trường hợp của Hiệp Gà làm ví dụ cho sự trả giá của nghệ sĩ khi bị sa ngã và dính vào chất kích thích. “Rõ ràng Hiệp Gà phải trả giá rất lớn bằng chính con đường sự nghiệp của mình khi dính vào chất kích thích. Trong khi nghệ sĩ chúng tôi rất đắt show thì rất ít người quan tâm tới Hiệp Gà. Đây là chuyện thật và thậm chí, chúng tôi có móc show thì người ta cũng khéo léo từ chối. Đấy là thiệt thòi rất lớn rồi. Và đó là cái giá rất đắt cho hình ảnh của mình khi dính vào những sai trái”.
-Đỗ Quyên
-Tổng hợp
-[#Châu Việt Cường](https://tienphong.vn/tu-khoa/chau-viet-cuong-tag38111.tpo "Châu Việt Cường") [#showbiz](https://tienphong.vn/tu-khoa/showbiz-tag190123.tpo "showbiz") [#Vượng Râu](https://tienphong.vn/tu-khoa/vuong-rau-tag249603.tpo "Vượng Râu") [#Hiệp Gà](https://tienphong.vn/tu-khoa/hiep-ga-tag100732.tpo "Hiệp Gà")
+#Châu Việt Cường #showbiz #Vượng Râu #Hiệp Gà
 ###  Xem thêm
-[ ![Bị cáo Châu Việt Cường tại thời điểm bị bắt.](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/hanh-trinh-phe-ma-tuy-roi-giet-nguoi-cua-ca-si-chau-viet-cuong-post1095287.tpo "Hành trình phê ma túy rồi giết người của ca sĩ Châu Việt Cường")
-##  [ Hành trình phê ma túy rồi giết người của ca sĩ Châu Việt Cường ](https://tienphong.vn/hanh-trinh-phe-ma-tuy-roi-giet-nguoi-cua-ca-si-chau-viet-cuong-post1095287.tpo "Hành trình phê ma túy rồi giết người của ca sĩ Châu Việt Cường")
-##  [ Ca sĩ Châu Việt Cường sắp ra tòa do nhét tỏi vào miệng làm cô gái chết ](https://tienphong.vn/ca-si-chau-viet-cuong-sap-ra-toa-do-nhet-toi-vao-mieng-lam-co-gai-chet-post1091760.tpo "Ca sĩ Châu Việt Cường sắp ra tòa do nhét tỏi vào miệng làm cô gái chết")
-##  [ Ca sĩ Châu Việt Cường bị khởi tố tội Giết người ](https://tienphong.vn/ca-si-chau-viet-cuong-bi-khoi-to-toi-giet-nguoi-post1072118.tpo " Ca sĩ Châu Việt Cường bị khởi tố tội Giết người")
-##  [ Sau vụ án Châu Việt Cường, Vượng Râu 'vén màn' sự thật giới showbiz ](https://tienphong.vn/sau-vu-an-chau-viet-cuong-vuong-rau-ven-man-su-that-gioi-showbiz-post1014534.tpo "Sau vụ án Châu Việt Cường, Vượng Râu 'vén màn' sự thật giới showbiz")
-##  [ 'Vén' góc khuất của giới biểu diễn từ vụ án Châu Việt Cường ](https://tienphong.vn/ven-goc-khuat-cua-gioi-bieu-dien-tu-vu-an-chau-viet-cuong-post1014267.tpo "'Vén' góc khuất của giới biểu diễn từ vụ án Châu Việt Cường")
+##   Hành trình phê ma túy rồi giết người của ca sĩ Châu Việt Cường 
+##   Ca sĩ Châu Việt Cường sắp ra tòa do nhét tỏi vào miệng làm cô gái chết 
+##   Ca sĩ Châu Việt Cường bị khởi tố tội Giết người 
+##   Sau vụ án Châu Việt Cường, Vượng Râu 'vén màn' sự thật giới showbiz 
+##   'Vén' góc khuất của giới biểu diễn từ vụ án Châu Việt Cường 
 ### Bình luận
-Gửi 
 Xin vui lòng gõ tiếng Việt có dấu
-XEM THÊM BÌNH LUẬN
-###  [ Cùng chuyên mục ](https://tienphong.vn/giai-tri/ "Giải trí")
-[ ![Dàn anh trai đối mặt thử thách sinh tồn đầu tiên tại Kon Ka Kinh](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/dan-anh-trai-doi-mat-thu-thach-sinh-ton-dau-tien-tai-kon-ka-kinh-post1849600.tpo "Dàn anh trai đối mặt thử thách sinh tồn đầu tiên tại Kon Ka Kinh")
-##  [ Dàn anh trai đối mặt thử thách sinh tồn đầu tiên tại Kon Ka Kinh ](https://tienphong.vn/dan-anh-trai-doi-mat-thu-thach-sinh-ton-dau-tien-tai-kon-ka-kinh-post1849600.tpo "Dàn anh trai đối mặt thử thách sinh tồn đầu tiên tại Kon Ka Kinh")
-[ !['Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/ma-xo-co-nsut-hanh-thuy-thu-55-ty-dong-mo-man-post1849642.tpo "'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn")
-##  [ 'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn ](https://tienphong.vn/ma-xo-co-nsut-hanh-thuy-thu-55-ty-dong-mo-man-post1849642.tpo "'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn")
-[ ![Angelina Jolie gây tranh cãi ](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/angelina-jolie-gay-tranh-cai-post1849622.tpo "Angelina Jolie gây tranh cãi ")
-##  [ Angelina Jolie gây tranh cãi ](https://tienphong.vn/angelina-jolie-gay-tranh-cai-post1849622.tpo "Angelina Jolie gây tranh cãi ")
-[ ](https://tienphong.vn/nguoi-dang-tao-nen-con-dia-chan-truoc-world-cup-2026-da-den-viet-nam-post1849460.tpo "Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam")
-##  [ Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam ](https://tienphong.vn/nguoi-dang-tao-nen-con-dia-chan-truoc-world-cup-2026-da-den-viet-nam-post1849460.tpo "Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam")
-[ ![Lệnh cấm làm chao đảo giới giải trí](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/lenh-cam-lam-chao-dao-gioi-giai-tri-post1849555.tpo "Lệnh cấm làm chao đảo giới giải trí")
-##  [ Lệnh cấm làm chao đảo giới giải trí ](https://tienphong.vn/lenh-cam-lam-chao-dao-gioi-giai-tri-post1849555.tpo "Lệnh cấm làm chao đảo giới giải trí")
-[ ![Show diễn ở Mỹ Đình bị tố dùng nhạc chưa xin phép ](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/show-dien-o-my-dinh-bi-to-dung-nhac-chua-xin-phep-post1849594.tpo "Show diễn ở Mỹ Đình bị tố dùng nhạc chưa xin phép ")
-##  [ Show diễn ở Mỹ Đình bị tố dùng nhạc chưa xin phép ](https://tienphong.vn/show-dien-o-my-dinh-bi-to-dung-nhac-chua-xin-phep-post1849594.tpo "Show diễn ở Mỹ Đình bị tố dùng nhạc chưa xin phép ")
-[ !['Đảo hoa hậu' bị phản ứng vì thoại phản cảm](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/dao-hoa-hau-bi-phan-ung-vi-thoai-phan-cam-post1849575.tpo "'Đảo hoa hậu' bị phản ứng vì thoại phản cảm")
-##  [ 'Đảo hoa hậu' bị phản ứng vì thoại phản cảm ](https://tienphong.vn/dao-hoa-hau-bi-phan-ung-vi-thoai-phan-cam-post1849575.tpo "'Đảo hoa hậu' bị phản ứng vì thoại phản cảm")
-[ ![Tóc Tiên và mẹ ruột sau nhiều năm 'từ mặt'](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/toc-tien-va-me-ruot-sau-nhieu-nam-tu-mat-post1849553.tpo "Tóc Tiên và mẹ ruột sau nhiều năm 'từ mặt'")
-##  [ Tóc Tiên và mẹ ruột sau nhiều năm 'từ mặt' ](https://tienphong.vn/toc-tien-va-me-ruot-sau-nhieu-nam-tu-mat-post1849553.tpo "Tóc Tiên và mẹ ruột sau nhiều năm 'từ mặt'")
-[ ![Tăng Phúc và dàn anh trai hát trước 5.000 khán giả](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/tang-phuc-va-dan-anh-trai-hat-truoc-5000-khan-gia-post1849513.tpo "Tăng Phúc và dàn anh trai hát trước 5.000 khán giả")
-##  [ Tăng Phúc và dàn anh trai hát trước 5.000 khán giả ](https://tienphong.vn/tang-phuc-va-dan-anh-trai-hat-truoc-5000-khan-gia-post1849513.tpo "Tăng Phúc và dàn anh trai hát trước 5.000 khán giả")
-Xem thêm
-###  [ Xã hội ](https://tienphong.vn/xa-hoi/ "Xã hội")
-[ ![Thủ tướng Lê Minh Hưng chủ trì lễ đón Thủ tướng Campuchia Hun Manet](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/thu-tuong-le-minh-hung-chu-tri-le-don-thu-tuong-campuchia-hun-manet-post1849676.tpo "Thủ tướng Lê Minh Hưng chủ trì lễ đón Thủ tướng Campuchia Hun Manet")
-##  [ Thủ tướng Lê Minh Hưng chủ trì lễ đón Thủ tướng Campuchia Hun Manet ](https://tienphong.vn/thu-tuong-le-minh-hung-chu-tri-le-don-thu-tuong-campuchia-hun-manet-post1849676.tpo "Thủ tướng Lê Minh Hưng chủ trì lễ đón Thủ tướng Campuchia Hun Manet")
-[ ![Không khí lạnh tràn xuống tháng 6, có bất thường?](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/khong-khi-lanh-tran-xuong-thang-6-co-bat-thuong-post1849675.tpo "Không khí lạnh tràn xuống tháng 6, có bất thường?")
-##  [ Không khí lạnh tràn xuống tháng 6, có bất thường? ](https://tienphong.vn/khong-khi-lanh-tran-xuong-thang-6-co-bat-thuong-post1849675.tpo "Không khí lạnh tràn xuống tháng 6, có bất thường?")
-[ ![Thủ tướng Campuchia và Phu nhân đến Hà Nội, bắt đầu thăm chính thức Việt Nam ](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/thu-tuong-campuchia-va-phu-nhan-den-ha-noi-bat-dau-tham-chinh-thuc-viet-nam-post1849630.tpo "Thủ tướng Campuchia và Phu nhân đến Hà Nội, bắt đầu thăm chính thức Việt Nam ")
-##  [ Thủ tướng Campuchia và Phu nhân đến Hà Nội, bắt đầu thăm chính thức Việt Nam ](https://tienphong.vn/thu-tuong-campuchia-va-phu-nhan-den-ha-noi-bat-dau-tham-chinh-thuc-viet-nam-post1849630.tpo "Thủ tướng Campuchia và Phu nhân đến Hà Nội, bắt đầu thăm chính thức Việt Nam ")
-###  [ Pháp luật ](https://tienphong.vn/phap-luat/ "Pháp luật")
-[ ](https://tienphong.vn/vu-tau-hoa-dam-xe-tai-o-ha-noi-cuc-csgt-de-nghi-xem-xet-trach-nhiem-cua-tai-xe-o-to-post1849670.tpo "Vụ tàu hỏa đâm xe tải ở Hà Nội: Cục CSGT đề nghị xem xét trách nhiệm của tài xế ô tô")
-##  [ Vụ tàu hỏa đâm xe tải ở Hà Nội: Cục CSGT đề nghị xem xét trách nhiệm của tài xế ô tô ](https://tienphong.vn/vu-tau-hoa-dam-xe-tai-o-ha-noi-cuc-csgt-de-nghi-xem-xet-trach-nhiem-cua-tai-xe-o-to-post1849670.tpo "Vụ tàu hỏa đâm xe tải ở Hà Nội: Cục CSGT đề nghị xem xét trách nhiệm của tài xế ô tô")
-[ ![Công an xác minh vụ việc nghi bạo hành, sử dụng trẻ em bán hàng rong ở TPHCM](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/cong-an-xac-minh-vu-viec-nghi-bao-hanh-su-dung-tre-em-ban-hang-rong-o-tphcm-post1849633.tpo "Công an xác minh vụ việc nghi bạo hành, sử dụng trẻ em bán hàng rong ở TPHCM")
-##  [ Công an xác minh vụ việc nghi bạo hành, sử dụng trẻ em bán hàng rong ở TPHCM ](https://tienphong.vn/cong-an-xac-minh-vu-viec-nghi-bao-hanh-su-dung-tre-em-ban-hang-rong-o-tphcm-post1849633.tpo "Công an xác minh vụ việc nghi bạo hành, sử dụng trẻ em bán hàng rong ở TPHCM")
-[ ![Mang dao tìm anh rể đòi 'công bằng' cho chị gái, người em nhận án tù dài ](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/mang-dao-tim-anh-re-doi-cong-bang-cho-chi-gai-nguoi-em-nhan-an-tu-dai-post1849506.tpo "Mang dao tìm anh rể đòi 'công bằng' cho chị gái, người em nhận án tù dài ")
-##  [ Mang dao tìm anh rể đòi 'công bằng' cho chị gái, người em nhận án tù dài ](https://tienphong.vn/mang-dao-tim-anh-re-doi-cong-bang-cho-chi-gai-nguoi-em-nhan-an-tu-dai-post1849506.tpo "Mang dao tìm anh rể đòi 'công bằng' cho chị gái, người em nhận án tù dài ")
-###  [ Giải trí ](https://tienphong.vn/giai-tri/ "Giải trí")
-[ !['Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/ma-xo-co-nsut-hanh-thuy-thu-55-ty-dong-mo-man-post1849642.tpo "'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn")
-##  [ 'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn ](https://tienphong.vn/ma-xo-co-nsut-hanh-thuy-thu-55-ty-dong-mo-man-post1849642.tpo "'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn")
-[ ](https://tienphong.vn/nguoi-dang-tao-nen-con-dia-chan-truoc-world-cup-2026-da-den-viet-nam-post1849460.tpo "Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam")
-##  [ Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam ](https://tienphong.vn/nguoi-dang-tao-nen-con-dia-chan-truoc-world-cup-2026-da-den-viet-nam-post1849460.tpo "Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam")
-[ ![Lệnh cấm làm chao đảo giới giải trí](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/lenh-cam-lam-chao-dao-gioi-giai-tri-post1849555.tpo "Lệnh cấm làm chao đảo giới giải trí")
-##  [ Lệnh cấm làm chao đảo giới giải trí ](https://tienphong.vn/lenh-cam-lam-chao-dao-gioi-giai-tri-post1849555.tpo "Lệnh cấm làm chao đảo giới giải trí")
-###  [ Thế giới ](https://tienphong.vn/the-gioi/ "Thế giới")
-[ ![Rộ tin Mỹ muốn mua lại quần đảo chiến lược ở Ấn Độ Dương](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/ro-tin-my-muon-mua-lai-quan-dao-chien-luoc-o-an-do-duong-post1849644.tpo "Rộ tin Mỹ muốn mua lại quần đảo chiến lược ở Ấn Độ Dương")
-##  [ Rộ tin Mỹ muốn mua lại quần đảo chiến lược ở Ấn Độ Dương ](https://tienphong.vn/ro-tin-my-muon-mua-lai-quan-dao-chien-luoc-o-an-do-duong-post1849644.tpo "Rộ tin Mỹ muốn mua lại quần đảo chiến lược ở Ấn Độ Dương")
-[ ![Tỷ phú Nga Abramovich tới Ukraine chuyển thông điệp](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/ty-phu-nga-abramovich-toi-ukraine-chuyen-thong-diep-post1849626.tpo "Tỷ phú Nga Abramovich tới Ukraine chuyển thông điệp")
-##  [ Tỷ phú Nga Abramovich tới Ukraine chuyển thông điệp ](https://tienphong.vn/ty-phu-nga-abramovich-toi-ukraine-chuyen-thong-diep-post1849626.tpo "Tỷ phú Nga Abramovich tới Ukraine chuyển thông điệp")
-[ ![Triều Tiên tổ chức lễ đón trọng thể dành cho Tổng Bí thư-Chủ tịch nước Trung Quốc Tập Cận Bình tại sân bay quốc tế Sunan ở Bình Nhưỡng, ngày 20/6/2019. Ảnh: Xinhua.](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/chu-tich-trung-quoc-tap-can-binh-tham-trieu-tien-se-thao-luan-van-de-hat-nhan-ket-noi-voi-nga-post1849652.tpo "Chủ tịch Trung Quốc Tập Cận Bình thăm Triều Tiên: Sẽ thảo luận vấn đề hạt nhân, kết nối với Nga?")
-##  [ Chủ tịch Trung Quốc Tập Cận Bình thăm Triều Tiên: Sẽ thảo luận vấn đề hạt nhân, kết nối với Nga? ](https://tienphong.vn/chu-tich-trung-quoc-tap-can-binh-tham-trieu-tien-se-thao-luan-van-de-hat-nhan-ket-noi-voi-nga-post1849652.tpo "Chủ tịch Trung Quốc Tập Cận Bình thăm Triều Tiên: Sẽ thảo luận vấn đề hạt nhân, kết nối với Nga?")
-[ ![Mỹ không có kế hoạch rút quân tham chiến tại Iran, tuyên bố sẵn sàng điều binh thu hồi vật liệu hạt nhân](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/my-khong-co-ke-hoach-rut-quan-tham-chien-tai-iran-tuyen-bo-san-sang-dieu-binh-thu-hoi-vat-lieu-hat-nhan-post1849638.tpo "Mỹ không có kế hoạch rút quân tham chiến tại Iran, tuyên bố sẵn sàng điều binh thu hồi vật liệu hạt nhân")
-##  [ Mỹ không có kế hoạch rút quân tham chiến tại Iran, tuyên bố sẵn sàng điều binh thu hồi vật liệu hạt nhân ](https://tienphong.vn/my-khong-co-ke-hoach-rut-quan-tham-chien-tai-iran-tuyen-bo-san-sang-dieu-binh-thu-hoi-vat-lieu-hat-nhan-post1849638.tpo "Mỹ không có kế hoạch rút quân tham chiến tại Iran, tuyên bố sẵn sàng điều binh thu hồi vật liệu hạt nhân")
-[ ![Philippines rung chuyển vì động đất mạnh 8,2 độ, nguy cơ xuất hiện sóng thần](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/philippines-rung-chuyen-vi-dong-dat-manh-82-do-nguy-co-xuat-hien-song-than-post1849629.tpo "Philippines rung chuyển vì động đất mạnh 8,2 độ, nguy cơ xuất hiện sóng thần")
-##  [ Philippines rung chuyển vì động đất mạnh 8,2 độ, nguy cơ xuất hiện sóng thần ](https://tienphong.vn/philippines-rung-chuyen-vi-dong-dat-manh-82-do-nguy-co-xuat-hien-song-than-post1849629.tpo "Philippines rung chuyển vì động đất mạnh 8,2 độ, nguy cơ xuất hiện sóng thần")
-[ ![Tổng thống Mỹ Donald Trump gửi lời tới Iran](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/tong-thong-my-donald-trump-gui-loi-toi-iran-post1849616.tpo "Tổng thống Mỹ Donald Trump gửi lời tới Iran")
-##  [ Tổng thống Mỹ Donald Trump gửi lời tới Iran ](https://tienphong.vn/tong-thong-my-donald-trump-gui-loi-toi-iran-post1849616.tpo "Tổng thống Mỹ Donald Trump gửi lời tới Iran")
-[ ](https://tienphong.vn/iran-phong-loat-ten-lua-dan-dao-ve-phia-israel-dua-ra-loi-canh-bao-danh-thep-post1849623.tpo "Iran phóng loạt tên lửa đạn đạo về phía Israel, đưa ra lời cảnh báo đanh thép")
-##  [ Iran phóng loạt tên lửa đạn đạo về phía Israel, đưa ra lời cảnh báo đanh thép ](https://tienphong.vn/iran-phong-loat-ten-lua-dan-dao-ve-phia-israel-dua-ra-loi-canh-bao-danh-thep-post1849623.tpo "Iran phóng loạt tên lửa đạn đạo về phía Israel, đưa ra lời cảnh báo đanh thép")
-###  [ Sức khỏe ](https://tienphong.vn/suc-khoe/ "Sức khỏe")
-[ ![Trái tim của người đàn ông 32 tuổi cứu bé trai đang cận kề 'cửa tử'](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/trai-tim-cua-nguoi-dan-ong-32-tuoi-cuu-be-trai-dang-can-ke-cua-tu-post1849645.tpo "Trái tim của người đàn ông 32 tuổi cứu bé trai đang cận kề 'cửa tử'")
-##  [ Trái tim của người đàn ông 32 tuổi cứu bé trai đang cận kề 'cửa tử' ](https://tienphong.vn/trai-tim-cua-nguoi-dan-ong-32-tuoi-cuu-be-trai-dang-can-ke-cua-tu-post1849645.tpo "Trái tim của người đàn ông 32 tuổi cứu bé trai đang cận kề 'cửa tử'")
-[ ![32 độ C lúc 1 giờ sáng, người nhà bệnh nhân trắng đêm vì nóng](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/32-do-c-luc-1-gio-sang-nguoi-nha-benh-nhan-trang-dem-vi-nong-post1849621.tpo "32 độ C lúc 1 giờ sáng, người nhà bệnh nhân trắng đêm vì nóng")
-##  [ 32 độ C lúc 1 giờ sáng, người nhà bệnh nhân trắng đêm vì nóng ](https://tienphong.vn/32-do-c-luc-1-gio-sang-nguoi-nha-benh-nhan-trang-dem-vi-nong-post1849621.tpo "32 độ C lúc 1 giờ sáng, người nhà bệnh nhân trắng đêm vì nóng")
-[ ![Tham vọng đưa Việt Nam vào bản đồ công nghệ điều trị đột quỵ](https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo) ](https://tienphong.vn/tham-vong-dua-viet-nam-vao-ban-do-cong-nghe-dieu-tri-dot-quy-post1849580.tpo "Tham vọng đưa Việt Nam vào bản đồ công nghệ điều trị đột quỵ")
-##  [ Tham vọng đưa Việt Nam vào bản đồ công nghệ điều trị đột quỵ ](https://tienphong.vn/tham-vong-dua-viet-nam-vao-ban-do-cong-nghe-dieu-tri-dot-quy-post1849580.tpo "Tham vọng đưa Việt Nam vào bản đồ công nghệ điều trị đột quỵ")
-[Báo điện tử Tiền Phong](https://tienphong.vn "Báo điện tử Tiền Phong")
+###   Cùng chuyên mục 
+##   Dàn anh trai đối mặt thử thách sinh tồn đầu tiên tại Kon Ka Kinh 
+##   'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn 
+##   Angelina Jolie gây tranh cãi 
+
+##   Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam 
+##   Lệnh cấm làm chao đảo giới giải trí 
+##   Show diễn ở Mỹ Đình bị tố dùng nhạc chưa xin phép 
+##   'Đảo hoa hậu' bị phản ứng vì thoại phản cảm 
+##   Tóc Tiên và mẹ ruột sau nhiều năm 'từ mặt' 
+##   Tăng Phúc và dàn anh trai hát trước 5.000 khán giả 
+###   Xã hội 
+##   Thủ tướng Lê Minh Hưng chủ trì lễ đón Thủ tướng Campuchia Hun Manet 
+##   Không khí lạnh tràn xuống tháng 6, có bất thường? 
+##   Thủ tướng Campuchia và Phu nhân đến Hà Nội, bắt đầu thăm chính thức Việt Nam 
+###   Pháp luật 
+
+##   Vụ tàu hỏa đâm xe tải ở Hà Nội: Cục CSGT đề nghị xem xét trách nhiệm của tài xế ô tô 
+##   Công an xác minh vụ việc nghi bạo hành, sử dụng trẻ em bán hàng rong ở TPHCM 
+##   Mang dao tìm anh rể đòi 'công bằng' cho chị gái, người em nhận án tù dài 
+###   Giải trí 
+##   'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn 
+
+##   Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam 
+##   Lệnh cấm làm chao đảo giới giải trí 
+###   Thế giới 
+##   Rộ tin Mỹ muốn mua lại quần đảo chiến lược ở Ấn Độ Dương 
+##   Tỷ phú Nga Abramovich tới Ukraine chuyển thông điệp 
+##   Chủ tịch Trung Quốc Tập Cận Bình thăm Triều Tiên: Sẽ thảo luận vấn đề hạt nhân, kết nối với Nga? 
+##   Mỹ không có kế hoạch rút quân tham chiến tại Iran, tuyên bố sẵn sàng điều binh thu hồi vật liệu hạt nhân 
+##   Philippines rung chuyển vì động đất mạnh 8,2 độ, nguy cơ xuất hiện sóng thần 
+##   Tổng thống Mỹ Donald Trump gửi lời tới Iran 
+
+##   Iran phóng loạt tên lửa đạn đạo về phía Israel, đưa ra lời cảnh báo đanh thép 
+###   Sức khỏe 
+##   Trái tim của người đàn ông 32 tuổi cứu bé trai đang cận kề 'cửa tử' 
+##   32 độ C lúc 1 giờ sáng, người nhà bệnh nhân trắng đêm vì nóng 
+##   Tham vọng đưa Việt Nam vào bản đồ công nghệ điều trị đột quỵ 
+Báo điện tử Tiền Phong
   * [](https://svvn.tienphong.vn "Sinh viên Việt Nam")
   * [](https://hoahoctro.tienphong.vn "Hoa học trò")
 
-[Video](https://tienphong.vn/video-clip/ "Video") [Nhật báo](https://tienphong.vn/nhat-bao/ "Nhật báo") [Ảnh](https://tienphong.vn/photo/ "Ảnh") [Podcast](https://tienphong.vn/podcast/ "Podcast") [Longform](https://tienphong.vn/longform/ "Longform") [Infographics](https://tienphong.vn/infographics/ "Infographics")
-[Xã hội](https://tienphong.vn/xa-hoi/ "Xã hội") [Kinh tế](https://tienphong.vn/kinh-te/ "Kinh tế") [Địa ốc](https://tienphong.vn/dia-oc/ "Địa ốc") [Sóng xanh](https://tienphong.vn/song-xanh/ "Sóng xanh") [Sức khỏe](https://tienphong.vn/suc-khoe/ "Sức khỏe") [Giới trẻ](https://tienphong.vn/gioi-tre/ "Giới trẻ") [Pháp luật](https://tienphong.vn/phap-luat/ "Pháp luật") [Thể thao](https://tienphong.vn/the-thao/ "Thể thao") [Người lính](https://tienphong.vn/hanh-trang-nguoi-linh/ "Người lính") [Xe](https://tienphong.vn/xe/ "Xe") [Văn hóa](https://tienphong.vn/van-hoa/ "Văn hóa") [Giải trí](https://tienphong.vn/giai-tri/ "Giải trí") [Giáo dục](https://tienphong.vn/giao-duc/ "Giáo dục") [Khoa học](https://tienphong.vn/khoa-hoc/ "Khoa học") [Hoa hậu](https://tienphong.vn/hoa-hau/ "Hoa hậu") [Bạn đọc](https://tienphong.vn/ban-doc/ "Bạn đọc") [Hàng không - Du lịch](https://tienphong.vn/hang-khong-du-lich/ "Hàng không - Du lịch") [Thế giới](https://tienphong.vn/the-gioi/ "Thế giới") [Nhịp sống Thủ đô](https://tienphong.vn/nhip-song-thu-do/ "Nhịp sống Thủ đô") [Nhịp sống phương Nam](https://tienphong.vn/nhip-song-phuong-nam/ "Nhịp sống phương Nam")
+Video Nhật báo Ảnh Podcast Longform Infographics
+Xã hội Kinh tế Địa ốc Sóng xanh Sức khỏe Giới trẻ Pháp luật Thể thao Người lính Xe Văn hóa Giải trí Giáo dục Khoa học Hoa hậu Bạn đọc Hàng không - Du lịch Thế giới Nhịp sống Thủ đô Nhịp sống phương Nam
