@@ -198,6 +198,7 @@ def main() -> None:
     load_env_file()
     init_session_state()
     st.session_state.chats = load_chats()
+    st.session_state.is_generating = bool(st.session_state.get("pending_rag_request"))
 
     prompt = render_main_layout()
     handle_pending_rag_request()

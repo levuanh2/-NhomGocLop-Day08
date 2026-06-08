@@ -195,7 +195,7 @@ def render_chat_panel(messages: list[dict], is_generating: bool) -> str | None:
                 render_chat_message(message)
 
         if is_generating and not has_pending_stream:
-            st.info("LegalBot đang xử lý câu hỏi...")
+            render_processing_status()
         if has_pending_stream:
             render_pending_stream_response()
 
@@ -217,6 +217,15 @@ def render_chat_panel(messages: list[dict], is_generating: bool) -> str | None:
     if submitted:
         return prompt
     return None
+
+
+def render_processing_status() -> None:
+    pending = st.session_state.get("pending_rag_request") or {}
+    target_chat_id = pending.get("chat_id")
+    if target_chat_id and target_chat_id != st.session_state.get("chat_id"):
+        return
+    with st.chat_message("assistant", avatar="⚖"):
+        st.caption("Đang xử lý yêu cầu...")
 
 
 def persist_pending_stream_to_original_chat(pending: dict) -> None:
