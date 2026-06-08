@@ -1,0 +1,23 @@
+{
+  "session_id": "20260608_164249",
+  "created_at": "20260608_164249",
+  "message_count": 4,
+  "messages": [
+    {
+      "role": "user",
+      "content": "có những nghệ sĩ nào bị bắt vì chất cấm"
+    },
+    {
+      "role": "assistant",
+      "content": "Theo thông tin từ các tài liệu, có những nghệ sĩ sau đây bị bắt vì liên quan đến chất cấm:\n\n1. **Long Nhật** (Đinh Long Nhật) - Bị bắt vì tổ chức sử dụng trái phép chất ma túy.\n2. **Sơn Ngọc Minh** - Cùng bị bắt với Long Nhật trong vụ tổ chức sử dụng trái phép chất ma túy.\n3. **Miu Lê** - Bị khởi tố và tạm giam để điều tra về hành vi tổ chức sử dụng trái phép chất ma túy.\n4. **Châu Việt Cường** - Liên quan đến vụ án sử dụng ma túy dẫn đến hậu quả chết người, bị tuyên phạt 13 năm tù về tội giết người.\n5. **Lệ Hằng** - Từng bị khởi tố về hành vi mua bán trái phép chất ma túy.\n6. **Chu Bin** - Bị phát hiện sử dụng trái phép chất ma túy và bị xử lý hành chính.\n7. **Nhikolai Đinh** - Bị khởi tố, bắt tạm giam để điều tra hành vi tàng trữ trái phép chất ma túy.\n8. **Hữu Tín** - Bị tuyên phạt 7 năm 6 tháng tù về tội tổ chức sử dụng trái phép chất ma túy.\n9. **Chi Dân** - Bị khởi tố và bắt tạm giam để điều tra về hành vi tổ chức sử dụng trái phép chất ma túy.\n10. **Andrea Aybar** (An Tây) - Bị khởi tố và điều tra về hành vi tàng trữ trái phép chất ma túy.\n\nCác vụ việc này cho thấy tình trạng người nổi tiếng dính đến chất cấm đang là vấn đề đáng lo ngại trong xã hội hiện nay."
+    },
+    {
+      "role": "user",
+      "content": "ồ, ai bị phạt tù lâu nhất thế"
+    },
+    {
+      "role": "assistant",
+      "content": "Theo thông tin từ các tài liệu, ca sĩ **Châu Việt Cường** là người bị phạt tù lâu nhất với bản án 13 năm tù về tội giết người, liên quan đến việc sử dụng ma túy dẫn đến hậu quả chết người. Vụ án này xảy ra vào năm 2018."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "session_id": "20260608_163011",
+  "created_at": "20260608_163011",
+  "message_count": 4,
+  "messages": [
+    {
+      "role": "user",
+      "content": "giá vàng hiện tại bao nhiêu"
+    },
+    {
+      "role": "assistant",
+      "content": "NGOÀI PHẠM VI: Tôi không thể cung cấp thông tin về giá vàng hiện tại vì đây không phải là một vấn đề liên quan đến quy định pháp luật Việt Nam hoặc các vụ việc vi phạm pháp luật."
+    },
+    {
+      "role": "user",
+      "content": "miu lê bị bắt khi nào"
+    },
+    {
+      "role": "assistant",
+      "content": "Ca sĩ Miu Lê, tên thật là Lê Ánh Nhật, bị bắt vào khoảng 12h30 ngày 10 tháng 5 năm 2026 tại bãi biển ở Cát Bà, TP Hải Phòng [VnExpress, 2026]."
+    }
+  ]
+}

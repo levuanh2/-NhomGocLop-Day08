@@ -1,0 +1,23 @@
+{
+  "session_id": "20260608_163930",
+  "created_at": "20260608_163930",
+  "message_count": 4,
+  "messages": [
+    {
+      "role": "user",
+      "content": "chi dân bị bắt khi nào và tội gì"
+    },
+    {
+      "role": "assistant",
+      "content": "Ca sĩ Chi Dân bị Công an TP.HCM khởi tố, bắt tạm giam vào ngày 14.11.2024 để điều tra về hành vi tổ chức sử dụng trái phép chất ma túy [article_06]."
+    },
+    {
+      "role": "user",
+      "content": "ồ, tôij của anh ấy là tội gì trong bộ luật hình sự"
+    },
+    {
+      "role": "assistant",
+      "content": "NGOÀI PHẠM VI: Tôi không thể cung cấp thông tin về tội danh trong bộ luật hình sự cụ thể của ca sĩ Chi Dân. Tuy nhiên, theo thông tin có sẵn, anh bị khởi tố và bắt tạm giam để điều tra về hành vi tổ chức sử dụng trái phép chất ma túy [article_06]."
+    }
+  ]
+}
