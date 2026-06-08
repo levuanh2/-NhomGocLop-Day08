@@ -1,0 +1,173 @@
+# Nhìn lại vụ ca sĩ Châu Việt Cường nhét tỏi làm chết người rúng động showbiz Việt
+
+**Source:** https://tienphong.vn/nhin-lai-vu-ca-si-chau-viet-cuong-nhet-toi-lam-chet-nguoi-rung-dong-showbiz-viet-post1095412.tpo
+**Crawled:** 2026-06-08T11:26:52.813550
+
+---
+### Báo điện tử Tiền Phong
+[](javascript:void\(0\);)
+  * Xem thêm; "Xem thêm")
+
+Chuyên mục
+Xã hội Chính trị Tin tức Phóng sự
+Thế giới Phân tích - Bình luận Chuyện lạ
+Giới trẻ Nhịp sống Cộng đồng mạng
+Pháp luật Bản tin 113 Pháp đình
+Người lính
+Văn hóa Chuyển động văn hóa Sách Góc nhìn
+Giáo dục Cổng trường Tuyển sinh Du học
+Khoa học
+Hoa hậu Tin tức trong nước Hoa hậu Việt Nam Quốc tế
+Tôi nghĩ
+Nhật báo
+Tết Việt
+24h
+Đọc & nghe nhanh
+Điểm tin
+Xem nhanh
+Đọc nhiều
+Multimedia
+Ảnh
+Podcast
+Infographics
+Quizz
+Longform
+Âm nhạc
+Các trang khác Sinh viên Việt Nam Hoa Học trò
+Liên hệ quảng cáo 0909559988 booking@baotienphong.com.vn
+Tòa soạn D29, Phạm Văn Bạch, P.Cầu Giấy, Hà Nội 024.39431250
+Đặt mua báo in (024)39439664 0908988666
+Bạn đọc làm báo Đồng hành cùng Tiền phong
+Giới thiệu Nhật báo Sự kiện Quảng cáo
+Theo dõi Báo Tiền phong trên; "Theo dõi Báo Tiền phong trên") fb yt tt zl gg
+##  Giải trí
+ chia sẻ ; "Chia sẻ")  text ; "Phông chữ")  in báo ; "In bài viết")  bình luận ; "Bình luận") Google News
+ chia sẻ ; "Facebook")  chia sẻ ; "Twitter")  copy link ; "Copy link")
+#  Nhìn lại vụ ca sĩ Châu Việt Cường nhét tỏi làm chết người rúng động showbiz Việt
+Đỗ Quyên
+07/03/2019 06:35
+ Nghe   Chia sẻ ; "Chia sẻ")  Lưu tin ; "Lưu bài viết")  Bình luận ; "Bình luận")  Trở về
+ Ca sĩ Châu Việt Cường tại cơ quan điều tra.
+TPO - Theo dự kiến vào sáng nay (7/3), TAND Hà Nội sẽ đưa ra xét xử nam ca sĩ Nguyễn Việt Cường (sinh năm 1978, ở Quảng Ninh, tức ca sĩ Châu Việt Cường) về tội "Giết người".
+Cùng ra hầu tòa với Châu Việt Cường còn có Phạm Đức Thế (sinh năm 1981, quê Ninh Bình) bị truy tố về tội tàng trữ trái phép chất ma túy.
+Theo cáo trạng, rạng sáng ngày 5/3/2018, Châu Việt Cường đi biểu diễn ở tỉnh Hà Nam về đến Hà Nội thì điện thoại cho Phạm Đức Thế xin ngủ nhờ.
+Sau khi liên lạc với Thế, Cường gọi điện cho bạn là Đoàn Quý Nguyên (tức ca sĩ Nam Khang, SN 1985, trú tại phố Nguyễn Đức Cảnh, quận Hoàng Mai, Hà Nội) rủ Nguyên đến nhà Thế chơi cùng.
+Trước khi Cường đến, Thế mang 1 gói ma tuý loại Ketamin (do Thế mua và cất từ trước) ra lấy một phần đổ xuống đĩa và lấy một tờ tiền mệnh giá 20.000 đồng để làm tẩu hút, rồi để trên kệ Tivi đợi Cường đến cùng sử dụng.
+Số ma túy còn lại, Thế gói cất vào trong ví cầm tay. Khi Cường và Nguyên đến, Thế ra đón và đưa vào phòng ngủ để ngồi nói chuyện.
+Lúc này, Nguyên điện thoại rủ thêm bạn là Đ.P.A. (sinh năm 1995, trú tại thị trấn Nông trường Mộc Châu, huyện Mộc Châu, tỉnh Sơn La) và T.M.H. (SN 1998, ở Chương Mỹ, Hà Nội) đến chơi cùng.
+Tại đây, Thế lấy ma túy cho mọi người sử dụng chung. Sau khi dùng hết, Cường tiếp tục đưa cho Thế một gói ma túy khác. Trong lúc Thế và Đ.P.A. chuẩn bị “đồ nghề” để chơi ma túy, Cường và T.M.H. rủ nhau sang phòng bên cạnh để quan hệ tình dục. Cả nhóm sau đó cùng nhau sử dụng ma túy lần thứ hai.
+Khoảng 6h ngày 6/3/2018, Nguyên ra về trước. Thế cùng ca sĩ Châu Việt Cường, Đ.P.A. và T.M.H. tiếp tục sử dụng ma túy thêm lần nữa.
+Hơn 8h cùng ngày 6/3/2018, cả Châu Việt Cường và T.M.H đều có biểu hiện bị ảo giác do sử dụng ma túy. Cả hai ngồi nói chuyện, khóc lóc và vái lạy nhau.
+Nghĩ T.M.H. bị ma nhập, cần dùng tỏi để đuổi ma, Châu Việt Cường cùng Thế và Đ.P.A. chạy đi mua tỏi. Cường bốc một vốc tỏi loại nguyên củ chạy lên phòng, ném vào người H..
+Sau đó, Cường tiếp tục nhặt tỏi cho vào miệng ăn và nhét 1 củ tỏi còn nguyên, chưa bóc, có kích thước (4,5x6 cm) vào trong khoang miệng của H..
+Khi nạn nhân nằm xuống đệm, Châu Việt Cường tiếp tục lấy tỏi ăn và ngồi trên bụng dưới của H., hai đầu gối tỳ trên đệm, liên tục nhét tổng cộng 33 nhánh tỏi vào trong khoang miệng của bạn gái.
+Theo lời khai của Phạm Đức Thế, Cường bị ảo giác, tưởng H. là "bà cô tổ" nên khóc lóc, chắp tay lạy H. Sau đó, vì sợ hãi nghĩ "bà cô tổ" là ma nên Cường đi lấy tỏi nhét vào miệng H. để trừ tà ma.
+Ngoài việc tự lấy tỏi nhét vào mồm H., Cường còn bảo Thế nhờ 2 thầy cúng lên làm lễ trừ tà cho bạn. Khi 2 thầy cúng có mặt tại căn hộ đã phát hiện nhóm Cường có biểu hiện phê ma túy, còn H. đã bất động nên vội vàng chạy ra ngoài trình báo công an về vụ việc.
+Khi cơ quan chức năng tới hiện trường, H. đã tử vong, miệng bị nhét 33 nhánh tỏi, còn Châu Việt Cường vẫn trong tình trạng "ngáo" khi bị đưa về trụ sở công an.
+Cơ quan chức năng cho rằng, nguyên nhân chết của nạn nhân H. là do ngạt cơ học vì bị bít tắc hoàn toàn đường hô hấp.
+Về phía Châu Việt Cường, sau khi bị tạm giữ một ngày, Cường đã phải nhập viện để điều trị nhiễm trùng máu do dấu hiệu đau rát, khó chịu vùng cổ họng. Tiến hành kiểm tra sức khỏe của Châu Việt Cường tại bệnh viện theo quy định của pháp luật, các bác sỹ tiến hành xét nghiệm, ghi nhận bạch cầu của anh ta chỉ số lên đến hơn 26.000; trong khi chỉ số bạch cầu của người khỏe mạnh bình thường chỉ khoảng 10.000. Nguyên nhân chính của hiện tượng này do Cường đã ăn, nuốt chửng quá nhiều tỏi. Điều này thấy rõ trong quá trình PV tiếp xúc nhanh với anh ta tại CQĐT; nam ca sỹ 34 tuổi luôn buồn nôn, tự kéo da cổ và kêu khó chịu ở vùng họng.
+Cho đến khoảng 20h30 tối 9/3, Châu Việt Cường được ra viện và hoàn tất các thủ tục đưa vào nhà tạm giữ của CAQ Ba Đình, Hà Nội để cơ quan chức năng tiếp tục điều tra, làm rõ vụ án.
+Có thể nói, vụ án liên quan tới ca sĩ Châu Việt Cường đã gây rúng động showbiz Việt. Thời điểm đó, Hiệp Gà từng đăng tải một số hình ảnh chụp chung với Châu Việt Cường cùng lời nhắn nhủ, động viên. Anh viết: “Châu Việt Cường hãy bình tĩnh đón nhận và cải tạo thật tốt để sớm được tự do. Còn mọi thứ lúc này không còn quan trọng nữa em à. Buồn và thấy bâng khuâng quá trời”.
+Trong khi đó, nghệ sĩ Vượng Râu cũng gây sốc khi có những chia sẻ xoay quanh chủ đề giới nghệ sĩ sử dụng chất kích thích. Vượng Râu thẳng thắn bày tỏ: “Tôi nói chuyện thật, cách đây khoảng hơn 10 năm, lúc đó tôi mới nổi. Tôi đi diễn với một ngôi sao đình đám nhất Việt Nam. Tôi diễn hài còn anh hát hầu như thâu đêm suốt sáng. Tôi tận mắt chứng kiến và trải nghiệm. Khi tôi diễn ở Hải Phòng, người ta nhét thuốc lắc vào miệng tôi và bắt phải uống. Tôi phải vào nhà vệ sinh để nôn ra.
+Có những điếu thuốc người ta cuộn cỏ vào rồi đưa cho. Người ta yêu mến người ta tặng, mà toàn dân anh chị, dân xã hội. Bao ngày tháng, bao nhiêu năm diễn ở tỉnh lẻ không về Hà Nội. Cứ diễn xong thì tụ tập ở một biệt thự nào đó để bay lắc thâu đêm.
+Tôi chứng kiến toàn bộ nhưng họ rất vô tư và không ép nên tôi ra xe tôi ngủ. Không phải một lần mà rất nhiều lần tôi chứng kiến sự việc đó”.
+Theo quan điểm riêng, nghệ sĩ Vượng Râu đồng tình với ý kiến cho rằng múi giờ khác biệt và môi trường có thể khiến nhiều nghệ sĩ sa ngã. Một số nghệ sĩ hát trong vũ trường thì gắn liền với “dân chơi” (cứ nói vui thế), thì để đáp lại tình cảm của người hâm mộ với nghệ sĩ thì người hâm mộ họ sẽ mời...
+Người ta cứ mời và một lần, hai lần vì nể, vì thói quen và những người không đủ bản lĩnh sẽ bị cuốn vào lúc nào không biết”.
+Nghệ sĩ Vượng Râu lấy trường hợp của Hiệp Gà làm ví dụ cho sự trả giá của nghệ sĩ khi bị sa ngã và dính vào chất kích thích. “Rõ ràng Hiệp Gà phải trả giá rất lớn bằng chính con đường sự nghiệp của mình khi dính vào chất kích thích. Trong khi nghệ sĩ chúng tôi rất đắt show thì rất ít người quan tâm tới Hiệp Gà. Đây là chuyện thật và thậm chí, chúng tôi có móc show thì người ta cũng khéo léo từ chối. Đấy là thiệt thòi rất lớn rồi. Và đó là cái giá rất đắt cho hình ảnh của mình khi dính vào những sai trái”.
+Đỗ Quyên
+Tổng hợp
+#Châu Việt Cường #showbiz #Vượng Râu #Hiệp Gà
+###  Xem thêm
+
+##   Hành trình phê ma túy rồi giết người của ca sĩ Châu Việt Cường
+##   Ca sĩ Châu Việt Cường sắp ra tòa do nhét tỏi vào miệng làm cô gái chết
+##   Ca sĩ Châu Việt Cường bị khởi tố tội Giết người
+##   Sau vụ án Châu Việt Cường, Vượng Râu 'vén màn' sự thật giới showbiz
+##   'Vén' góc khuất của giới biểu diễn từ vụ án Châu Việt Cường
+### Bình luận
+Đăng nhập;) hoặc Tạo tài khoản;) để tham gia bình luận
+Gửi
+Xin vui lòng gõ tiếng Việt có dấu
+XEM THÊM BÌNH LUẬN
+###   Cùng chuyên mục
+
+##   Dàn anh trai đối mặt thử thách sinh tồn đầu tiên tại Kon Ka Kinh
+
+##   'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn
+
+##   Angelina Jolie gây tranh cãi
+
+##   Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam
+
+##   Lệnh cấm làm chao đảo giới giải trí
+
+##   Show diễn ở Mỹ Đình bị tố dùng nhạc chưa xin phép
+
+##   'Đảo hoa hậu' bị phản ứng vì thoại phản cảm
+
+##   Tóc Tiên và mẹ ruột sau nhiều năm 'từ mặt'
+
+##   Tăng Phúc và dàn anh trai hát trước 5.000 khán giả
+Xem thêm
+###   Xã hội
+
+##   Thủ tướng Lê Minh Hưng chủ trì lễ đón Thủ tướng Campuchia Hun Manet
+
+##   Không khí lạnh tràn xuống tháng 6, có bất thường?
+
+##   Thủ tướng Campuchia và Phu nhân đến Hà Nội, bắt đầu thăm chính thức Việt Nam
+###   Pháp luật
+
+##   Vụ tàu hỏa đâm xe tải ở Hà Nội: Cục CSGT đề nghị xem xét trách nhiệm của tài xế ô tô
+
+##   Công an xác minh vụ việc nghi bạo hành, sử dụng trẻ em bán hàng rong ở TPHCM
+
+##   Mang dao tìm anh rể đòi 'công bằng' cho chị gái, người em nhận án tù dài
+###   Giải trí
+
+##   'Ma xó' có NSƯT Hạnh Thúy thu 55 tỷ đồng mở màn
+
+##   Người đang tạo nên cơn địa chấn trước World Cup 2026 đã đến Việt Nam
+
+##   Lệnh cấm làm chao đảo giới giải trí
+###   Thế giới
+
+##   Rộ tin Mỹ muốn mua lại quần đảo chiến lược ở Ấn Độ Dương
+
+##   Tỷ phú Nga Abramovich tới Ukraine chuyển thông điệp
+
+##   Chủ tịch Trung Quốc Tập Cận Bình thăm Triều Tiên: Sẽ thảo luận vấn đề hạt nhân, kết nối với Nga?
+
+##   Mỹ không có kế hoạch rút quân tham chiến tại Iran, tuyên bố sẵn sàng điều binh thu hồi vật liệu hạt nhân
+
+##   Philippines rung chuyển vì động đất mạnh 8,2 độ, nguy cơ xuất hiện sóng thần
+
+##   Tổng thống Mỹ Donald Trump gửi lời tới Iran
+
+##   Iran phóng loạt tên lửa đạn đạo về phía Israel, đưa ra lời cảnh báo đanh thép
+###   Sức khỏe
+
+##   Trái tim của người đàn ông 32 tuổi cứu bé trai đang cận kề 'cửa tử'
+
+##   32 độ C lúc 1 giờ sáng, người nhà bệnh nhân trắng đêm vì nóng
+
+##   Tham vọng đưa Việt Nam vào bản đồ công nghệ điều trị đột quỵ
+Báo điện tử Tiền Phong
+  * [](https://svvn.tienphong.vn "Sinh viên Việt Nam")
+  * [](https://hoahoctro.tienphong.vn "Hoa học trò")
+
+Video Nhật báo Ảnh Podcast Longform Infographics
+Xã hội Kinh tế Địa ốc Sóng xanh Sức khỏe Giới trẻ Pháp luật Thể thao Người lính Xe Văn hóa Giải trí Giáo dục Khoa học Hoa hậu Bạn đọc Hàng không - Du lịch Thế giới Nhịp sống Thủ đô Nhịp sống phương Nam
+Tòa soạn D29, Phạm Văn Bạch, P.Cầu Giấy, Hà Nội 024.39431250
+Liên hệ quảng cáo 0909559988 booking@baotienphong.com.vn
+Đặt mua báo in (024)39439664 0908988666
+Theo dõi BÁO TIỀN PHONG trên
+
+Chính sách bảo mật
+Cơ quan chủ quản: **Trung ương Đoàn TNCS Hồ Chí Minh**
+Tổng Biên tập: **PHÙNG CÔNG SƯỞNG**
+ Bạn đọc làm báo
+Giấy phép số **76/GP-BTTTT** , cấp ngày **26/02/2020.**
+© Bản quyền thuộc báo **Tiền Phong**
+Cấm sao chép dưới mọi hình thức nếu không có sự chấp thuận bằng văn bản
+Thiết kế và phát triển bởi **Hemera Media**
