@@ -56,7 +56,6 @@ def persist_current_chat_if_needed() -> None:
 
 
 def handle_select_chat(chat_id: str) -> None:
-    persist_current_chat_if_needed()
     chat = load_chats().get(chat_id)
     if not chat:
         return
@@ -180,7 +179,14 @@ def render_disclaimer_box() -> None:
 def render_chat_panel(messages: list[dict], is_generating: bool) -> str | None:
     render_chat_topbar()
     st.divider()
-    has_pending_stream = bool(st.session_state.get("pending_stream_response"))
+    pending_stream = st.session_state.get("pending_stream_response")
+    if pending_stream and pending_stream.get("chat_id") != st.session_state.get("chat_id"):
+        persist_pending_stream_to_original_chat(pending_stream)
+        pending_stream = None
+    has_pending_stream = bool(
+        pending_stream
+        and pending_stream.get("chat_id") == st.session_state.get("chat_id")
+    )
     with st.container(height=545, border=False):
         if not messages:
             render_welcome_state()
@@ -257,6 +263,7 @@ def render_pending_stream_response() -> None:
 
 
 def render_chat_topbar() -> None:
+    st.markdown('<div class="chat-topbar-offset"></div>', unsafe_allow_html=True)
     title = st.session_state.current_chat_title
     left_col, right_col = st.columns([1, 0.34])
     with left_col:
