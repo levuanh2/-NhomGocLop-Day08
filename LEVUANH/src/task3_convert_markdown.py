@@ -8,15 +8,16 @@ Input:
 Output:
   - data/standardized/legal/*.md
   - data/standardized/news/*.md
+
+Mỗi output .md có YAML frontmatter và nội dung đã clean.
 """
 
 import json
 import re
 import sys
-import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Optional
 
 # Fix Windows console encoding
 if sys.stdout.encoding != "utf-8":
@@ -52,17 +53,11 @@ def setup_directories() -> None:
 
 def slugify(text: str, max_length: int = 80) -> str:
     """
-    Chuyển text thành slug ASCII-safe cho filename.
-    - Normalize tiếng Việt NFKD -> ASCII
-    - Chỉ giữ a-z, 0-9, space, dash
-    - Thay space/dash bằng "_"
-    - Giới hạn max_length
+    Chuyển text thành slug an toàn cho filename (ASCII, dùng _ thay khoảng trắng).
     """
-    text = unicodedata.normalize("NFKD", text)
-    text = text.encode("ascii", "ignore").decode("ascii")
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9\s\-]", "", text)
-    text = re.sub(r"[\s\-]+", "_", text)
+    text = text.strip().lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s-]+", "_", text)
     text = re.sub(r"_+", "_", text)
     text = text.strip("_")
     if len(text) > max_length:
@@ -73,6 +68,12 @@ def slugify(text: str, max_length: int = 80) -> str:
 def build_frontmatter(metadata: dict) -> str:
     """
     Tạo YAML frontmatter từ dict metadata.
+
+    Ví dụ:
+        ---
+        title: "foo"
+        source: "bar"
+        ---
     """
     lines = ["---"]
     for key, value in metadata.items():
@@ -88,75 +89,12 @@ def build_frontmatter(metadata: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Markdown cleaning helpers
+# News conversion
 # ---------------------------------------------------------------------------
-
-# Footer/menu markers để cắt phần cuối
-FOOTER_MARKERS = [
-    "[ Trở lại",
-    "Trở lại Pháp luật",
-    "Trở lại Hình sự",
-    "Trở lại",
-    "Chia sẻ [",
-    "Gửi email cho tác giả",
-    "Về trang chủ",
-    "Hotline:",
-    "Tải ứng dụng",
-    "Điều khoản sử dụng",
-    "Tòa soạn",
-    "Đăng ký nhận thông báo",
-]
-
-
-def strip_before_article_title(content: str, title: str) -> str:
-    """
-    Cắt bỏ phần header/menu trước nội dung bài.
-    - Tìm heading khớp title: "# {title}" hoặc "## {title}"
-    - Nếu không có exact, tìm dòng đầu tiên bắt đầu "# " hoặc "## " và có length > 20
-    """
-    if not title:
-        return content
-
-    lines = content.split("\n")
-
-    # Tìm exact title trong heading
-    for i, line in enumerate(lines):
-        stripped = line.strip()
-        if stripped in (f"# {title}", f"## {title}"):
-            return "\n".join(lines[i:])
-
-    # Tìm heading đầu tiên hợp lệ (bắt đầu #, độ dài > 20)
-    for i, line in enumerate(lines):
-        stripped = line.strip()
-        if stripped.startswith("# ") or stripped.startswith("## "):
-            if len(stripped) > 20:
-                return "\n".join(lines[i:])
-
-    return content
-
-
-def strip_after_footer(content: str) -> str:
-    """
-    Cắt bỏ phần footer sau bài dựa trên markers.
-    """
-    lines = content.split("\n")
-    cut_index = len(lines)
-
-    for i, line in enumerate(lines):
-        stripped = line.strip()
-        for marker in FOOTER_MARKERS:
-            if marker in stripped:
-                cut_index = min(cut_index, i)
-                break
-
-    if cut_index < len(lines):
-        lines = lines[:cut_index]
-
-    return "\n".join(lines)
-
 
 # Các dòng menu/header/footer phổ biến cần loại bỏ
 NOISE_PATTERNS = [
+    # Navigation
     r"^\[?\s*Trang\s+chủ\s*\]?\(?.*?\)?\s*$",
     r"^\[?\s*Mới\s+nhất\s*\]?\(?.*?\)?\s*$",
     r"^Tin\s+theo\s+khu\s+vực\s*$",
@@ -198,15 +136,11 @@ NOISE_PATTERNS = [
 COMPILED_NOISE = [re.compile(p, re.IGNORECASE) for p in NOISE_PATTERNS]
 
 
-def clean_news_markdown(content: str, title: Optional[str] = None) -> str:
+def clean_news_markdown(content: str) -> str:
     """
     Loại bỏ menu/header/footer và các dòng noise khỏi content markdown.
     Giữ lại nội dung bài báo thật.
     """
-    # Bước 1: Cắt phần header trước title nếu có
-    if title:
-        content = strip_before_article_title(content, title)
-
     lines = content.split("\n")
     cleaned = []
     skip_next_empty = False
@@ -246,11 +180,8 @@ def clean_news_markdown(content: str, title: Optional[str] = None) -> str:
 
         cleaned.append(line)
 
-    # Ghép lại và strip footer
-    result = "\n".join(cleaned)
-    result = strip_after_footer(result)
-
     # Giảm nhiều dòng trống liên tiếp
+    result = "\n".join(cleaned)
     result = re.sub(r"\n{3,}", "\n\n", result)
 
     # Loại bỏ heading lặp lại (giữ H1 đầu tiên, bỏ các H1/H2 trùng)
@@ -260,11 +191,7 @@ def clean_news_markdown(content: str, title: Optional[str] = None) -> str:
     return result.strip()
 
 
-# ---------------------------------------------------------------------------
-# News conversion
-# ---------------------------------------------------------------------------
-
-def convert_news_json_file(json_path: Path, title: Optional[str] = None) -> bool:
+def convert_news_json_file(json_path: Path) -> bool:
     """
     Convert 1 file JSON từ Task 2 sang Markdown.
 
@@ -291,13 +218,17 @@ def convert_news_json_file(json_path: Path, title: Optional[str] = None) -> bool
         if not content:
             return False
 
-        # Clean content với title
-        cleaned_content = clean_news_markdown(content, title=title)
+        # Clean content
+        cleaned_content = clean_news_markdown(content)
 
-        # Kiểm tra độ dài sau khi clean
-        if len(cleaned_content) < 500:
-            print(f"  [WARN] Cleaned content too short ({len(cleaned_content)} chars) for {json_path.name}")
-            return False
+        # Loại bỏ các heading trùng lặp với title trong content
+        title_escaped = re.escape(title)
+        cleaned_content = re.sub(
+            rf"^#+\s*{title_escaped}\s*$",
+            "",
+            cleaned_content,
+            flags=re.MULTILINE | re.IGNORECASE
+        )
 
         # Build frontmatter
         frontmatter = build_frontmatter({
@@ -309,7 +240,7 @@ def convert_news_json_file(json_path: Path, title: Optional[str] = None) -> bool
         })
 
         # Output: đúng 1 heading chính
-        markdown = f"{frontmatter}\n\n# {title}\n\n{cleaned_content}\n"
+        markdown = f"{frontmatter}\n\n# {title}\n\n{cleaned_content.strip()}\n"
 
         # Filename
         filename = f"{slugify(title)}.md"
@@ -389,7 +320,7 @@ def convert_legal_file(file_path: Path) -> bool:
 # Batch conversion
 # ---------------------------------------------------------------------------
 
-def convert_news_articles() -> Tuple[int, int, int]:
+def convert_news_articles() -> tuple[int, int, int]:
     """
     Convert toàn bộ news JSON hợp lệ sang Markdown.
 
@@ -433,7 +364,7 @@ def convert_news_articles() -> Tuple[int, int, int]:
     return converted, skipped, failed
 
 
-def convert_legal_docs() -> Tuple[int, int]:
+def convert_legal_docs() -> tuple[int, int]:
     """
     Convert toàn bộ legal docs sang Markdown.
 
