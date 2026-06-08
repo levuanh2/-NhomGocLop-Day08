@@ -131,7 +131,7 @@ def is_article_url(url: str) -> bool:
     if not is_valid_domain(url):
         return False
 
-    # Reject homepage / category / tag / search
+    # Reject homepage / category / tag / search / event / collection pages
     skip_patterns = [
         r"^/$",
         r"^/search",
@@ -153,6 +153,10 @@ def is_article_url(url: str) -> bool:
         r"/chuyen-de/",
         r"/chu-de/",
         r"/topic/",
+        r"/event/",
+        r"/collection/",
+        r"/dt\d+\.htm",
+        r"/tags\d+\.html",
         r"\.pdf$",
         r"\.png$",
         r"\.jpg$",
@@ -173,9 +177,9 @@ def is_article_url(url: str) -> bool:
         if not re.search(r"/[\w\-]+\.htm$", path):
             return False
 
-    # thanhnien: must have numeric ID before .htm
+    # thanhnien: must have long numeric ID (5+ digits) before .htm
     if netloc == "thanhnien.vn":
-        if not re.search(r"-?\d+\.htm$", path):
+        if not re.search(r"\d{5,}\.htm$", path):
             return False
 
     # dantri: must have article slug with digits before .htm
@@ -225,15 +229,14 @@ SITEMAP_URLS = {
 }
 
 CATEGORY_URLS = [
-    "https://vnexpress.net/phap-luat/khoa-kiem-tra",
-    "https://thanhnien.vn/phap-luat",
+    "https://vnexpress.net/phap-luat",
     "https://dantri.com.vn/phap-luat.htm",
-    "https://nld.com.vn/phap-luat.htm",
+    "https://thanhnien.vn/phap-luat",
     "https://vietnamnet.vn/phap-luat",
-    "https://tuoitre.vn/phap-luat",
     "https://plo.vn/phap-luat",
-    "https://tienphong.vn/phap-luat",
-    "https://laodong.vn/phap-luat",
+    "https://vnexpress.net/thoi-su",
+    "https://dantri.com.vn/thoi-su.htm",
+    "https://thanhnien.vn/thoi-su",
 ]
 
 
@@ -270,7 +273,18 @@ async def _fetch_sitemap(session, domain: str, sitemap_url: str) -> list[str]:
 async def _fetch_category_page(session, url: str, page: int) -> tuple[list[str], str]:
     import requests
     try:
-        page_url = url if page == 0 else f"{url}/trang-{page}.html"
+        if page == 0:
+            page_url = url
+        elif "dantri" in url:
+            page_url = f"{url}/trang-{page}.htm"
+        elif "thanhnien" in url:
+            page_url = f"{url}/trang-{page}.htm"
+        elif "vnexpress" in url:
+            page_url = f"{url}/trang-{page}.html"
+        elif "plo" in url:
+            page_url = f"{url}/trang-{page}.html"
+        else:
+            page_url = f"{url}/trang-{page}.html"
         resp = session.get(page_url, timeout=15)
         resp.raise_for_status()
         html = resp.text
