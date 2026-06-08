@@ -1,0 +1,369 @@
+:root {
+  --bg: #f7f8fb;
+  --panel: #ffffff;
+  --sidebar: #eef2f7;
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #1d4ed8;
+  --accent-strong: #1e3a8a;
+  --accent-soft: #dbeafe;
+  --success: #0f766e;
+  --warn: #fef3c7;
+}
+
+.stApp {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+html,
+body,
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.block-container {
+  height: calc(100vh - 2.25rem);
+  overflow: hidden;
+  padding-top: 2.25rem;
+  padding-bottom: 0 !important;
+  max-width: 1680px;
+}
+
+footer,
+[data-testid="stFooter"],
+[data-testid="stDecoration"],
+.stAppDeployButton,
+[data-testid="stToolbar"] {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  visibility: hidden !important;
+}
+
+[data-testid="stSidebar"] {
+  background: #1e3a8a;
+  overflow: hidden;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+  overflow-y: auto;
+}
+
+[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {
+  gap: 0.5rem !important;
+}
+
+[data-testid="stSidebar"] div[data-testid="stElementContainer"] {
+  margin: 0 !important;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 18px;
+}
+
+.sidebar-logo {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 22px;
+}
+
+.sidebar-brand strong,
+.sidebar-brand span {
+  display: block;
+}
+
+.sidebar-brand strong {
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.sidebar-brand span {
+  margin-top: 3px;
+  color: #bfdbfe;
+  font-size: 13px;
+}
+
+.sidebar-section-title {
+  margin: 18px 0 8px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.disclaimer,
+.empty-sources,
+.welcome-state {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+.disclaimer span,
+.empty-sources span,
+.welcome-state p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+[data-testid="stSidebar"] .disclaimer {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+[data-testid="stSidebar"] .disclaimer strong {
+  color: #fff;
+}
+
+[data-testid="stSidebar"] .disclaimer span {
+  color: #bfdbfe;
+}
+
+.welcome-state {
+  min-height: 220px;
+  align-content: center;
+  background: linear-gradient(135deg, #ffffff, #eff6ff);
+}
+
+.welcome-state h2 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.chat-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  padding-top: 2px;
+}
+
+div[data-testid="stChatMessage"] {
+  border-radius: 8px;
+}
+
+div[data-testid="stChatMessage"] div[data-testid="stMarkdownContainer"] {
+  line-height: 1.65;
+}
+
+.citation-card {
+  display: block;
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+.citation-card h4 {
+  margin-bottom: 4px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+div[data-testid="stButton"] button,
+div[data-testid="stLinkButton"] a,
+div[data-testid="stFormSubmitButton"] button {
+  border-radius: 8px;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+div[data-testid="stButton"] button {
+  min-height: 44px;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  padding-inline: 18px !important;
+}
+
+[data-testid="stSidebar"] div[data-testid="stButton"] button {
+  border: none !important;
+  background: transparent !important;
+  color: #dbeafe;
+  justify-content: flex-start;
+  text-align: left;
+  min-height: 28px;
+  height: 28px;
+  margin-bottom: 0;
+  padding: 0 6px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-testid="stSidebar"] div[data-testid="stButton"] button:hover {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.chat-history-item button[data-testid="baseButton-secondary"] {
+  background: transparent !important;
+  color: #e0e7ff !important;
+  font-weight: 600;
+}
+
+.chat-history-item {
+  margin: 0;
+  line-height: 1;
+}
+
+.chat-history-item button[data-testid="baseButton-secondary"]:hover {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.chat-history-item.active button[data-testid="baseButton-primary"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  font-weight: 800;
+}
+
+button[data-testid="baseButton-primary"],
+[data-testid="stSidebar"] button[data-testid="baseButton-primary"],
+div[data-testid="stButton"] button[data-testid="baseButton-primary"],
+button[kind="primary"] {
+  background: #1e3a8a !important;
+  background-color: #1e3a8a !important;
+  border-color: #1e3a8a !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+button[data-testid="baseButton-primary"]:hover,
+button[kind="primary"]:hover {
+  background: #172f73 !important;
+  background-color: #172f73 !important;
+  color: #fff !important;
+}
+
+button[data-testid="baseButton-secondary"]:hover {
+  border-color: transparent !important;
+  color: var(--accent) !important;
+}
+
+div[data-testid="stCheckbox"] label p {
+  color: #fff;
+  font-weight: 700;
+}
+
+div[data-testid="stCheckbox"] span[data-baseweb="checkbox"] div {
+  background-color: var(--accent) !important;
+}
+
+div[data-testid="stExpander"] {
+  border: 0 !important;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+div[data-testid="stExpander"] details,
+div[data-testid="stExpander"] summary,
+div[data-testid="stExpander"] div {
+  border-color: transparent !important;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"],
+div[data-testid="stElementContainer"],
+div[data-testid="stContainer"] {
+  border-color: transparent !important;
+}
+
+div[data-testid="stForm"] {
+  border: 0;
+  padding: 0;
+  margin-top: 0.35rem;
+  margin-bottom: 0 !important;
+  background: transparent;
+}
+
+div[data-testid="stTextInput"] input {
+  min-height: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  line-height: 48px !important;
+  padding: 0 24px !important;
+  font-size: 18px;
+}
+
+div[data-testid="stTextInput"] input:focus {
+  border: 0 !important;
+  box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.18) !important;
+}
+
+div[data-testid="stTextInput"] input:invalid {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+div[data-testid="stFormSubmitButton"] button {
+  min-height: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #1e3a8a !important;
+  font-size: 56px;
+  font-weight: 700;
+  justify-content: center;
+  text-align: center;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+div[data-testid="stFormSubmitButton"] button:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #172f73 !important;
+}
+
+div[data-testid="stProgress"] div[role="progressbar"] > div {
+  background-color: var(--accent) !important;
+}
+
+@media (max-width: 980px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .current-chat {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .chat-title {
+    font-size: 20px;
+  }
+}
+  color: var(--ink);
+  background: #ffffff !important;
+  color: var(--ink) !important;
