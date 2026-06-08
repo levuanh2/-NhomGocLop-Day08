@@ -1,0 +1,23 @@
+{
+  "session_id": "20260608_172646",
+  "created_at": "20260608_172646",
+  "message_count": 4,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ca sĩ miu lê bị bắt khi nào"
+    },
+    {
+      "role": "assistant",
+      "content": "Ca sĩ Miu Lê bị bắt vào ngày 16 tháng 5 năm 2026 với cáo buộc tổ chức sử dụng trái phép chất ma túy. Tuy nhiên, cô cùng hai người bạn đã bị phát hiện sử dụng ma túy tại bãi tắm Tùng Thu, thuộc thôn 2 Cát Bà, vào khoảng 12h30 ngày 10 tháng 5 năm 2026 [VnExpress, 2026]."
+    },
+    {
+      "role": "user",
+      "content": "ca sĩ miu lê bị bắt khi nào"
+    },
+    {
+      "role": "assistant",
+      "content": "Ca sĩ Miu Lê bị bắt vào ngày 16 tháng 5 năm 2026 với cáo buộc tổ chức sử dụng trái phép chất ma túy. Cô cùng hai người bạn đã bị bắt tạm giam sau khi công an củng cố chứng cứ liên quan đến vụ việc [VnExpress, 2026]."
+    }
+  ]
+}

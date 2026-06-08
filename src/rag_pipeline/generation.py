@@ -10,10 +10,6 @@ Hướng dẫn:
 """
 
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
 from .retrieval_pipeline import retrieve, _add_continuations
 
 

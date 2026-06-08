@@ -11,11 +11,9 @@ Score = 1 - distance → cosine similarity ∈ [-1, 1], càng cao càng liên qu
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-_VECTORSTORE_DIR = Path(__file__).parent.parent / "data" / "vectorstore" / "chroma"
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+_DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
+_VECTORSTORE_DIR = _DATA_DIR / "vectorstore" / "chroma"
 _EMBEDDING_MODEL = "text-embedding-3-small"
 
 # Module-level cache để không khởi tạo lại mỗi lần gọi

@@ -19,12 +19,11 @@ Hướng dẫn:
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 
-load_dotenv()
-
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+_DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
 PAGEINDEX_API_KEY = os.getenv("PAGEINDEX_API_KEY", "")
-STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
+STANDARDIZED_DIR = _DATA_DIR / "standardized"
 
 
 def upload_documents():

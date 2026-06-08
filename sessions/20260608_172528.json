@@ -1,0 +1,15 @@
+{
+  "session_id": "20260608_172528",
+  "created_at": "20260608_172528",
+  "message_count": 2,
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "NGOÀI PHẠM VI:"
+    }
+  ]
+}
