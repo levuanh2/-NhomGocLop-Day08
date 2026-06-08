@@ -65,3 +65,7 @@ weaviate_data/
 *.bin
 *.safetensors
 *.onnx
+venv/
+.venv/
+__pycache__/
+*.pyc
