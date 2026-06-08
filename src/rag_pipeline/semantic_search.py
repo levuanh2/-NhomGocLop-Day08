@@ -14,6 +14,38 @@ from pathlib import Path
 _PROJECT_ROOT = Path(__file__).parent.parent.parent
 _VECTORSTORE_DIR = _PROJECT_ROOT / "data" / "vectorstore" / "chroma"
 _COLLECTION_NAME = "legal_chunks"
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = None
+
+if load_dotenv:
+    load_dotenv()
+else:
+    env_path = Path(__file__).resolve().parents[2] / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+def _resolve_data_dir() -> Path:
+    env_dir = os.getenv("RAG_DATA_DIR")
+    if env_dir and Path(env_dir).exists():
+        return Path(env_dir)
+
+    repo_root = Path(__file__).resolve().parents[2]
+    candidates = [Path(__file__).parent.parent / "data"]
+    candidates.extend(sorted(repo_root.glob("*/data")))
+    for candidate in candidates:
+        if (candidate / "vectorstore" / "chroma").exists():
+            return candidate
+    return candidates[0]
+
+
+_VECTORSTORE_DIR = _resolve_data_dir() / "vectorstore" / "chroma"
 _EMBEDDING_MODEL = "text-embedding-3-small"
 
 # Module-level cache để không khởi tạo lại mỗi lần gọi

@@ -10,6 +10,24 @@ Hướng dẫn:
 """
 
 import os
+from pathlib import Path
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = None
+
+if load_dotenv:
+    load_dotenv()
+else:
+    env_path = Path(__file__).resolve().parents[2] / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
 from .retrieval_pipeline import retrieve, _add_continuations
 
 
@@ -28,6 +46,11 @@ TOP_P = 0.9
 # temperature: Độ ngẫu nhiên của output
 # Chọn 0.3 vì: RAG cần factual, ít sáng tạo
 TEMPERATURE = 0.3
+
+# Giới hạn context trước khi gọi LLM. Fallback BM25 có thể lấy từ markdown thô,
+# nên cần chặn kích thước để tránh lỗi context_length_exceeded.
+MAX_CONTEXT_CHARS = 24000
+MAX_CHUNK_CHARS = 2500
 
 
 # =============================================================================
@@ -144,9 +167,35 @@ def format_context(chunks: list[dict]) -> str:
         source_label = source.rsplit(".", 1)[0] if "." in source else source
         context_parts.append(
             f"[Document {i} | Source: {source_label} | Type: {doc_type}]\n"
-            f"{chunk['content']}"
+            f"{chunk['content'][:MAX_CHUNK_CHARS]}"
         )
     return "\n\n---\n\n".join(context_parts)
+
+
+def _trim_chunks_for_context(chunks: list[dict]) -> list[dict]:
+    """Giữ context trong giới hạn ổn định trước khi đưa vào prompt."""
+    trimmed: list[dict] = []
+    used_chars = 0
+
+    for chunk in chunks:
+        content = str(chunk.get("content", "")).strip()
+        if not content:
+            continue
+
+        remaining = MAX_CONTEXT_CHARS - used_chars
+        if remaining <= 0:
+            break
+
+        clipped = content[: min(MAX_CHUNK_CHARS, remaining)].strip()
+        if not clipped:
+            continue
+
+        safe_chunk = chunk.copy()
+        safe_chunk["content"] = clipped
+        trimmed.append(safe_chunk)
+        used_chars += len(clipped)
+
+    return trimmed
 
 
 # =============================================================================
@@ -229,6 +278,7 @@ def generate_with_citation(
     # Step 2: Retrieve + add continuation chunks
     chunks = retrieve(retrieval_query, top_k=top_k)
     chunks = _add_continuations(chunks)
+    chunks = _trim_chunks_for_context(chunks)
 
     # Step 2: Reorder
     reordered = reorder_for_llm(chunks)
@@ -262,9 +312,10 @@ def generate_with_citation(
     session_name = _generate_session_name(query, answer, client) if not history else None
 
     # Step 6: Return theo BotResponse schema
+    used_chunks = reordered
     return {
         "answer": answer,
-        "chunks": [] if out_of_scope else chunks,
+        "chunks": [] if out_of_scope else used_chunks,
         "out_of_scope": out_of_scope,
         "query": query,
         "session_name": session_name,
@@ -284,4 +335,4 @@ if __name__ == "__main__":
         print("=" * 70)
         result = generate_with_citation(q)
         print(f"\nA: {result['answer']}")
-        print(f"\n[Sources: {len(result['chunks'])} chunks | out_of_scope={result['out_of_scope']}]")
+        print(f"\n[Sources: {len(result['chunks'])} chunks]")
