@@ -11,6 +11,9 @@ Score = 1 - distance → cosine similarity ∈ [-1, 1], càng cao càng liên qu
 import os
 from pathlib import Path
 
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+_VECTORSTORE_DIR = _PROJECT_ROOT / "data" / "vectorstore" / "chroma"
+_COLLECTION_NAME = "legal_chunks"
 try:
     from dotenv import load_dotenv
 except ImportError:
@@ -63,7 +66,7 @@ def _get_collection():
     if _chroma_collection is None:
         import chromadb
         client = chromadb.PersistentClient(path=str(_VECTORSTORE_DIR))
-        _chroma_collection = client.get_collection("drug_law_docs")
+        _chroma_collection = client.get_collection(_COLLECTION_NAME)
     return _chroma_collection
 
 
