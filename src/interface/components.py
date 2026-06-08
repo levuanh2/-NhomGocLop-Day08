@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import time
 
 import streamlit as st
@@ -56,7 +57,6 @@ def persist_current_chat_if_needed() -> None:
 
 
 def handle_select_chat(chat_id: str) -> None:
-    persist_current_chat_if_needed()
     chat = load_chats().get(chat_id)
     if not chat:
         return
@@ -73,7 +73,6 @@ def handle_select_chat(chat_id: str) -> None:
 
 
 def handle_new_chat() -> None:
-    persist_current_chat_if_needed()
     reset_current_chat()
     st.rerun()
 
@@ -290,6 +289,7 @@ def render_pending_stream_response() -> None:
 
 def render_chat_topbar() -> None:
     title = st.session_state.current_chat_title
+    st.markdown('<div class="chat-topbar-offset"></div>', unsafe_allow_html=True)
     left_col, right_col = st.columns([1, 0.34])
     with left_col:
         st.markdown(f'<div class="chat-title">{normalize_title(title, 60)}</div>', unsafe_allow_html=True)
@@ -428,23 +428,74 @@ def render_citation_card(index: int, chunk: dict, settings: dict) -> None:
     metadata = chunk_metadata(chunk)
     source_type = metadata.get("type", "")
     score = score_percent(chunk.get("score"))
+    title = html.escape(get_chunk_title(chunk))
+    source_label = html.escape(format_source_type(source_type))
+    raw_article_id = get_article_id(chunk) if source_type == "legal" else ""
+    article_id = html.escape(raw_article_id) if raw_article_id and not raw_article_id.startswith("Không rõ") else ""
+    raw_date = metadata.get("date") or metadata.get("published_at") or metadata.get("created_at") or ""
+    date_label = html.escape(raw_date)
+    content = chunk.get("content") or chunk.get("text") or ""
+    preview = html.escape(preview_text(content, 260))
+    meta_items = [f"<span>{source_label}</span>"]
+    if date_label:
+        meta_items.append(f"<span>{date_label}</span>")
+    if article_id:
+        meta_items.append(f"<span>{article_id}</span>")
+    meta_html = "".join(meta_items)
 
-    st.markdown(f'<article class="citation-card">', unsafe_allow_html=True)
-    st.markdown(f"#### [{index}] {get_chunk_title(chunk)}")
-    st.caption(f"{format_source_type(source_type)} · {get_chunk_date(chunk)}")
+    st.markdown(
+        f"""
+        <article class="citation-card">
+            <div class="citation-card__head">
+                <span class="citation-card__index">[{index}]</span>
+                <h4>{title}</h4>
+            </div>
+            <div class="citation-card__meta">
+                {meta_html}
+            </div>
+            <p class="citation-card__preview">{preview}</p>
+        </article>
+        """,
+        unsafe_allow_html=True,
+    )
 
     if source_type == "news" and metadata.get("url"):
         st.link_button("Mở nguồn", metadata["url"], use_container_width=True)
-    if source_type == "legal":
-        st.markdown(f"**Điều khoản:** {get_article_id(chunk)}")
     if settings.get("show_source_file") and metadata.get("source"):
         st.markdown(f"**File:** `{metadata['source']}`")
 
-    st.markdown(f"> {preview_text(chunk.get('content'), 200)}")
     if settings.get("show_scores", True):
         st.progress(score, text=f"Độ tin cậy {format_score(chunk.get('score'))}")
+
+    if st.button("Hiện đầy đủ", key=f"show_full_chunk_{index}_{metadata.get('source', '')}_{metadata.get('chunk_index', 'na')}", use_container_width=True):
+        show_full_citation_dialog(index, chunk)
+
     if settings.get("show_debug"):
         st.caption(
             f"retrieval={chunk.get('source', 'unknown')} · chunk_index={metadata.get('chunk_index', 'N/A')}"
         )
-    st.markdown("</article>", unsafe_allow_html=True)
+
+
+@st.dialog("Chi tiết nguồn")
+def show_full_citation_dialog(index: int, chunk: dict) -> None:
+    metadata = chunk_metadata(chunk)
+    source_type = metadata.get("type", "")
+    st.markdown(f"### [{index}] {get_chunk_title(chunk)}")
+    st.caption(f"{format_source_type(source_type)} · {get_chunk_date(chunk)}")
+
+    if source_type == "legal":
+        st.markdown(f"**Điều khoản:** {get_article_id(chunk)}")
+    if metadata.get("source"):
+        st.markdown(f"**File:** `{metadata['source']}`")
+    if metadata.get("url"):
+        st.link_button("Mở nguồn gốc", metadata["url"])
+
+    st.progress(score_percent(chunk.get("score")), text=f"Độ tin cậy {format_score(chunk.get('score'))}")
+    st.markdown("**Nội dung**")
+    st.text_area(
+        "Nội dung đầy đủ",
+        value=chunk.get("content") or chunk.get("text") or "",
+        height=360,
+        label_visibility="collapsed",
+        disabled=True,
+    )

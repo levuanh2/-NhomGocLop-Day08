@@ -64,13 +64,9 @@ def get_pipeline_response(prompt: str, history: list[dict]) -> dict:
 
     try:
         load_env_file()
-        from rag_pipeline.generation import generate_with_citation
+        from rag_pipeline.pipeline import chat
 
-        return generate_with_citation(
-            query=prompt,
-            history=history,
-            top_k=st.session_state.settings.get("top_k", 5),
-        )
+        return chat(prompt, history=history, top_k=st.session_state.settings.get("top_k", 5))
     except Exception as exc:  # noqa: BLE001 - UI must degrade cleanly for demo.
         st.session_state.debug_error = repr(exc)
         error_text = repr(exc)
@@ -150,8 +146,6 @@ def handle_pending_rag_request() -> None:
     st.session_state.pending_rag_request = None
 
     chunks = response.get("chunks") or []
-    if st.session_state.settings.get("top_k"):
-        chunks = chunks[: st.session_state.settings["top_k"]]
     out_of_scope = bool(response.get("out_of_scope", False))
     answer = response.get("answer") or (
         "Xin lỗi, hệ thống chưa tạo được câu trả lời. "

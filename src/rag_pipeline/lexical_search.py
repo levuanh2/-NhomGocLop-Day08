@@ -16,6 +16,7 @@ BM25 hoạt động thế nào:
 """
 
 from pathlib import Path
+import unicodedata
 
 
 def _resolve_data_dir() -> Path:
@@ -58,17 +59,56 @@ def _load_corpus_from_chroma() -> list[dict]:
 
 
 def _load_corpus_from_files() -> list[dict]:
-    """Fallback: load toàn bộ .md files từ data/standardized/."""
+    """Fallback: load .md files từ data/standardized/ và chia thành chunk nhỏ."""
     search_dir = _STANDARDIZED_DIR
     corpus = []
     for md_file in sorted(search_dir.rglob("*.md")):
         content = md_file.read_text(encoding="utf-8")
         doc_type = "legal" if "legal" in str(md_file) else "news"
-        corpus.append({
-            "content": content,
-            "metadata": {"source": md_file.name, "type": doc_type},
-        })
+        for chunk_index, chunk_text in enumerate(_chunk_markdown_text(content)):
+            corpus.append({
+                "content": chunk_text,
+                "metadata": {
+                    "source": md_file.name,
+                    "type": doc_type,
+                    "chunk_index": chunk_index,
+                    "title": md_file.stem,
+                },
+            })
     return corpus
+
+
+def _chunk_markdown_text(text: str, max_chars: int = 1800, overlap: int = 180) -> list[str]:
+    """Chia fallback markdown thành chunk vừa đủ để không làm nổ context window."""
+    paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+    chunks: list[str] = []
+    current = ""
+
+    for paragraph in paragraphs:
+        if len(paragraph) > max_chars:
+            if current:
+                chunks.append(current.strip())
+                current = ""
+            start = 0
+            while start < len(paragraph):
+                end = start + max_chars
+                chunks.append(paragraph[start:end].strip())
+                if end >= len(paragraph):
+                    break
+                start = max(0, end - overlap)
+            continue
+
+        candidate = f"{current}\n\n{paragraph}" if current else paragraph
+        if len(candidate) <= max_chars:
+            current = candidate
+        else:
+            chunks.append(current.strip())
+            prefix = current[-overlap:].strip() if overlap and current else ""
+            current = f"{prefix}\n\n{paragraph}" if prefix else paragraph
+
+    if current:
+        chunks.append(current.strip())
+    return chunks
 
 
 def _ensure_corpus():
@@ -91,9 +131,18 @@ def build_bm25_index(corpus: list[dict]):
     """
     from rank_bm25 import BM25Okapi
 
-    # Tokenize — simple whitespace split đủ dùng cho tiếng Việt
-    tokenized_corpus = [doc["content"].lower().split() for doc in corpus]
+    # Tokenize — normalize dấu để câu hỏi không dấu vẫn khớp văn bản tiếng Việt.
+    tokenized_corpus = [_tokenize(doc["content"]) for doc in corpus]
     return BM25Okapi(tokenized_corpus)
+
+
+def _normalize_text(text: str) -> str:
+    text = unicodedata.normalize("NFD", text.lower())
+    return "".join(ch for ch in text if unicodedata.category(ch) != "Mn").replace("đ", "d")
+
+
+def _tokenize(text: str) -> list[str]:
+    return _normalize_text(text).split()
 
 
 def lexical_search(query: str, top_k: int = 10) -> list[dict]:
@@ -116,7 +165,7 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
 
     _ensure_corpus()
 
-    tokenized_query = query.lower().split()
+    tokenized_query = _tokenize(query)
     scores = _bm25.get_scores(tokenized_query)
 
     top_indices = np.argsort(scores)[::-1][:top_k]
