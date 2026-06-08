@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 
 EXAMPLE_QUESTIONS = [
     "Dieu kien de duoc huong an treo la gi?",
@@ -9,6 +11,31 @@ EXAMPLE_QUESTIONS = [
     "Nguoi lao dong nghi viec co duoc nhan tro cap thoi viec khong?",
     "Vu viec dua tin sai su that tren mang co the bi xu ly nhu the nao?",
 ]
+
+
+QUICK_REPLY_PATTERNS: tuple[tuple[re.Pattern, str], ...] = (
+    (
+        re.compile(r"^(hi|hello|hey|chao|chào|xin chao|xin chào|alo|alô)[!.\s]*$", re.IGNORECASE),
+        (
+            "Xin chào, tôi là LegalBot. Rất vui được hỗ trợ bạn.\n\n"
+            "Bạn có thể hỏi tôi về quy định pháp luật Việt Nam, điều luật cụ thể, "
+            "mức xử phạt, quyền và nghĩa vụ trong một tình huống pháp lý, hoặc các vụ việc "
+            "vi phạm pháp luật được đăng trên báo chí. Khi có dữ liệu phù hợp, tôi sẽ cố gắng "
+            "trả lời ngắn gọn, dễ hiểu và kèm nguồn tham khảo để bạn kiểm chứng."
+        ),
+    ),
+    (
+        re.compile(r"^(ban la ai|bạn là ai|gioi thieu ve ban|giới thiệu về bạn|ban lam duoc gi|bạn làm được gì)[?!. \s]*$", re.IGNORECASE),
+        (
+            "Tôi là LegalBot, trợ lý hỏi đáp pháp luật Việt Nam.\n\n"
+            "Vai trò của tôi là giúp bạn tra cứu và diễn giải thông tin pháp luật theo cách "
+            "dễ hiểu hơn: ví dụ như điều kiện hưởng án treo, mức phạt cho một hành vi, quy định "
+            "về lao động, dân sự, hành chính, hình sự hoặc các vụ việc vi phạm pháp luật từ nguồn báo chí.\n\n"
+            "Tôi không thay thế luật sư hay cơ quan có thẩm quyền, nhưng có thể giúp bạn có cái nhìn "
+            "ban đầu rõ ràng hơn và cung cấp tài liệu tham khảo khi hệ thống tìm được nguồn phù hợp."
+        ),
+    ),
+)
 
 
 MOCK_CHUNKS = [
@@ -97,3 +124,20 @@ def mock_chat(query: str, history: list[dict] | None = None) -> dict:
         "out_of_scope": False,
         "query": query,
     }
+
+
+def quick_reply_chat(query: str) -> dict | None:
+    clean_query = " ".join((query or "").strip().split())
+    if not clean_query:
+        return None
+
+    for pattern, answer in QUICK_REPLY_PATTERNS:
+        if pattern.match(clean_query):
+            return {
+                "answer": answer,
+                "chunks": [],
+                "out_of_scope": False,
+                "query": query,
+                "quick_reply": True,
+            }
+    return None

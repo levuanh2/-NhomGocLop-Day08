@@ -16,7 +16,7 @@ for path in (CURRENT_DIR, SRC_DIR):
 
 from chat_store import load_chats, save_chat
 from layout import render_main_layout
-from mock_data import mock_chat
+from mock_data import mock_chat, quick_reply_chat
 from state import (
     build_history_for_pipeline,
     create_message,
@@ -59,6 +59,10 @@ def validate_prompt(prompt: str) -> tuple[bool, str]:
 
 
 def get_pipeline_response(prompt: str, history: list[dict]) -> dict:
+    quick_reply = quick_reply_chat(prompt)
+    if quick_reply:
+        return quick_reply
+
     if st.session_state.settings.get("use_mock", False):
         return mock_chat(prompt, history)
 
