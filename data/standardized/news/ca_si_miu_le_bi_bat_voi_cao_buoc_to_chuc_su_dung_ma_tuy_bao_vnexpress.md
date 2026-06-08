@@ -8,14 +8,7 @@ type: "news"
 
 # Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy - Báo VnExpress
 
-#  Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy 
-[ ](https://vnexpress.net/ "VNE")
 ##  Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy
-  * [](javascript:; "Chia sẻ bài viết lên Facebook")
-  * [](javascript:; "Chia sẻ bài viết lên X")
-  * [](javascript:; "Chia sẻ bài viết lên Linkedin")
-  * [ ](https://vnexpress.net/ca-si-miu-le-bi-bat-voi-cao-buoc-to-chuc-su-dung-ma-tuy-5074769.html#box_comment_vne "Ý kiến")
-  * [](javascript:; "In")
 
 Ca sĩ Miu Lê, tên thật Lê Ánh Nhật, cùng hai người bạn bị bắt tạm giam về tội Tổ chức sử dụng trái phép chất ma túy, sau thời gian công an củng cố chứng cứ.
 Ngày 16/5, Cơ quan CSĐT Công an thành phố Hải Phòng đã ra quyết định khởi tố, lệnh bắt tạm giam đối với Lê Ánh Nhật (ca sĩ Miu Lê, 35 tuổi, trú TP HCM) cùng Vũ Khương An (31 tuổi, quốc tịch Việt Nam và Canada) về hành vi _Tổ chức sử dụng trái phép chất ma túy;_ Trần Minh Trang (30 tuổi, trú Hà Nội) bị khởi tố tội _Không tố giác tội phạm_.
@@ -30,7 +23,3 @@ Khám xét hai phòng ở bãi biển, công an thu: Hai túi nylon chứa chấ
 Quá trình điều tra ban đầu xác định, Thúy An là quản lý cơ sở lưu trú TiTi Beach thuộc bãi tắm Tùng Thu ở đặc khu Cát Hải, đảo Cát Bà.
 Từ 7/5, An mời bạn bè là ca sĩ Miu Lê, Vũ Khương An và vợ chồng Trần Đức Phong - Trần Minh Trang đến chơi. Phong rủ Vũ Thái Nam đi cùng và chuẩn bị trước ma túy tổng hợp là [nước vui](https://vnexpress.net/ma-tuy-tong-hop-bien-tuong-thanh-tra-sua-nuoc-vui-3513189.html), Ketamine để cả nhóm cùng sử dụng.
 Đêm 9/5, Phong pha nước vui vào cốc và đổ Ketamine ra đĩa để Nam đánh mịn sau đó đưa cho 6 người. Cả nhóm sử dụng ma túy đến khoảng 5h hôm sau.
-**Lê Tân**
-×
-![](https://vnexpress.net/ca-si-miu-le-bi-bat-voi-cao-buoc-to-chuc-su-dung-ma-tuy-5074769.html)
-×

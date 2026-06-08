@@ -1,0 +1,9 @@
+{
+  "config": "A",
+  "metrics": {
+    "faithfulness": 0.975,
+    "answer_relevancy": 0.9813,
+    "context_precision": 0.4375,
+    "context_recall": 0.7938
+  }
+}

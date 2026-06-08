@@ -1,0 +1,128 @@
+[
+  {
+    "id": "q01",
+    "category": "legal",
+    "question": "Tội tàng trữ trái phép chất ma túy bị phạt tù bao nhiêu năm theo Bộ luật Hình sự?",
+    "ground_truth": "Theo Điều 248 Bộ luật Hình sự 2015, tội tàng trữ trái phép chất ma túy bị phạt tù từ 01 năm đến 05 năm ở khoản 1 (cơ bản). Hình phạt tăng lên từ 05 đến 10 năm nếu có tổ chức, tái phạm hoặc số lượng lớn (khoản 2); từ 10 đến 15 năm với số lượng rất lớn (khoản 3); từ 15 đến 20 năm với số lượng đặc biệt lớn (khoản 4); và lên đến 20 năm hoặc tù chung thân với heroin/cocaine từ 600 gam trở lên (khoản 5).",
+    "expected_sources": ["bo_luat_hinh_su_2015_chuong_xx.md"]
+  },
+  {
+    "id": "q02",
+    "category": "legal",
+    "question": "Tội tổ chức sử dụng trái phép chất ma túy bị xử lý như thế nào?",
+    "ground_truth": "Theo Điều 255 Bộ luật Hình sự 2015, tội tổ chức sử dụng trái phép chất ma túy bị phạt tù từ 02 đến 07 năm (khoản 1). Nếu phạm tội 02 lần trở lên, đối với người dưới 18 tuổi, phụ nữ có thai hoặc nhiều người thì bị phạt từ 07 đến 15 năm (khoản 2). Hình phạt từ 15 đến 20 năm khi gây tổn hại sức khỏe nghiêm trọng (khoản 3). Tù 20 năm hoặc chung thân nếu dẫn đến chết người (khoản 4). Ngoài ra còn bị phạt tiền từ 50 triệu đến 500 triệu đồng.",
+    "expected_sources": ["bo_luat_hinh_su_2015_chuong_xx.md"]
+  },
+  {
+    "id": "q03",
+    "category": "legal",
+    "question": "Các hành vi nào bị nghiêm cấm theo Luật Phòng, chống ma túy 2021?",
+    "ground_truth": "Theo Điều 5 Luật Phòng, chống ma túy 2021, các hành vi bị nghiêm cấm gồm: (1) Trồng cây có chứa chất ma túy; (2) Sản xuất, tàng trữ, vận chuyển, mua bán, xuất nhập khẩu trái phép chất ma túy, tiền chất; (3) Sử dụng, tổ chức sử dụng trái phép chất ma túy; xúi giục, cưỡng bức, lôi kéo người khác sử dụng; (4) Chứa chấp, hỗ trợ việc sử dụng trái phép chất ma túy; (5) Sản xuất, tàng trữ, mua bán dụng cụ dùng vào việc sử dụng trái phép chất ma túy; (6) Hợp pháp hóa tiền tài sản do vi phạm pháp luật về ma túy; (7) Lợi dụng chức vụ, quyền hạn, nghề nghiệp để vi phạm.",
+    "expected_sources": ["luat_phong_chong_ma_tuy_2021.md"]
+  },
+  {
+    "id": "q04",
+    "category": "legal",
+    "question": "Thời hạn cai nghiện ma túy bắt buộc là bao lâu?",
+    "ground_truth": "Theo Điều 29 Luật Phòng, chống ma túy 2021, thời hạn cai nghiện ma túy bắt buộc tại cơ sở cai nghiện từ 12 tháng đến 24 tháng. Người có tiến bộ rõ rệt có thể được giảm thời gian nhưng phải đảm bảo tối thiểu 09 tháng. Nếu hết thời hạn mà vẫn còn nghiện có thể gia hạn thêm không quá 06 tháng.",
+    "expected_sources": ["luat_phong_chong_ma_tuy_2021.md"]
+  },
+  {
+    "id": "q05",
+    "category": "legal",
+    "question": "Tội mua bán trái phép chất ma túy bị xử phạt như thế nào?",
+    "ground_truth": "Theo Điều 250 Bộ luật Hình sự 2015, tội mua bán trái phép chất ma túy bị phạt tù từ 02 đến 07 năm ở khung cơ bản. Tăng lên 07-15 năm nếu có tổ chức, tái phạm, lợi dụng chức vụ, dùng người dưới 18 tuổi, mua bán qua biên giới hoặc số lượng lớn. Khung 15-20 năm và khung cao nhất 20 năm, tù chung thân hoặc tử hình áp dụng khi số lượng đặc biệt lớn. Người phạm tội còn bị phạt tiền đến 500 triệu đồng và tịch thu tài sản.",
+    "expected_sources": ["bo_luat_hinh_su_2015_chuong_xx.md"]
+  },
+  {
+    "id": "q06",
+    "category": "legal",
+    "question": "Cai nghiện ma túy là gì theo Luật Phòng, chống ma túy 2021?",
+    "ground_truth": "Theo Điều 2 khoản 6 Luật Phòng, chống ma túy 2021, cai nghiện ma túy là quá trình thực hiện các hoạt động hỗ trợ y tế, tâm lý, xã hội cho người nghiện ma túy nhằm giúp người nghiện dừng sử dụng chất ma túy, phục hồi sức khỏe, nhân cách và tái hòa nhập cộng đồng.",
+    "expected_sources": ["luat_phong_chong_ma_tuy_2021.md"]
+  },
+  {
+    "id": "q07",
+    "category": "news",
+    "question": "Ca sĩ Miu Lê bị bắt vì tội gì và ở đâu?",
+    "ground_truth": "Ca sĩ Miu Lê bị bắt quả tang khi đang sử dụng ma túy tại bãi biển Cát Bà, Hải Phòng. Cô bị khởi tố về tội tổ chức sử dụng trái phép chất ma túy và sau đó bị tạm giam để điều tra.",
+    "expected_sources": ["ca_si_miu_le_bi_bat_qua_tang_dung_ma_tuy_o_bai_bien.md", "ca_si_miu_le_bi_bat_voi_cao_buoc_to_chuc_su_dung_ma_tuy_bao_vnexpress.md"]
+  },
+  {
+    "id": "q08",
+    "category": "news",
+    "question": "Ca sĩ Long Nhật bị bắt vì lý do gì?",
+    "ground_truth": "Ca sĩ Long Nhật bị bắt do liên quan đến ma túy. Anh sau đó khai nhận có sử dụng ma túy dạng A (thường chỉ các chất kích thích tổng hợp) cùng với quản lý của mình.",
+    "expected_sources": ["ca_si_long_nhat_bi_bat_showbiz_viet_lien_tiep_chan_ong_vi_ma_tuy.md", "ca_si_long_nhat_khai_su_dung_ma_tuy_a_cung_quan_ly_tuoi_tre_online.md"]
+  },
+  {
+    "id": "q09",
+    "category": "news",
+    "question": "Châu Việt Cường bị bắt vì tội gì?",
+    "ground_truth": "Ca sĩ Châu Việt Cường bị bắt do liên quan đến vụ nhét tỏi vào miệng làm chết người, xảy ra trong bối cảnh sử dụng ma túy. Vụ việc gây chấn động làng giải trí Việt Nam.",
+    "expected_sources": ["nhin_lai_vu_ca_si_chau_viet_cuong_nhet_toi_lam_chet_nguoi_rung_ong_showbiz_viet.md"]
+  },
+  {
+    "id": "q10",
+    "category": "news",
+    "question": "Ca sĩ Sơn Ngọc Minh bị bắt cùng ai?",
+    "ground_truth": "Ca sĩ Sơn Ngọc Minh bị bắt cùng với ca sĩ Long Nhật trong cùng một vụ liên quan đến ma túy.",
+    "expected_sources": ["bat_ca_si_long_nhat_va_ca_si_son_ngoc_minh_vi_lien_quan_ma_tuy_tuoi_tre_online.md", "ca_si_son_ngoc_minh_vua_bi_bat_vi_lien_quan_en_ma_tuy_la_ai.md"]
+  },
+  {
+    "id": "q11",
+    "category": "news",
+    "question": "Vụ khởi tố 3 bị can trong vụ Miu Lê liên quan đến ai?",
+    "ground_truth": "Trong vụ Miu Lê sử dụng ma túy ở Cát Bà, cơ quan điều tra đã khởi tố 3 bị can liên quan đến vụ án tổ chức sử dụng trái phép chất ma túy.",
+    "expected_sources": ["khoi_to_3_bi_can_trong_vu_ca_si_miu_le_su_dung_ma_tuy_o_cat_ba_tuoi_tre_online.md"]
+  },
+  {
+    "id": "q12",
+    "category": "news",
+    "question": "Showbiz Việt có vấn đề gì với ma túy và cần làm gì để khắc phục?",
+    "ground_truth": "Theo các bài báo, showbiz Việt đã có nhiều nghệ sĩ liên quan đến ma túy như Miu Lê, Long Nhật, Sơn Ngọc Minh, Châu Việt Cường. Các chuyên gia cho rằng cần có sự thanh lọc từ chính nội bộ ngành nghệ thuật, nâng cao ý thức pháp luật và có biện pháp quản lý chặt chẽ hơn đối với nghệ sĩ.",
+    "expected_sources": ["ma_tuy_va_showbiz_su_thanh_loc_can_bat_au_tu_nghe_si.md"]
+  },
+  {
+    "id": "q13",
+    "category": "combined",
+    "question": "Miu Lê bị khởi tố về tội gì và tội đó bị phạt bao nhiêu năm tù theo luật?",
+    "ground_truth": "Miu Lê bị khởi tố về tội tổ chức sử dụng trái phép chất ma túy theo Điều 255 Bộ luật Hình sự 2015. Theo điều luật này, mức phạt cơ bản là từ 02 đến 07 năm tù. Nếu có tình tiết tăng nặng như phạm tội nhiều lần hoặc đối với nhiều người, mức phạt tăng lên 07-15 năm.",
+    "expected_sources": ["ca_si_miu_le_bi_bat_voi_cao_buoc_to_chuc_su_dung_ma_tuy_bao_vnexpress.md", "bo_luat_hinh_su_2015_chuong_xx.md"]
+  },
+  {
+    "id": "q14",
+    "category": "combined",
+    "question": "Người nghiện ma túy có được hỗ trợ cai nghiện không và chế độ trong cơ sở cai nghiện như thế nào?",
+    "ground_truth": "Theo Luật Phòng, chống ma túy 2021, người nghiện ma túy được tự nguyện cai nghiện tại gia đình, cộng đồng hoặc cơ sở cai nghiện. Nhà nước khuyến khích và có chính sách hỗ trợ chi phí cho người không có khả năng kinh tế (Điều 23). Trong cơ sở cai nghiện bắt buộc, người cai nghiện được tư vấn tâm lý, điều trị y tế, tham gia lao động trị liệu, học văn hóa và nghề nghiệp, được bảo đảm an toàn và có thể được giảm thời hạn khi đủ điều kiện (Điều 30).",
+    "expected_sources": ["luat_phong_chong_ma_tuy_2021.md"]
+  },
+  {
+    "id": "q15",
+    "category": "combined",
+    "question": "Các nghệ sĩ Việt Nam nào đã bị bắt vì liên quan đến ma túy?",
+    "ground_truth": "Nhiều nghệ sĩ Việt Nam đã bị bắt vì liên quan đến ma túy, trong đó nổi bật có: Ca sĩ Miu Lê bị bắt quả tang dùng ma túy ở Cát Bà và bị khởi tố tội tổ chức sử dụng trái phép chất ma túy; Ca sĩ Long Nhật bị bắt và khai sử dụng ma túy A cùng quản lý; Ca sĩ Sơn Ngọc Minh bị bắt cùng Long Nhật; Ca sĩ Châu Việt Cường liên quan đến vụ làm chết người trong bữa tiệc ma túy.",
+    "expected_sources": ["ca_si_miu_le_bi_bat_qua_tang_dung_ma_tuy_o_bai_bien.md", "ca_si_long_nhat_bi_bat_showbiz_viet_lien_tiep_chan_ong_vi_ma_tuy.md", "bat_ca_si_long_nhat_va_ca_si_son_ngoc_minh_vi_lien_quan_ma_tuy_tuoi_tre_online.md", "nhin_lai_vu_ca_si_chau_viet_cuong_nhet_toi_lam_chet_nguoi_rung_ong_showbiz_viet.md"]
+  },
+  {
+    "id": "q16",
+    "category": "out_of_scope",
+    "question": "Hôm nay thời tiết Hà Nội thế nào?",
+    "ground_truth": "NGOÀI PHẠM VI: Câu hỏi này không liên quan đến pháp luật hoặc vụ việc vi phạm pháp luật.",
+    "expected_sources": []
+  },
+  {
+    "id": "q17",
+    "category": "out_of_scope",
+    "question": "Cho tôi công thức nấu phở bò ngon nhất?",
+    "ground_truth": "NGOÀI PHẠM VI: Câu hỏi này không liên quan đến pháp luật hoặc vụ việc vi phạm pháp luật.",
+    "expected_sources": []
+  },
+  {
+    "id": "q18",
+    "category": "legal",
+    "question": "Tội sản xuất trái phép chất ma túy bị xử phạt như thế nào?",
+    "ground_truth": "Theo Điều 247 Bộ luật Hình sự 2015, tội sản xuất trái phép chất ma túy bị phạt tù từ 02 đến 07 năm (khoản 1). Phạt từ 07 đến 15 năm nếu có tổ chức, tái phạm, lợi dụng chức vụ, hoặc sản xuất số lượng đáng kể (khoản 2). Phạt từ 15 đến 20 năm với số lượng lớn hơn (khoản 3). Phạt 20 năm, tù chung thân hoặc tử hình với số lượng đặc biệt lớn như heroin/cocaine từ 100 gam trở lên (khoản 4). Ngoài ra bị phạt tiền đến 500 triệu đồng.",
+    "expected_sources": ["bo_luat_hinh_su_2015_chuong_xx.md"]
+  }
+]

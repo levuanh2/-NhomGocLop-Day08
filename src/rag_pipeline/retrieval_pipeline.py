@@ -5,12 +5,13 @@ Kết hợp semantic search + lexical search + reranking + PageIndex fallback
 thành một pipeline thống nhất.
 
 Logic:
-    1. Chạy semantic_search + lexical_search song song (top_k * 4 candidates mỗi bên)
-    2. Merge kết quả (RRF)
-    3. Diversify: đảm bảo kết quả đến từ nhiều nguồn khác nhau
-    4. Rerank (cross-encoder nếu có Jina API key, else sort by score)
-    5. Nếu top result score < threshold → fallback sang PageIndex
-    6. Return top_k results
+    1. (Optional) HyDE: sinh hypothetical document từ query → dùng làm search query
+    2. Chạy semantic_search + lexical_search song song (top_k * 4 candidates mỗi bên)
+    3. Merge kết quả (RRF)
+    4. Diversify: đảm bảo kết quả đến từ nhiều nguồn khác nhau
+    5. Rerank (cross-encoder nếu có Jina API key, else sort by score)
+    6. Nếu top result score < threshold → fallback sang PageIndex
+    7. Return top_k results
 
 Improvements vs v1:
   - SCORE_THRESHOLD = 0.008: phù hợp với RRF score range (max ~0.016)
@@ -19,8 +20,12 @@ Improvements vs v1:
     toàn bộ kết quả từ 1 article
   - Query expansion: queries về định nghĩa tự động thêm "giải thích từ ngữ"
     → fix lỗi ngữ nghĩa khi tìm điều luật định nghĩa
+  - HyDE (Hypothetical Document Embeddings): thay vì embed câu hỏi trực tiếp,
+    sinh ra một đoạn văn bản giả định có thể trả lời câu hỏi, rồi embed đoạn đó
+    → embedding gần hơn với embedding của document thật trong vector space
 """
 
+import os
 from .semantic_search import semantic_search
 from .lexical_search import lexical_search, _ensure_corpus
 from . import lexical_search as _t6  # Module-level access so CORPUS ref stays live after reassign
@@ -42,6 +47,44 @@ RERANK_METHOD = "cross_encoder"  # "cross_encoder" | "mmr" | "rrf"
 # Số chunks tối đa lấy từ một file nguồn (tránh 5/5 từ cùng 1 article)
 # = 3 → đủ để cover multi-chunk answers, nhưng vẫn đảm bảo diversity
 MAX_CHUNKS_PER_SOURCE = 3
+
+
+# =============================================================================
+# HyDE — Hypothetical Document Embeddings
+# =============================================================================
+
+_HYDE_PROMPT = """Bạn là chuyên gia pháp luật Việt Nam.
+Viết MỘT đoạn văn bản khoảng 150 từ như thể đó là trích dẫn từ văn bản luật hoặc bài báo pháp lý
+trả lời trực tiếp cho câu hỏi sau. Chỉ viết đoạn văn, không giải thích thêm.
+
+Câu hỏi: {query}"""
+
+
+def _hyde_expand(query: str) -> str:
+    """
+    HyDE: thay vì embed câu hỏi → sinh hypothetical document → embed document đó.
+
+    Tại sao hiệu quả hơn:
+      - Câu hỏi thường ngắn, mơ hồ về mặt ngữ nghĩa (vector thưa).
+      - Hypothetical document có cùng vocabulary với documents thật → embedding
+        gần hơn trong vector space → cosine similarity cao hơn với đúng chunk.
+      - Đặc biệt hữu ích với câu hỏi "là gì", câu hỏi về định nghĩa pháp lý.
+
+    Fallback: trả về query gốc nếu OpenAI không khả dụng.
+    """
+    try:
+        from openai import OpenAI
+        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": _HYDE_PROMPT.format(query=query)}],
+            temperature=0,
+            max_tokens=250,
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"  ⚠ HyDE failed ({e}), falling back to original query")
+        return query
 
 
 # =============================================================================
@@ -163,12 +206,15 @@ def retrieve(
     top_k: int = DEFAULT_TOP_K,
     score_threshold: float = SCORE_THRESHOLD,
     use_reranking: bool = True,
+    use_hyde: bool = False,
 ) -> list[dict]:
     """
     Retrieval pipeline hoàn chỉnh với fallback logic.
 
     Pipeline:
-        Query (+ expanded queries)
+        Query
+          ├→ (Optional) HyDE: sinh hypothetical document → dùng làm search query
+          ├→ Query expansion
           ├→ Semantic Search → results_dense
           ├→ Lexical Search  → results_sparse
           │
@@ -184,6 +230,7 @@ def retrieve(
         top_k: Số lượng kết quả cuối cùng
         score_threshold: Ngưỡng điểm tối thiểu cho hybrid results (RRF scale)
         use_reranking: Có áp dụng reranking hay không
+        use_hyde: Dùng HyDE (Hypothetical Document Embeddings) cho semantic search
 
     Returns:
         List of {
@@ -193,22 +240,25 @@ def retrieve(
             'source': str  # 'hybrid' hoặc 'pageindex'
         }
     """
-    # Step 1: Query expansion + song song semantic + lexical
+    # Step 0 (Optional): HyDE — sinh hypothetical document để embed thay cho query
+    semantic_query = _hyde_expand(query) if use_hyde else query
+
+    # Step 1: Query expansion (dùng query gốc để BM25 khớp từ khoá chính xác)
     queries = _expand_query(query)
-    # Expanded (definition) queries → bigger pool để tìm clause cụ thể.
-    # Regular queries → pool gốc (2x) để giữ precision cho factual chunks.
     search_k = top_k * (4 if len(queries) > 1 else 2)
 
+    # Semantic search: dùng semantic_query (HyDE doc hoặc query gốc)
+    # HyDE doc có cùng vocabulary với documents thật → cosine similarity cao hơn
     dense_results = []
+    try:
+        r = semantic_search(semantic_query, top_k=search_k)
+        dense_results.extend(r)
+    except Exception as e:
+        print(f"  ⚠ Semantic search failed: {e}")
+
+    # Lexical search: dùng expanded queries (keyword match, không cần HyDE)
     sparse_results = []
-
     for q in queries:
-        try:
-            r = semantic_search(q, top_k=search_k)
-            dense_results.extend(r)
-        except Exception as e:
-            print(f"  ⚠ Semantic search failed: {e}")
-
         try:
             r = lexical_search(q, top_k=search_k)
             sparse_results.extend(r)

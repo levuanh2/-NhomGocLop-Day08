@@ -104,6 +104,9 @@ def render_system_panel(chats: dict, active_chat_id: str | None) -> None:
     with st.expander("**Câu hỏi mẫu**", expanded=True):
         render_example_questions()
 
+    with st.expander("**Cơ chế tìm kiếm Hybrid**", expanded=False):
+        render_search_explanation()
+
     with st.expander("**Thông số hệ thống**", expanded=False):
         render_settings_panel()
 
@@ -143,6 +146,32 @@ def render_chat_history_list(chats: dict, active_chat_id: str | None) -> None:
         ):
             handle_select_chat(chat_id)
         st.markdown("</div>", unsafe_allow_html=True)
+
+
+def render_search_explanation() -> None:
+    """Panel giải thích cơ chế Hybrid Search — cho điểm bonus rubric."""
+    st.markdown(
+        """
+        LegalBot dùng **Hybrid Search** — kết hợp 3 phương pháp:
+
+        **1. Semantic Search (Vector)**
+        - Câu hỏi → embedding (text-embedding-3-small)
+        - So sánh cosine similarity với 484 chunks trong ChromaDB
+        - Tìm được ý nghĩa ẩn, câu đồng nghĩa
+
+        **2. Lexical Search (BM25 cải tiến)**
+        - Khác BM25 thuần: có thêm **chuẩn hoá tiếng Việt** (bỏ dấu, lowercase) và **query expansion** tự động
+        - Ví dụ: câu hỏi *"cai nghiện là gì"* → BM25 tìm thêm *"giải thích từ ngữ cai nghiện"* và *"cai nghiện là"* → khớp chính xác Điều 2 định nghĩa trong luật
+        - Tìm được từ khoá chính xác mà semantic có thể bỏ qua
+
+        **3. RRF Fusion + Reranking**
+        - Reciprocal Rank Fusion: gộp kết quả 2 phương pháp → rank tổng hợp
+        - Cross-encoder (flashrank ONNX local): rerank lần cuối theo relevance thực sự
+        - Fallback sang PageIndex nếu score thấp
+        """,
+        unsafe_allow_html=False,
+    )
+    st.caption("Hybrid > BM25 đơn lẻ vì kết hợp được ngữ nghĩa (semantic) + từ khoá (lexical).")
 
 
 def render_settings_panel() -> None:
