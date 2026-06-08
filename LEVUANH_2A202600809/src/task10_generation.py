@@ -10,11 +10,21 @@ Hướng dẫn:
 """
 
 import os
+import sys
+from pathlib import Path
+
+if sys.stdout.encoding != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from .task9_retrieval_pipeline import retrieve
+# Flexible import hỗ trợ cả relative và direct script
+try:
+    from .task9_retrieval_pipeline import retrieve
+except ImportError:
+    from task9_retrieval_pipeline import retrieve
 
 
 # =============================================================================
@@ -32,6 +42,10 @@ TOP_P = 0.9
 # temperature: Độ ngẫu nhiên của output
 # Chọn 0.3 vì: RAG cần factual, ít sáng tạo
 TEMPERATURE = 0.3
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 
 # =============================================================================
@@ -75,20 +89,21 @@ def reorder_for_llm(chunks: list[dict]) -> list[dict]:
     Returns:
         List reordered để maximize LLM attention.
     """
-    # TODO: Implement reordering
-    #
-    # if len(chunks) <= 2:
-    #     return chunks
-    #
-    # # Split into first half (important → đầu) and second half (important → cuối)
-    # reordered = []
-    # for i in range(0, len(chunks), 2):
-    #     reordered.append(chunks[i])  # Odd positions go first
-    # for i in range(len(chunks) - 1 - (len(chunks) % 2 == 0), 0, -2):
-    #     reordered.append(chunks[i])  # Even positions go last (reversed)
-    #
-    # return reordered
-    raise NotImplementedError("Implement reorder_for_llm")
+    if len(chunks) <= 2:
+        return chunks
+
+    reordered = []
+    n = len(chunks)
+
+    # Odd positions: 0, 2, 4, ... → đầu
+    for i in range(0, n, 2):
+        reordered.append(chunks[i])
+
+    # Even positions reversed: n-1, n-3, ... → cuối
+    for i in range(n - 1, 0, -2):
+        reordered.append(chunks[i])
+
+    return reordered
 
 
 # =============================================================================
@@ -106,23 +121,75 @@ def format_context(chunks: list[dict]) -> str:
     Returns:
         Formatted context string.
     """
-    # TODO: Implement context formatting
-    #
-    # context_parts = []
-    # for i, chunk in enumerate(chunks, 1):
-    #     source = chunk.get("metadata", {}).get("source", f"Source {i}")
-    #     doc_type = chunk.get("metadata", {}).get("type", "unknown")
-    #     context_parts.append(
-    #         f"[Document {i} | Source: {source} | Type: {doc_type}]\n"
-    #         f"{chunk['content']}\n"
-    #     )
-    # return "\n---\n".join(context_parts)
-    raise NotImplementedError("Implement format_context")
+    context_parts = []
+    for i, chunk in enumerate(chunks, 1):
+        meta = chunk.get("metadata", {})
+        title = meta.get("title", f"Document {i}")
+        source = meta.get("source", "unknown")
+        url = meta.get("url", "")
+        doc_type = meta.get("doc_type", "unknown")
+        score = chunk.get("score", 0)
+
+        header = f"[Document {i} | Title: {title} | Source: {source}"
+        if url:
+            header += f" | URL: {url}"
+        header += f" | Type: {doc_type} | Score: {score:.4f}]"
+
+        context_parts.append(f"{header}\n{chunk['content']}")
+
+    return "\n---\n".join(context_parts)
 
 
 # =============================================================================
 # GENERATION
 # =============================================================================
+
+def _extract_fallback_answer(query: str, chunks: list[dict]) -> dict:
+    """Tạo extractive answer fallback khi không có OpenAI API key."""
+    if not chunks:
+        return {
+            "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+            "sources": [],
+            "retrieval_source": "none",
+        }
+
+    reordered = reorder_for_llm(chunks)
+    lines = []
+    sources = []
+
+    for i, chunk in enumerate(reordered[:TOP_K], 1):
+        meta = chunk.get("metadata", {})
+        title = meta.get("title", "Unknown")
+        source = meta.get("source", "unknown")
+        url = meta.get("url", "")
+
+        content = chunk.get("content", "")
+        preview = content[:400].replace("\n", " ")
+
+        citation = f"[{title} | {source}]"
+        if url:
+            citation = f"[{title} | {source} | {url}]"
+
+        lines.append(f"{i}. {preview}... {citation}")
+        sources.append({
+            "title": title,
+            "source": source,
+            "url": url,
+            "content": content[:500],
+        })
+
+    answer = (
+        f"Dựa trên các nguồn tìm được, tôi có thể trả lời câu hỏi như sau:\n\n"
+        + "\n\n".join(lines)
+        + "\n\n(Lưu ý: Đây là câu trả lời extractive, được tạo tự động do không có OpenAI API key.)"
+    )
+
+    return {
+        "answer": answer,
+        "sources": sources,
+        "retrieval_source": chunks[0].get("source", "hybrid") if chunks else "none",
+    }
+
 
 def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     """
@@ -146,56 +213,94 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
             'retrieval_source': str  # 'hybrid' hoặc 'pageindex'
         }
     """
-    # TODO: Implement generation pipeline
-    #
-    # # Step 1: Retrieve
-    # chunks = retrieve(query, top_k=top_k)
-    #
-    # # Step 2: Reorder
-    # reordered = reorder_for_llm(chunks)
-    #
-    # # Step 3: Format context
-    # context = format_context(reordered)
-    #
-    # # Step 4: Build prompt
-    # user_message = f"""Context:\n{context}\n\n---\n\nQuestion: {query}"""
-    #
-    # # Step 5: Call LLM
-    # from openai import OpenAI
-    # client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    #
-    # response = client.chat.completions.create(
-    #     model="gpt-4o-mini",
-    #     messages=[
-    #         {"role": "system", "content": SYSTEM_PROMPT},
-    #         {"role": "user", "content": user_message}
-    #     ],
-    #     temperature=TEMPERATURE,
-    #     top_p=TOP_P,
-    # )
-    #
-    # answer = response.choices[0].message.content
-    #
-    # # Step 6: Return
-    # return {
-    #     "answer": answer,
-    #     "sources": chunks,
-    #     "retrieval_source": chunks[0].get("source", "hybrid") if chunks else "none"
-    # }
-    raise NotImplementedError("Implement generate_with_citation")
+    # Step 1: Retrieve
+    chunks = retrieve(query, top_k=top_k)
+
+    # Step 2: Check empty
+    if not chunks:
+        return {
+            "answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+            "sources": [],
+            "retrieval_source": "none",
+        }
+
+    # Step 3: Reorder
+    reordered = reorder_for_llm(chunks)
+
+    # Step 4: Format context
+    context = format_context(reordered)
+
+    # Step 5: Call LLM nếu có API key
+    if not OPENAI_API_KEY:
+        return _extract_fallback_answer(query, chunks)
+
+    # Call OpenAI
+    try:
+        client_kwargs = {"api_key": OPENAI_API_KEY}
+        if OPENAI_BASE_URL:
+            client_kwargs["base_url"] = OPENAI_BASE_URL
+
+        from openai import OpenAI
+
+        client = OpenAI(**client_kwargs)
+
+        user_message = f"Context:\n{context}\n\n---\n\nQuestion: {query}"
+
+        response = client.chat.completions.create(
+            model=OPENAI_MODEL,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_message},
+            ],
+            temperature=TEMPERATURE,
+            top_p=TOP_P,
+        )
+
+        answer = response.choices[0].message.content
+
+        sources = []
+        for chunk in chunks:
+            meta = chunk.get("metadata", {})
+            sources.append({
+                "title": meta.get("title", ""),
+                "source": meta.get("source", ""),
+                "url": meta.get("url", ""),
+                "content": chunk.get("content", "")[:500],
+            })
+
+        return {
+            "answer": answer,
+            "sources": sources,
+            "retrieval_source": chunks[0].get("source", "hybrid") if chunks else "none",
+        }
+
+    except Exception as e:
+        print(f"[WARN] LLM call failed: {type(e).__name__}: {e}")
+        print("[INFO] Falling back to extractive answer")
+        return _extract_fallback_answer(query, chunks)
 
 
 if __name__ == "__main__":
-    test_queries = [
-        "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo pháp luật Việt Nam?",
-        "Những nghệ sĩ nào đã bị bắt vì liên quan tới ma tuý?",
-        "Quy trình cai nghiện bắt buộc theo Luật Phòng chống ma tuý 2021?",
-    ]
+    import argparse
 
-    for q in test_queries:
-        print(f"\n{'='*70}")
-        print(f"Q: {q}")
-        print("=" * 70)
-        result = generate_with_citation(q)
-        print(f"\nA: {result['answer']}")
-        print(f"\n[Sources: {len(result['sources'])} chunks | via {result['retrieval_source']}]")
+    parser = argparse.ArgumentParser(description="Generation with Citation CLI")
+    parser.add_argument("query", nargs="?", default="Những nghệ sĩ nào liên quan tới ma túy?", help="Query")
+    parser.add_argument("--top_k", type=int, default=TOP_K, help="Number of chunks")
+    args = parser.parse_args()
+
+    print(f"[INFO] OPENAI_API_KEY: {'set' if OPENAI_API_KEY else 'not set'}")
+    if not OPENAI_API_KEY:
+        print("[INFO] Will use extractive fallback answer")
+
+    print(f"\nQuery: {args.query}")
+    print("=" * 70)
+
+    result = generate_with_citation(args.query, top_k=args.top_k)
+
+    print(f"\nAnswer:\n{result['answer']}")
+    print(f"\n[Sources: {len(result['sources'])} chunks | via {result['retrieval_source']}]")
+
+    if result["sources"]:
+        print("\n--- Sources ---")
+        for i, s in enumerate(result["sources"], 1):
+            print(f"  {i}. {s.get('title', 'Unknown')} | {s.get('source', '?')}")

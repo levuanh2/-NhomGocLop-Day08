@@ -2,7 +2,7 @@
 title: "Người mẫu Andrea Aybar và ca sĩ Chi Dân bị bắt"
 source: "vnexpress.net"
 url: "https://vnexpress.net/nguoi-mau-andrea-aybar-va-ca-si-chi-dan-bi-bat-4814295.html"
-date_crawled: "2026-06-08T07:02:57.826683+00:00"
+date_crawled: "2026-06-08T08:23:18.044976+00:00"
 doc_type: "news"
 ---
 
@@ -43,4 +43,5 @@ Ca sĩ Chi Dân sinh năm 1989 ở Kiên Giang, chủ yếu theo đuổi dòng n
 **Quốc Thắng**
 ×
 ![](https://vnexpress.net/nguoi-mau-andrea-aybar-va-ca-si-chi-dan-bi-bat-4814295.html)
+[](https://vnexpress.net/nguoi-mau-andrea-aybar-va-ca-si-chi-dan-bi-bat-4814295.html)
 ×

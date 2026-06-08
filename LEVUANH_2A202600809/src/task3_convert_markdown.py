@@ -409,6 +409,16 @@ def convert_news_articles() -> Tuple[int, int, int]:
         print(f"  [INFO] No JSON files found in {NEWS_DIR}")
         return 0, 0, 0
 
+    # Xóa file .md cũ trước khi ghi lại để tránh duplicate
+    old_md_files = sorted(NEWS_OUT.glob("*.md"))
+    if old_md_files:
+        print(f"  [INFO] Removing {len(old_md_files)} old markdown file(s) from {NEWS_OUT}")
+        for old_path in old_md_files:
+            try:
+                old_path.unlink()
+            except Exception as e:
+                print(f"  [WARN] Cannot remove old file {old_path.name}: {type(e).__name__}: {e}")
+
     for json_path in json_files:
         try:
             with open(json_path, "r", encoding="utf-8") as f:
@@ -456,6 +466,27 @@ def convert_legal_docs() -> Tuple[int, int]:
     if not legal_files:
         print(f"  [INFO] No legal files found in {LEGAL_DIR}")
         return 0, 0
+
+    # Kiểm tra xem có file cần MarkItDown không
+    needs_markitdown = any(
+        f.suffix.lower() in (".pdf", ".docx", ".html", ".htm")
+        for f in legal_files
+        if f.is_file()
+    )
+    if needs_markitdown and not HAS_MARKITDOWN:
+        print(f"  [WARN] MarkItDown not installed. PDF/DOCX/HTML legal files may fail to convert.")
+        print(f"  [WARN] Install with: pip install markitdown[pdf]")
+        print(f"  [WARN] Legal files will be skipped if conversion fails.")
+
+    # Xóa file .md cũ trong standardized/legal để tránh duplicate
+    old_legal_md = sorted(LEGAL_OUT.glob("*.md"))
+    if old_legal_md:
+        print(f"  [INFO] Removing {len(old_legal_md)} old legal markdown file(s)")
+        for old_path in old_legal_md:
+            try:
+                old_path.unlink()
+            except Exception as e:
+                print(f"  [WARN] Cannot remove {old_path.name}: {type(e).__name__}: {e}")
 
     for file_path in legal_files:
         if file_path.is_file():

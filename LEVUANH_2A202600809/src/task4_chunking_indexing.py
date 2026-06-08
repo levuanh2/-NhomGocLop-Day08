@@ -24,10 +24,12 @@ if sys.stdout.encoding != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
 
 # Paths - tự động xác định LEVUANH subdirectory
+# __file__ = E:\...\LEVUANH\src\task4.py
+# __file__.parent = LEVUANH/src
+# __file__.parent.parent = LEVUANH (root of project)
 _BASE = Path(__file__).resolve().parent.parent
-# Nếu có LEVUANH subdirectory, dùng nó
-if (_BASE / "LEVUANH").exists() and (_BASE / "src").name != "src":
-    # Đang ở root, có LEVUANH
+# Nếu _BASE chưa có src mà có LEVUANH con → nhảy vào
+if not (_BASE / "src").exists() and (_BASE / "LEVUANH").exists():
     _BASE = _BASE / "LEVUANH"
 
 STANDARDIZED_DIR = _BASE / "data" / "standardized"
@@ -35,10 +37,33 @@ NEWS_DIR = STANDARDIZED_DIR / "news"
 LEGAL_DIR = STANDARDIZED_DIR / "legal"
 INDEX_DIR = _BASE / "data" / "index"
 
-# Chunking config
+# =============================================================================
+# CONFIGURATION — Các hằng số cấu hình chunking và embedding
+# =============================================================================
+
+"""
+Chunking strategy:
+- RecursiveCharacterTextSplitter
+- chunk_size = 500
+- chunk_overlap = 50
+Reason:
+Recursive splitter is robust for mixed Vietnamese legal/news Markdown because
+it preserves paragraph boundaries while keeping chunks small enough for retrieval.
+
+Embedding:
+- BAAI/bge-m3
+- dimension = 1024
+Reason:
+bge-m3 supports multilingual retrieval and works well for Vietnamese.
+"""
+
+CHUNKING_STRATEGY = "RecursiveCharacterTextSplitter"
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 SEPARATORS = ["\n\n", "\n", ". ", " ", ""]
+
+EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
+EMBEDDING_DIM = 1024
 
 # Embedding models (theo thứ tự ưu tiên)
 EMBEDDING_MODELS = [
@@ -125,6 +150,9 @@ def load_markdown_documents() -> list[dict]:
     if LEGAL_DIR.exists():
         dirs_to_scan.append(("legal", LEGAL_DIR))
 
+    # Deduplicate globally across all directories
+    seen_dedup_keys = set()
+
     for doc_type, dir_path in dirs_to_scan:
         md_files = sorted(dir_path.glob("*.md"))
         for md_path in md_files:
@@ -134,13 +162,22 @@ def load_markdown_documents() -> list[dict]:
 
                 # Nếu không có title trong frontmatter, dùng filename stem
                 title = metadata.get("title") or md_path.stem
+                url = metadata.get("url", "")
+
+                # Deduplicate theo url hoặc normalized title
+                dedup_key = _normalize_dedup_key(url, title)
+                if dedup_key:
+                    if dedup_key in seen_dedup_keys:
+                        print(f"  [SKIP] Duplicate document: {md_path.name} (url/title already indexed)")
+                        continue
+                    seen_dedup_keys.add(dedup_key)
 
                 doc = {
                     "doc_id": str(uuid.uuid4()),
                     "source_file": md_path.name,
                     "source_path": str(md_path),
                     "title": title,
-                    "url": metadata.get("url", ""),
+                    "url": url,
                     "source": metadata.get("source", md_path.stem),
                     "doc_type": doc_type,
                     "content": body,
@@ -152,6 +189,37 @@ def load_markdown_documents() -> list[dict]:
                 print(f"  [WARN] Cannot load {md_path.name}: {type(e).__name__}: {e}")
 
     return documents
+
+
+def _normalize_dedup_key(url: str, title: str) -> str:
+    """Tạo dedup key từ URL hoặc title."""
+    if url and url.strip():
+        return url.strip().lower()
+    if title and title.strip():
+        # Normalize title: lowercase, strip extra spaces
+        return title.strip().lower()
+    return ""
+
+
+def load_documents() -> list[dict]:
+    """
+    Wrapper để tương thích với tests.
+
+    Returns:
+        List of documents với format:
+        {
+            "doc_id": str,
+            "source_file": str,
+            "source_path": str,
+            "title": str,
+            "url": str,
+            "source": str,
+            "doc_type": str,
+            "content": str,
+            "content_length": int
+        }
+    """
+    return load_markdown_documents()
 
 
 # ---------------------------------------------------------------------------
@@ -177,6 +245,8 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
         return _simple_chunk(documents)
 
     chunks = []
+    max_chunk_size = CHUNK_SIZE + 100  # Guard: không vượt quá CHUNK_SIZE + 100
+
     for doc in documents:
         doc_id = doc["doc_id"]
         source_file = doc["source_file"]
@@ -198,6 +268,31 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
             if not chunk_text:
                 continue
 
+            # Noise filter: skip invalid chunks
+            chunk_len = len(chunk_text)
+            if chunk_len < 80:
+                continue
+            if "javascript:" in chunk_text.lower():
+                continue
+            if "Chia sẻ bài viết" in chunk_text:
+                continue
+            if "Bình luận" in chunk_text:
+                continue
+            if "Copy link" in chunk_text:
+                continue
+            # Skip chunks that are only title headings
+            if chunk_text.startswith("#") and chunk_len < 150:
+                continue
+            # Skip chunks that are only images/links
+            if re.match(r"^!\[.*\]\(.*\)$", chunk_text.strip()):
+                continue
+            if re.match(r"^\[.*\]\(.*\)$", chunk_text.strip()) and chunk_len < 100:
+                continue
+
+            # Guard: cắt nếu vượt quá max_chunk_size
+            if len(chunk_text) > max_chunk_size:
+                chunk_text = chunk_text[:max_chunk_size]
+
             chunk = {
                 "chunk_id": f"{doc_id}_{chunk_idx}",
                 "doc_id": doc_id,
@@ -209,6 +304,7 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
                 "chunk_index": chunk_idx,
                 "text": chunk_text,
                 "text_length": len(chunk_text),
+                "content": chunk_text,  # Alias cho tương thích tests
             }
             chunks.append(chunk)
 
@@ -218,6 +314,8 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
 def _simple_chunk(documents: list[dict]) -> list[dict]:
     """Simple fallback chunking khi không có langchain."""
     chunks = []
+    max_chunk_size = CHUNK_SIZE + 100
+
     for doc in documents:
         content = doc["content"]
         doc_id = doc["doc_id"]
@@ -227,6 +325,10 @@ def _simple_chunk(documents: list[dict]) -> list[dict]:
             part = part.strip()
             if not part or len(part) < 50:
                 continue
+            # Guard chunk size
+            if len(part) > max_chunk_size:
+                part = part[:max_chunk_size]
+
             chunk = {
                 "chunk_id": f"{doc_id}_{idx}",
                 "doc_id": doc_id,
@@ -238,6 +340,7 @@ def _simple_chunk(documents: list[dict]) -> list[dict]:
                 "chunk_index": idx,
                 "text": part,
                 "text_length": len(part),
+                "content": part,
             }
             chunks.append(chunk)
     return chunks
@@ -378,16 +481,20 @@ def save_outputs(
     print(f"  [OK] Chunks saved: {chunks_path} ({len(chunks)} chunks)")
 
     # 2. Save index_metadata.json
+    actual_model_name = embedding_model_name or EMBEDDING_MODEL_NAME
+    actual_dim = embedding_dim or EMBEDDING_DIM
+
     metadata = {
-        "created_at": datetime.now(timezone.utc).isoformat(),
-        "embedding_model": embedding_model_name or "none",
-        "embedding_dim": embedding_dim,
+        "chunking_strategy": CHUNKING_STRATEGY,
+        "embedding_model": actual_model_name,
+        "embedding_dim": actual_dim,
         "chunk_size": CHUNK_SIZE,
         "chunk_overlap": CHUNK_OVERLAP,
-        "separators": SEPARATORS,
         "document_count": len(documents),
         "chunk_count": len(chunks),
         "vector_store": store_type,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "separators": SEPARATORS,
         "input_dirs": [
             str(NEWS_DIR) if NEWS_DIR.exists() else None,
             str(LEGAL_DIR) if LEGAL_DIR.exists() else None,
@@ -429,12 +536,14 @@ def main() -> None:
     print(f"Index output:  {INDEX_DIR}")
     print(f"Chunk size:    {CHUNK_SIZE}")
     print(f"Chunk overlap: {CHUNK_OVERLAP}")
+    print(f"Strategy:      {CHUNKING_STRATEGY}")
+    print(f"Embedding:     {EMBEDDING_MODEL_NAME} (dim={EMBEDDING_DIM})")
     print(f"FAISS:         {'available' if HAS_FAISS else 'not available'}")
     print("=" * 70)
 
     # Step 1: Load documents
     print("\n--- Loading documents ---")
-    documents = load_markdown_documents()
+    documents = load_documents()
     if not documents:
         print("[ERROR] No documents loaded. Exiting.")
         return

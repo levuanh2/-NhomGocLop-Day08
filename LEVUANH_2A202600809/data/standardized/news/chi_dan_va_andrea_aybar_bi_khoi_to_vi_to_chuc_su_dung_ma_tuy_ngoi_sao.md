@@ -2,7 +2,7 @@
 title: "Chi Dân và Andrea Aybar bị khởi tố vì tổ chức sử dụng ma túy - Ngôi sao"
 source: "ngoisao.vnexpress.net"
 url: "https://ngoisao.vnexpress.net/chi-dan-va-andrea-aybar-bi-khoi-to-vi-to-chuc-su-dung-ma-tuy-4815983.html"
-date_crawled: "2026-06-08T07:03:06.593045+00:00"
+date_crawled: "2026-06-08T08:23:27.693206+00:00"
 doc_type: "news"
 ---
 
@@ -23,4 +23,14 @@ Andrea Aybar, sinh năm 1995, sống ở Việt Nam từ nhỏ dù mang quốc t
 **Kim Mạch**
 ![Chi Dân tại cơ quan điều tra.](https://i1-ngoisao.vnecdn.net/2024/11/14/Anh-1-Nguyen-Trung-Hieu-7940-1731565577.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=NogXlDVKDjY7pzr7b0hjxA)
 ![Andrea Aybar khi bị bắt.](https://ngoisao.vnexpress.net/chi-dan-va-andrea-aybar-bi-khoi-to-vi-to-chuc-su-dung-ma-tuy-4815983.html)
+##  Tiêu điểm [Cơ ngơi của Sao](https://ngoisao.vnexpress.net/topic/co-ngoi-cua-sao-28761 "Cơ ngơi của Sao")
+[ ![Không gian sống hơn 200 m2 của á hậu Thúy An](https://i1-ngoisao.vnecdn.net/2026/06/05/dsc03752-1780630125-4720-1780630819.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=vH7Im87MfuZr9iRc8aecCg) ](https://ngoisao.vnexpress.net/khong-gian-song-hon-200-m2-cua-a-hau-thuy-an-5082192.html "Không gian sống hơn 200 m2 của á hậu Thúy An")
+###  [Không gian sống hơn 200 m2 của á hậu Thúy An](https://ngoisao.vnexpress.net/khong-gian-song-hon-200-m2-cua-a-hau-thuy-an-5082192.html "Không gian sống hơn 200 m2 của á hậu Thúy An") [ ](https://ngoisao.vnexpress.net/khong-gian-song-hon-200-m2-cua-a-hau-thuy-an-5082192.html#box_comment)
+Tiêu điểm khác
+[ ![Talk series 'Star of the Month'](https://i-ngoisao.vnecdn.net/2026/05/27/hoangoanh111-1779879655-3355-1779879768_140x84.jpg) ](https://ngoisao.vnexpress.net/topic/talk-series-star-of-the-month-28762 "Talk series 'Star of the Month'")
+###  [Talk series 'Star of the Month'](https://ngoisao.vnexpress.net/topic/talk-series-star-of-the-month-28762 "Talk series 'Star of the Month'")
+[ ![Miss Grand International All Stars](https://i-ngoisao.vnecdn.net/2026/06/03/top10-1780474975-8268-1780475029_140x84.jpg) ](https://ngoisao.vnexpress.net/topic/miss-grand-international-all-stars-28901 "Miss Grand International All Stars")
+###  [Miss Grand International All Stars](https://ngoisao.vnexpress.net/topic/miss-grand-international-all-stars-28901 "Miss Grand International All Stars")
+[ ![Cơ thể phụ nữ lên tiếng](https://i-ngoisao.vnecdn.net/2026/04/08/5cf7719edea4ae3990a8b17d52c2bbe0jpg-1775612750_140x84.jpg) ](https://ngoisao.vnexpress.net/topic/co-the-phu-nu-len-tieng-28765 "Cơ thể phụ nữ lên tiếng")
+###  [Cơ thể phụ nữ lên tiếng](https://ngoisao.vnexpress.net/topic/co-the-phu-nu-len-tieng-28765 "Cơ thể phụ nữ lên tiếng")
 ×
