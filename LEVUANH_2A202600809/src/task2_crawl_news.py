@@ -489,20 +489,27 @@ async def main() -> list[dict]:
         results.append(article)
 
     # Tổng kết
-    success_count = sum(1 for r in results 
-                       if r["status"] == "success" 
-                       and r.get("is_valid_article", False) 
+    success_count = sum(1 for r in results
+                       if r["status"] == "success"
+                       and r.get("is_valid_article", False)
                        and r.get("is_relevant_topic", False))
     failed_count = total - success_count
+    meets_requirement = success_count >= 5
 
     print("\n" + "=" * 70)
     print("CRAWL SUMMARY")
-    print(f"  Total URLs:      {total}")
-    print(f"  Success:         {success_count}")
-    print(f"  Failed:          {failed_count}")
-    print(f"  Success dir:    {OUTPUT_DIR}")
-    print(f"  Failed dir:     {OUTPUT_DIR_FAILED}")
+    print(f"  Total URLs:          {total}")
+    print(f"  Success:            {success_count}")
+    print(f"  Failed:             {failed_count}")
+    print(f"  Meets requirement:  {meets_requirement} (need >= 5)")
+    print(f"  Success dir:        {OUTPUT_DIR}")
+    print(f"  Failed dir:         {OUTPUT_DIR_FAILED}")
     print("=" * 70)
+
+    if not meets_requirement:
+        print(f"\n[WARNING] Only {success_count} article(s) crawled successfully.")
+        print(f"[WARNING] Task requires at least 5 valid articles about Vietnamese artists and drugs.")
+        print(f"[WARNING] Please check failed articles in: {OUTPUT_DIR_FAILED}")
 
     return results
 

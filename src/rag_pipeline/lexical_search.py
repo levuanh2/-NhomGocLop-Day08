@@ -15,6 +15,7 @@ BM25 hoạt động thế nào:
     - k1=1.5 (term saturation), b=0.75 (length normalization)
 """
 
+import os
 from pathlib import Path
 import unicodedata
 
@@ -39,6 +40,8 @@ def _resolve_data_dir() -> Path:
 
 
 _DATA_DIR = _resolve_data_dir()
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+_DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
 _STANDARDIZED_DIR = _DATA_DIR / "standardized"
 _VECTORSTORE_DIR = _DATA_DIR / "vectorstore" / "chroma"
 
@@ -119,7 +122,8 @@ def _ensure_corpus():
         CORPUS = _load_corpus_from_chroma()
     except Exception:
         CORPUS = _load_corpus_from_files()
-    _bm25 = build_bm25_index(CORPUS)
+    if CORPUS:
+        _bm25 = build_bm25_index(CORPUS)
 
 
 def build_bm25_index(corpus: list[dict]):

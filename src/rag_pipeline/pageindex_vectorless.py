@@ -36,6 +36,8 @@ else:
             key, value = line.split("=", 1)
             os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+_DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
 PAGEINDEX_API_KEY = os.getenv("PAGEINDEX_API_KEY", "")
 
 

@@ -83,6 +83,37 @@ _OUT_OF_SCOPE_PREFIX = "NGOÀI PHẠM VI:"
 
 
 # =============================================================================
+# SESSION NAMING
+# =============================================================================
+
+_SESSION_NAMING_PROMPT = """Dựa vào câu hỏi và câu trả lời bên dưới, hãy tạo một tên ngắn gọn cho đoạn hội thoại này.
+
+Yêu cầu bắt buộc:
+- Bắt đầu bằng một ĐỘNG TỪ (ví dụ: Phân tích, Tra cứu, Giải thích, Tìm hiểu, So sánh, Xác định...)
+- Tiếp theo là DANH TỪ hoặc cụm danh từ mô tả chủ đề
+- KHÔNG phải câu hỏi (không kết thúc bằng dấu ?)
+- Ngắn gọn: 3–7 từ
+- Trả về DUY NHẤT tên đó, không giải thích thêm
+
+Ví dụ: Phân tích tội phạm ma túy | Tra cứu hình phạt tù chung thân | Xác định tội danh buôn bán chất cấm"""
+
+
+def _generate_session_name(query: str, answer: str, client) -> str:
+    """Tạo tên session từ câu hỏi và câu trả lời đầu tiên. Chỉ gọi 1 lần."""
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": _SESSION_NAMING_PROMPT},
+            {"role": "user", "content": f"Câu hỏi: {query}\n\nCâu trả lời: {answer[:500]}"},
+        ],
+        temperature=0.4,
+        max_tokens=30,
+    )
+    name = response.choices[0].message.content.strip()
+    return name.rstrip("?")
+
+
+# =============================================================================
 # DOCUMENT REORDERING (tránh lost in the middle)
 # =============================================================================
 
@@ -277,6 +308,9 @@ def generate_with_citation(
     answer = response.choices[0].message.content
     out_of_scope = answer.strip().startswith(_OUT_OF_SCOPE_PREFIX)
 
+    # Tạo tên session chỉ ở lượt đầu tiên (history rỗng)
+    session_name = _generate_session_name(query, answer, client) if not history else None
+
     # Step 6: Return theo BotResponse schema
     used_chunks = reordered
     return {
@@ -284,6 +318,7 @@ def generate_with_citation(
         "chunks": [] if out_of_scope else used_chunks,
         "out_of_scope": out_of_scope,
         "query": query,
+        "session_name": session_name,
     }
 
 
