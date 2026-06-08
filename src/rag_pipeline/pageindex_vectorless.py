@@ -19,11 +19,46 @@ Hướng dẫn:
 
 import os
 from pathlib import Path
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = None
+
+if load_dotenv:
+    load_dotenv()
+else:
+    env_path = Path(__file__).resolve().parents[2] / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 _PROJECT_ROOT = Path(__file__).parent.parent.parent
 _DATA_DIR = Path(os.getenv("DATA_DIR", str(_PROJECT_ROOT / "LeTrungKien_2A202600834" / "data")))
 PAGEINDEX_API_KEY = os.getenv("PAGEINDEX_API_KEY", "")
-STANDARDIZED_DIR = _DATA_DIR / "standardized"
+
+
+def _resolve_data_dir() -> Path:
+    env_dir = os.getenv("RAG_DATA_DIR")
+    if env_dir and Path(env_dir).exists():
+        return Path(env_dir)
+
+    repo_root = Path(__file__).resolve().parents[2]
+    candidates = [Path(__file__).parent.parent / "data"]
+    candidates.extend(sorted(repo_root.glob("*/data")))
+    for candidate in candidates:
+        if (candidate / "standardized").exists() and (candidate / "vectorstore" / "chroma").exists():
+            return candidate
+    for candidate in candidates:
+        if (candidate / "standardized").exists():
+            return candidate
+    return candidates[0]
+
+
+STANDARDIZED_DIR = _resolve_data_dir() / "standardized"
 
 
 def upload_documents():

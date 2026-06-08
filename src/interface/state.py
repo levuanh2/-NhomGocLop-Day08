@@ -15,7 +15,7 @@ DEFAULT_SETTINGS = {
     "show_debug": False,
     "show_scores": True,
     "show_source_file": False,
-    "use_mock": True,
+    "use_mock": False,
 }
 
 
@@ -30,6 +30,7 @@ def init_session_state() -> None:
         "is_generating": False,
         "settings": DEFAULT_SETTINGS.copy(),
         "pending_example": None,
+        "pending_rag_request": None,
         "pending_stream_response": None,
         "pending_action": None,
         "new_name": "",
